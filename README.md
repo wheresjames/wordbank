@@ -63,18 +63,18 @@ builds, never mixed in one package.
 
 ```
                          ┌────────────────────────────────────────────┐
-   tracked in git        │  wordlists/  (corpus)   profiles/ (styles)  │
+   tracked in git        │  wordlists/  (corpus)   profiles/ (styles) │
                          └───────────────┬────────────────┬───────────┘
                                          │                │
                           generate +     ▼  review/select ▼
    gitignored, disposable    ┌─────────────────────────────────────────┐
-   output/                   │ output/images/<profile>/candidates       │
-                             │ output/audio/<lang>/<voice_set>/*.wav    │
+   output/                   │ output/images/<profile>/candidates      │
+                             │ output/audio/<lang>/<voice_set>/*.wav   │
                              └──────────────────┬──────────────────────┘
                                                 │  generate_db.py
                                                 ▼
    archived by the app       ┌────────────────────────────────────┐
-   (outside this repo)       │  package: words.yml + media + ...   │
+   (outside this repo)       │  package: words.yml + media + ...  │
                              └────────────────────────────────────┘
                                                 │  import (round-trip)
                                                 ▼
@@ -531,7 +531,7 @@ product renders on transparency):
 |---|---|---|---|
 | ![apple](docs/examples/apple.png) | ![banana](docs/examples/banana.png) | ![strawberry](docs/examples/strawberry.png) | ![bear](docs/examples/bear.png) |
 | ![cat](docs/examples/cat.png) | ![dog](docs/examples/dog.png) | ![bicycle](docs/examples/bicycle.png) | ![car](docs/examples/car.png) |
-| ![airplane](docs/examples/airplane.png) | ![train](docs/examples/train.png) | ![rocket](docs/examples/rocket.png) | |
+|
 
 Swap the active profile (e.g. `juggernaut-cartoon` or `sdxl-storybook`) to render
 the same corpus in a completely different style — each profile keeps its own

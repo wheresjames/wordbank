@@ -1,0 +1,39 @@
+schema_version: 1
+name: sdxl-storybook
+description: SDXL Base 1.0 + StoryBook Redmond Kids LoRA  ★ current setup
+type: images
+model:
+  checkpoint: sd_xl_base_1.0.safetensors
+  lora: StoryBookRedmond-KidsRedmAF.safetensors
+  lora_strength: 1.0
+rembg_model: u2net
+prompt:
+  template: RedmAF storybook illustration, one single {item}, isolated on solid white background, centered, large, complete subject fully visible, bold outline, cute children's book style, flat colors, simple, clean
+  categories:
+    animal: RedmAF storybook illustration, one single {item}, full body, isolated on solid white background, centered, large, entire animal visible from head to tail, bold outline, cute children's book style, flat colors, simple, clean
+    food: RedmAF storybook illustration, one single {item}, isolated on solid white background, centered, large, complete item fully visible, bold outline, cute children's book style, flat colors, simple, clean
+    vehicle: RedmAF storybook illustration, one single {item}, isolated on solid white background, centered, large, complete vehicle fully visible, bold outline, cute children's book style, flat colors, simple, clean
+    furniture: RedmAF storybook illustration, one single {item}, isolated on solid white background, centered, large, complete piece fully visible, bold outline, cute children's book style, flat colors, simple, clean
+    city: RedmAF storybook cartoon icon of a {item}, isolated on solid white background, centered, large, bold outline, flat colors, minimal detail, simple, clean
+  negative: realistic, photographic, 3d render, dark background, black background, colored background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, people, humans, shadow, drop shadow, cast shadow, reflection, background elements, background objects, background figures, small, tiny
+  negative_categories:
+    animal: realistic, photographic, 3d render, dark background, black background, colored background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, clothes, clothing, dressed, outfit, costume, hat, shirt, flowers, plants, grass, ground, dirt, branches, trees, scenery, landscape, environment, props, accessories, decorations, second animal, other animals, background animals, people, humans, shadow, drop shadow, cast shadow, reflection, background elements, background objects, background figures, small, tiny
+    food: realistic, photographic, 3d render, dark background, black background, colored background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, plate, bowl, dish, table, surface, cutting board, kitchen, utensils, napkin, fork, knife, spoon, props, decorations, accessories, scenery, background elements, landscape, environment, people, humans, shadow, drop shadow, cast shadow, reflection, background objects, background figures, small, tiny
+    vehicle: realistic, photographic, 3d render, dark background, black background, colored background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, driver, passenger, road, street, highway, parking lot, ground, pavement, driveway, props, decorations, scenery, background elements, landscape, environment, people, humans, shadow, drop shadow, cast shadow, reflection, background objects, background figures, small, tiny
+    furniture: realistic, photographic, 3d render, dark background, black background, colored background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, room, wall, floor, ceiling, interior, rug, carpet, props, accessories, decorations, scenery, background elements, landscape, environment, people, humans, shadow, drop shadow, cast shadow, reflection, background objects, background figures, small, tiny
+    city: realistic, photographic, 3d render, dark background, black background, colored background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, people, humans, crowd, busy, complex, cluttered, street scene, cityscape, shadow, drop shadow, cast shadow, reflection, background elements, background objects, background figures, small, tiny
+generation:
+  sampler: euler
+  scheduler: normal
+  steps: 20
+  cfg: 8
+  width: 512
+  height: 512
+  images_per_item: 1
+downloads:
+- dest: models/checkpoints/sd_xl_base_1.0.safetensors
+  url: https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors
+  size_hint: 6.9 GB
+- dest: models/loras/StoryBookRedmond-KidsRedmAF.safetensors
+  civitai: 154194
+  size_hint: 650 MB

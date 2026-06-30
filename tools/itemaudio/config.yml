@@ -1,0 +1,117 @@
+schema_version: 1
+name: default
+type: audio
+languages:
+  en:
+    selected: melotts-en-us
+    voice_sets:
+      coqui-ljspeech:
+        engine: coqui
+        model: tts_models/en/ljspeech/vits
+      melotts-en-us:
+        engine: melotts
+        model: EN
+        voice: EN-US
+      piper-amy:
+        engine: piper
+        voice: en_US-amy-medium
+  de:
+    selected: coqui-thorsten
+    voice_sets:
+      coqui-thorsten:
+        engine: coqui
+        model: tts_models/de/thorsten/vits
+      piper-thorsten:
+        engine: piper
+        voice: de_DE-thorsten-high
+      mms-deu:
+        engine: mms
+        model: facebook/mms-tts-deu
+  fr:
+    selected: melotts-fr
+    voice_sets:
+      coqui-css10:
+        engine: coqui
+        model: tts_models/fr/css10/vits
+      melotts-fr:
+        engine: melotts
+        model: FR
+      mms-fra:
+        engine: mms
+        model: facebook/mms-tts-fra
+  es:
+    selected: melotts-es
+    voice_sets:
+      coqui-css10:
+        engine: coqui
+        model: tts_models/es/css10/vits
+      melotts-es:
+        engine: melotts
+        model: ES
+      mms-spa:
+        engine: mms
+        model: facebook/mms-tts-spa
+  it:
+    selected: coqui-mai-female
+    voice_sets:
+      coqui-mai-female:
+        engine: coqui
+        model: tts_models/it/mai_female/vits
+  ja:
+    selected: coqui-kokoro
+    voice_sets:
+      coqui-kokoro:
+        engine: coqui
+        model: tts_models/ja/kokoro/tacotron2-DDC
+      melotts-jp:
+        engine: melotts
+        model: JP
+  zh-cn:
+    selected: coqui-baker
+    voice_sets:
+      coqui-baker:
+        engine: coqui
+        model: tts_models/zh-CN/baker/tacotron2-DDC-GST
+      melotts-zh:
+        engine: melotts
+        model: ZH
+downloads:
+- engine: coqui
+  model: tts_models/en/ljspeech/vits
+- engine: coqui
+  model: tts_models/de/thorsten/vits
+- engine: coqui
+  model: tts_models/fr/css10/vits
+- engine: coqui
+  model: tts_models/es/css10/vits
+- engine: coqui
+  model: tts_models/it/mai_female/vits
+- engine: coqui
+  model: tts_models/ja/kokoro/tacotron2-DDC
+- engine: coqui
+  model: tts_models/zh-CN/baker/tacotron2-DDC-GST
+- engine: melotts
+  model: EN
+- engine: melotts
+  model: FR
+- engine: melotts
+  model: ES
+- engine: melotts
+  model: JP
+- engine: melotts
+  model: ZH
+- engine: piper
+  voice: en_US-amy-medium
+- engine: piper
+  voice: de_DE-thorsten-high
+- engine: mms
+  model: facebook/mms-tts-deu
+- engine: mms
+  model: facebook/mms-tts-fra
+- engine: mms
+  model: facebook/mms-tts-spa
+default_speaker: null
+default_speaker_wav: null
+output_format: wav
+split_sentences: false
+local_dir: ./coqui_local

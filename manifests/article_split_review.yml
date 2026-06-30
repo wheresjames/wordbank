@@ -1,0 +1,56 @@
+- key: mars
+  lang: fr
+  text: Mars
+  reason: no recognized leading article
+- key: mars
+  lang: es
+  text: Marte
+  reason: no recognized leading article
+- key: venus
+  lang: fr
+  text: Vénus
+  reason: no recognized leading article
+- key: venus
+  lang: es
+  text: Venus
+  reason: no recognized leading article
+- key: jupiter
+  lang: fr
+  text: Jupiter
+  reason: no recognized leading article
+- key: jupiter
+  lang: es
+  text: Júpiter
+  reason: no recognized leading article
+- key: saturn
+  lang: fr
+  text: Saturne
+  reason: no recognized leading article
+- key: saturn
+  lang: es
+  text: Saturno
+  reason: no recognized leading article
+- key: uranus
+  lang: fr
+  text: Uranus
+  reason: no recognized leading article
+- key: uranus
+  lang: es
+  text: Urano
+  reason: no recognized leading article
+- key: neptune
+  lang: fr
+  text: Neptune
+  reason: no recognized leading article
+- key: neptune
+  lang: es
+  text: Neptuno
+  reason: no recognized leading article
+- key: mercury
+  lang: fr
+  text: Mercure
+  reason: no recognized leading article
+- key: mercury
+  lang: es
+  text: Mercurio
+  reason: no recognized leading article

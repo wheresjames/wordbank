@@ -1,0 +1,3180 @@
+animal:
+  cat:
+    tr: {de: "Katze", fr: "chat", es: "gato", jp: "猫", cn: "猫", it: "il gatto", ua: "кіт"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  dog:
+    tr: {de: "Hund", fr: "chien", es: "perro", jp: "犬", cn: "狗", it: "il cane", ua: "собака"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  bunny:
+    tr: {de: "Häschen", fr: "lapin", es: "conejito", jp: "うさぎ", cn: "兔子", it: "il coniglio", ua: "кролик"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  elephant:
+    tr: {de: "Elefant", fr: "éléphant", es: "elefante", jp: "象", cn: "大象", it: "l'elefante", ua: "слон"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  giraffe:
+    tr: {de: "Giraffe", fr: "girafe", es: "jirafa", jp: "キリン", cn: "长颈鹿", it: "la giraffa", ua: "жираф"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  fish:
+    tr: {de: "Fisch", fr: "poisson", es: "pez", jp: "魚", cn: "鱼", it: "il pesce", ua: "риба"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  butterfly:
+    tr: {de: "Schmetterling", fr: "papillon", es: "mariposa", jp: "蝶", cn: "蝴蝶", it: "la farfalla", ua: "метелик"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  frog:
+    tr: {de: "Frosch", fr: "grenouille", es: "rana", jp: "カエル", cn: "青蛙", it: "la rana", ua: "жаба"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  shark:
+    tr: {de: "Hai", fr: "requin", es: "tiburón", jp: "サメ", cn: "鲨鱼", it: "lo squalo", ua: "акула"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  dolphin:
+    tr: {de: "Delfin", fr: "dauphin", es: "delfín", jp: "イルカ", cn: "海豚", it: "il delfino", ua: "дельфін"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  whale:
+    tr: {de: "Wal", fr: "baleine", es: "ballena", jp: "クジラ", cn: "鲸鱼", it: "la balena", ua: "кит"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  jellyfish:
+    tr: {de: "Qualle", fr: "méduse", es: "medusa", jp: "クラゲ", cn: "水母", it: "la medusa", ua: "медуза"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  crab:
+    tr: {de: "Krabbe", fr: "crabe", es: "cangrejo", jp: "カニ", cn: "螃蟹", it: "il granchio", ua: "краб"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  octopus:
+    tr: {de: "Oktopus", fr: "pieuvre", es: "pulpo", jp: "タコ", cn: "章鱼", it: "il polpo", ua: "восьминіг"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  seahorse:
+    tr: {de: "Seepferdchen", fr: "hippocampe", es: "caballito de mar", jp: "タツノオトシゴ", cn: "海马", it: "il cavalluccio marino", ua: "морський коник"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  bird:
+    tr: {de: "Vogel", fr: "oiseau", es: "pájaro", jp: "鳥", cn: "鸟", it: "l'uccello", ua: "птах"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  chicken:
+    tr: {de: "Huhn", fr: "poulet", es: "pollo", jp: "ニワトリ", cn: "鸡", it: "il pollo", ua: "курка"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  duck:
+    tr: {de: "Ente", fr: "canard", es: "pato", jp: "アヒル", cn: "鸭子", it: "l'anatra", ua: "качка"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  goose:
+    tr: {de: "Gans", fr: "oie", es: "ganso", jp: "ガチョウ", cn: "鹅", it: "l'oca", ua: "гуска"}
+    art: {de: "die", fr: "l'", es: "el"}
+    pos: ["n"]
+  turkey:
+    tr: {de: "Truthahn", fr: "dinde", es: "pavo", jp: "七面鳥", cn: "火鸡", it: "il tacchino", ua: "індик"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  cow:
+    tr: {de: "Kuh", fr: "vache", es: "vaca", jp: "牛", cn: "奶牛", it: "la mucca", ua: "корова"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  horse:
+    tr: {de: "Pferd", fr: "cheval", es: "caballo", jp: "馬", cn: "马", it: "il cavallo", ua: "кінь"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  pig:
+    tr: {de: "Schwein", fr: "cochon", es: "cerdo", jp: "豚", cn: "猪", it: "il maiale", ua: "свиня"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  sheep:
+    tr: {de: "Schaf", fr: "mouton", es: "oveja", jp: "羊", cn: "绵羊", it: "la pecora", ua: "вівця"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  goat:
+    tr: {de: "Ziege", fr: "chèvre", es: "cabra", jp: "ヤギ", cn: "山羊", it: "la capra", ua: "коза"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  lion:
+    tr: {de: "Löwe", fr: "lion", es: "león", jp: "ライオン", cn: "狮子", it: "il leone", ua: "лев"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  tiger:
+    tr: {de: "Tiger", fr: "tigre", es: "tigre", jp: "トラ", cn: "老虎", it: "la tigre", ua: "тигр"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  bear:
+    tr: {de: "Bär", fr: "ours", es: "oso", jp: "クマ", cn: "熊", it: "l'orso", ua: "ведмідь"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  monkey:
+    tr: {de: "Affe", fr: "singe", es: "mono", jp: "サル", cn: "猴子", it: "la scimmia", ua: "мавпа"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  zebra:
+    tr: {de: "Zebra", fr: "zèbre", es: "cebra", jp: "シマウマ", cn: "斑马", it: "la zebra", ua: "зебра"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  panda:
+    tr: {de: "Panda", fr: "panda", es: "panda", jp: "パンダ", cn: "熊猫", it: "il panda", ua: "панда"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  kangaroo:
+    tr: {de: "Känguru", fr: "kangourou", es: "canguro", jp: "カンガルー", cn: "袋鼠", it: "il canguro", ua: "кенгуру"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  koala:
+    tr: {de: "Koala", fr: "koala", es: "koala", jp: "コアラ", cn: "考拉", it: "il koala", ua: "коала"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  deer:
+    tr: {de: "Hirsch", fr: "cerf", es: "ciervo", jp: "鹿", cn: "鹿", it: "il cervo", ua: "олень"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  mouse:
+    tr: {de: "Maus", fr: "souris", es: "ratón", jp: "ネズミ", cn: "老鼠", it: "il topo", ua: "миша"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  squirrel:
+    tr: {de: "Eichhörnchen", fr: "écureuil", es: "ardilla", jp: "リス", cn: "松鼠", it: "lo scoiattolo", ua: "білка"}
+    art: {de: "das", fr: "l'", es: "la"}
+    pos: ["n"]
+  fox:
+    tr: {de: "Fuchs", fr: "renard", es: "zorro", jp: "キツネ", cn: "狐狸", it: "la volpe", ua: "лисиця"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  wolf:
+    tr: {de: "Wolf", fr: "loup", es: "lobo", jp: "オオカミ", cn: "狼", it: "il lupo", ua: "вовк"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  raccoon:
+    tr: {de: "Waschbär", fr: "raton laveur", es: "mapache", jp: "アライグマ", cn: "浣熊", it: "il procione", ua: "єнот"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  snake:
+    tr: {de: "Schlange", fr: "serpent", es: "serpiente", jp: "ヘビ", cn: "蛇", it: "il serpente", ua: "змія"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  turtle:
+    tr: {de: "Schildkröte", fr: "tortue", es: "tortuga", jp: "カメ", cn: "乌龟", it: "la tartaruga", ua: "черепаха"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  lizard:
+    tr: {de: "Eidechse", fr: "lézard", es: "lagarto", jp: "トカゲ", cn: "蜥蜴", it: "la lucertola", ua: "ящірка"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  crocodile:
+    tr: {de: "Krokodil", fr: "crocodile", es: "cocodrilo", jp: "ワニ", cn: "鳄鱼", it: "il coccodrillo", ua: "крокодил"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  penguin:
+    tr: {de: "Pinguin", fr: "pingouin", es: "pingüino", jp: "ペンギン", cn: "企鹅", it: "il pinguino", ua: "пінгвін"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  owl:
+    tr: {de: "Eule", fr: "hibou", es: "búho", jp: "フクロウ", cn: "猫头鹰", it: "il gufo", ua: "сова"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  eagle:
+    tr: {de: "Adler", fr: "aigle", es: "águila", jp: "ワシ", cn: "鹰", it: "l'aquila", ua: "орел"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  parrot:
+    tr: {de: "Papagei", fr: "perroquet", es: "loro", jp: "オウム", cn: "鹦鹉", it: "il pappagallo", ua: "папуга"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  bee:
+    tr: {de: "Biene", fr: "abeille", es: "abeja", jp: "ハチ", cn: "蜜蜂", it: "l'ape", ua: "бджола"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  ant:
+    tr: {de: "Ameise", fr: "fourmi", es: "hormiga", jp: "アリ", cn: "蚂蚁", it: "la formica", ua: "мураха"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  spider:
+    tr: {de: "Spinne", fr: "araignée", es: "araña", jp: "クモ", cn: "蜘蛛", it: "il ragno", ua: "павук"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  snail:
+    tr: {de: "Schnecke", fr: "escargot", es: "caracol", jp: "カタツムリ", cn: "蜗牛", it: "la lumaca", ua: "равлик"}
+    art: {de: "die", fr: "l'", es: "el"}
+    pos: ["n"]
+  worm:
+    tr: {de: "Wurm", fr: "ver", es: "gusano", jp: "ミミズ", cn: "蠕虫", it: "il verme", ua: "черв'як"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  ladybug:
+    tr: {de: "Marienkäfer", fr: "coccinelle", es: "mariquita", jp: "テントウムシ", cn: "瓢虫", it: "la coccinella", ua: "сонечко"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  mosquito:
+    tr: {de: "Mücke", fr: "moustique", es: "mosquito", jp: "蚊", cn: "蚊子", it: "la zanzara", ua: "комар"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  lobster:
+    tr: {de: "Hummer", fr: "homard", es: "langosta", jp: "ロブスター", cn: "龙虾", it: "l'aragosta", ua: "омар"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  shrimp:
+    tr: {de: "Garnele", fr: "crevette", es: "camarón", jp: "エビ", cn: "虾", it: "il gambero", ua: "креветка"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  squid:
+    tr: {de: "Tintenfisch", fr: "calmar", es: "calamar", jp: "イカ", cn: "鱿鱼", it: "il calamaro", ua: "кальмар"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  clam:
+    tr: {de: "Muschel", fr: "palourde", es: "almeja", jp: "ハマグリ", cn: "蛤蜊", it: "la vongola", ua: "молюск"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  starfish:
+    tr: {de: "Seestern", fr: "étoile de mer", es: "estrella de mar", jp: "ヒトデ", cn: "海星", it: "la stella marina", ua: "морська зірка"}
+    art: {de: "der", fr: "l'", es: "la"}
+    pos: ["n"]
+  seal:
+    tr: {de: "Seehund", fr: "phoque", es: "foca", jp: "アザラシ", cn: "海豹", it: "la foca", ua: "тюлень"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  otter:
+    tr: {de: "Otter", fr: "loutre", es: "nutria", jp: "カワウソ", cn: "水獭", it: "la lontra", ua: "видра"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  camel:
+    tr: {de: "Kamel", fr: "chameau", es: "camello", jp: "ラクダ", cn: "骆驼", it: "il cammello", ua: "верблюд"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  donkey:
+    tr: {de: "Esel", fr: "âne", es: "burro", jp: "ロバ", cn: "驴", it: "l'asino", ua: "осел"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  hippo:
+    tr: {de: "Flusspferd", fr: "hippopotame", es: "hipopótamo", jp: "カバ", cn: "河马", it: "l'ippopotamo", ua: "бегемот"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  rhino:
+    tr: {de: "Nashorn", fr: "rhinocéros", es: "rinoceronte", jp: "サイ", cn: "犀牛", it: "il rinoceronte", ua: "носоріг"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+food:
+  apple:
+    tr: {de: "Apfel", fr: "pomme", es: "manzana", jp: "りんご", cn: "苹果", it: "la mela", ua: "яблуко"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  banana:
+    tr: {de: "Banane", fr: "banane", es: "plátano", jp: "バナナ", cn: "香蕉", it: "la banana", ua: "банан"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  orange:
+    tr: {de: "Orange", fr: "orange", es: "naranja", jp: "オレンジ", cn: "橙子", it: "l'arancia", ua: "апельсин"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  grape:
+    tr: {de: "Traube", fr: "raisin", es: "uva", jp: "ぶどう", cn: "葡萄", it: "l'uva", ua: "виноград"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  strawberry:
+    tr: {de: "Erdbeere", fr: "fraise", es: "fresa", jp: "いちご", cn: "草莓", it: "la fragola", ua: "полуниця"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  tomato:
+    tr: {de: "Tomate", fr: "tomate", es: "tomate", jp: "トマト", cn: "番茄", it: "il pomodoro", ua: "помідор"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  carrot:
+    tr: {de: "Karotte", fr: "carotte", es: "zanahoria", jp: "にんじん", cn: "胡萝卜", it: "la carota", ua: "морква"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  potato:
+    tr: {de: "Kartoffel", fr: "pomme de terre", es: "patata", jp: "じゃがいも", cn: "土豆", it: "la patata", ua: "картопля"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  bread:
+    tr: {de: "Brot", fr: "pain", es: "pan", jp: "パン", cn: "面包", it: "il pane", ua: "хліб"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  pizza:
+    tr: {de: "Pizza", fr: "pizza", es: "pizza", jp: "ピザ", cn: "披萨", it: "la pizza", ua: "піца"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  hamburger:
+    tr: {de: "Hamburger", fr: "hamburger", es: "hamburguesa", jp: "ハンバーガー", cn: "汉堡", it: "l'hamburger", ua: "гамбургер"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  ice_cream:
+    tr: {de: "Eis", fr: "glace", es: "helado", jp: "アイスクリーム", cn: "冰淇淋", it: "il gelato", ua: "морозиво"}
+    art: {de: "das", fr: "la", es: "el"}
+    pos: ["n"]
+  cake:
+    tr: {de: "Kuchen", fr: "gâteau", es: "pastel", jp: "ケーキ", cn: "蛋糕", it: "la torta", ua: "торт"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  pear:
+    tr: {de: "Birne", fr: "poire", es: "pera", jp: "梨", cn: "梨", it: "la pera", ua: "груша"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  peach:
+    tr: {de: "Pfirsich", fr: "pêche", es: "durazno", jp: "桃", cn: "桃子", it: "la pesca", ua: "персик"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  watermelon:
+    tr: {de: "Wassermelone", fr: "pastèque", es: "sandía", jp: "スイカ", cn: "西瓜", it: "l'anguria", ua: "кавун"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  pineapple:
+    tr: {de: "Ananas", fr: "ananas", es: "piña", jp: "パイナップル", cn: "菠萝", it: "l'ananas", ua: "ананас"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  lemon:
+    tr: {de: "Zitrone", fr: "citron", es: "limón", jp: "レモン", cn: "柠檬", it: "il limone", ua: "лимон"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  lime:
+    tr: {de: "Limette", fr: "citron vert", es: "lima", jp: "ライム", cn: "青柠", it: "il lime", ua: "лайм"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  cherry:
+    tr: {de: "Kirsche", fr: "cerise", es: "cereza", jp: "さくらんぼ", cn: "樱桃", it: "la ciliegia", ua: "вишня"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  blueberry:
+    tr: {de: "Blaubeere", fr: "myrtille", es: "arándano", jp: "ブルーベリー", cn: "蓝莓", it: "il mirtillo", ua: "чорниця"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  raspberry:
+    tr: {de: "Himbeere", fr: "framboise", es: "frambuesa", jp: "ラズベリー", cn: "覆盆子", it: "il lampone", ua: "малина"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  mango:
+    tr: {de: "Mango", fr: "mangue", es: "mango", jp: "マンゴー", cn: "芒果", it: "il mango", ua: "манго"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  avocado:
+    tr: {de: "Avocado", fr: "avocat", es: "aguacate", jp: "アボカド", cn: "牛油果", it: "l'avocado", ua: "авокадо"}
+    art: {de: "die", fr: "l'", es: "el"}
+    pos: ["n"]
+  cucumber:
+    tr: {de: "Gurke", fr: "concombre", es: "pepino", jp: "きゅうり", cn: "黄瓜", it: "il cetriolo", ua: "огірок"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  lettuce:
+    tr: {de: "Salat", fr: "laitue", es: "lechuga", jp: "レタス", cn: "生菜", it: "la lattuga", ua: "салат"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  broccoli:
+    tr: {de: "Brokkoli", fr: "brocoli", es: "brócoli", jp: "ブロッコリー", cn: "西兰花", it: "il broccolo", ua: "броколі"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  corn:
+    tr: {de: "Mais", fr: "maïs", es: "maíz", jp: "とうもろこし", cn: "玉米", it: "il mais", ua: "кукурудза"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  onion:
+    tr: {de: "Zwiebel", fr: "oignon", es: "cebolla", jp: "玉ねぎ", cn: "洋葱", it: "la cipolla", ua: "цибуля"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  garlic:
+    tr: {de: "Knoblauch", fr: "ail", es: "ajo", jp: "ニンニク", cn: "大蒜", it: "l'aglio", ua: "часник"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  pepper:
+    tr: {de: "Paprika", fr: "poivron", es: "pimiento", jp: "ピーマン", cn: "甜椒", it: "il peperone", ua: "перець"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  mushroom:
+    tr: {de: "Pilz", fr: "champignon", es: "champiñón", jp: "きのこ", cn: "蘑菇", it: "il fungo", ua: "гриб"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  rice:
+    tr: {de: "Reis", fr: "riz", es: "arroz", jp: "ご飯", cn: "米饭", it: "il riso", ua: "рис"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  pasta:
+    tr: {de: "Pasta", fr: "pâtes", es: "pasta", jp: "パスタ", cn: "意大利面", it: "la pasta", ua: "паста"}
+    art: {de: "die", fr: "les", es: "la"}
+    pos: ["n"]
+  noodles:
+    tr: {de: "Nudeln", fr: "nouilles", es: "fideos", jp: "麺", cn: "面条", it: "i noodles", ua: "локшина"}
+    art: {de: "die", fr: "les", es: "los"}
+    pos: ["n"]
+  soup:
+    tr: {de: "Suppe", fr: "soupe", es: "sopa", jp: "スープ", cn: "汤", it: "la zuppa", ua: "суп"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  cheese:
+    tr: {de: "Käse", fr: "fromage", es: "queso", jp: "チーズ", cn: "奶酪", it: "il formaggio", ua: "сир"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  egg:
+    tr: {de: "Ei", fr: "œuf", es: "huevo", jp: "卵", cn: "鸡蛋", it: "l'uovo", ua: "яйце"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  milk:
+    tr: {de: "Milch", fr: "lait", es: "leche", jp: "牛乳", cn: "牛奶", it: "il latte", ua: "молоко"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  yogurt:
+    tr: {de: "Joghurt", fr: "yaourt", es: "yogur", jp: "ヨーグルト", cn: "酸奶", it: "lo yogurt", ua: "йогурт"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  butter:
+    tr: {de: "Butter", fr: "beurre", es: "mantequilla", jp: "バター", cn: "黄油", it: "il burro", ua: "масло"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  cereal:
+    tr: {de: "Müsli", fr: "céréales", es: "cereal", jp: "シリアル", cn: "麦片", it: "i cereali", ua: "пластівці"}
+    art: {de: "das", fr: "les", es: "el"}
+    pos: ["n"]
+  sandwich:
+    tr: {de: "Sandwich", fr: "sandwich", es: "sándwich", jp: "サンドイッチ", cn: "三明治", it: "il panino", ua: "бутерброд"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  hot_dog:
+    tr: {de: "Hotdog", fr: "hot-dog", es: "perrito caliente", jp: "ホットドッグ", cn: "热狗", it: "l'hot dog", ua: "хот-дог"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  taco:
+    tr: {de: "Taco", fr: "taco", es: "taco", jp: "タコス", cn: "墨西哥卷饼", it: "il taco", ua: "тако"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  burrito:
+    tr: {de: "Burrito", fr: "burrito", es: "burrito", jp: "ブリトー", cn: "墨西哥卷", it: "il burrito", ua: "буріто"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  cookie:
+    tr: {de: "Keks", fr: "biscuit", es: "galleta", jp: "クッキー", cn: "饼干", it: "il biscotto", ua: "печиво"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  chocolate:
+    tr: {de: "Schokolade", fr: "chocolat", es: "chocolate", jp: "チョコレート", cn: "巧克力", it: "il cioccolato", ua: "шоколад"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  candy:
+    tr: {de: "Süßigkeit", fr: "bonbon", es: "caramelo", jp: "キャンディー", cn: "糖果", it: "la caramella", ua: "цукерка"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  donut:
+    tr: {de: "Donut", fr: "beignet", es: "dona", jp: "ドーナツ", cn: "甜甜圈", it: "la ciambella", ua: "пончик"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  pancake:
+    tr: {de: "Pfannkuchen", fr: "crêpe", es: "panqueque", jp: "パンケーキ", cn: "煎饼", it: "il pancake", ua: "млинець"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  waffle:
+    tr: {de: "Waffel", fr: "gaufre", es: "gofre", jp: "ワッフル", cn: "华夫饼", it: "il waffle", ua: "вафля"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  muffin:
+    tr: {de: "Muffin", fr: "muffin", es: "muffin", jp: "マフィン", cn: "松饼", it: "il muffin", ua: "мафін"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  pie:
+    tr: {de: "Kuchen", fr: "tarte", es: "tarta", jp: "パイ", cn: "派", it: "la crostata", ua: "пиріг"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  popcorn:
+    tr: {de: "Popcorn", fr: "pop-corn", es: "palomitas", jp: "ポップコーン", cn: "爆米花", it: "il popcorn", ua: "попкорн"}
+    art: {de: "das", fr: "le", es: "las"}
+    pos: ["n"]
+  peanut:
+    tr: {de: "Erdnuss", fr: "cacahuète", es: "cacahuate", jp: "ピーナッツ", cn: "花生", it: "l'arachide", ua: "арахіс"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  almond:
+    tr: {de: "Mandel", fr: "amande", es: "almendra", jp: "アーモンド", cn: "杏仁", it: "la mandorla", ua: "мигдаль"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  steak:
+    tr: {de: "Steak", fr: "steak", es: "bistec", jp: "ステーキ", cn: "牛排", it: "la bistecca", ua: "стейк"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  sausage:
+    tr: {de: "Wurst", fr: "saucisse", es: "salchicha", jp: "ソーセージ", cn: "香肠", it: "la salsiccia", ua: "ковбаса"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  bacon:
+    tr: {de: "Speck", fr: "bacon", es: "tocino", jp: "ベーコン", cn: "培根", it: "la pancetta", ua: "бекон"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+vehicle:
+  car:
+    tr: {de: "Auto", fr: "voiture", es: "coche", jp: "車", cn: "汽车", it: "la macchina", ua: "автомобіль"}
+    art: {de: "das", fr: "la", es: "el"}
+    pos: ["n"]
+  truck:
+    tr: {de: "Lastwagon", fr: "camion", es: "camión", jp: "トラック", cn: "卡车", it: "il camion", ua: "вантажівка"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  bus:
+    tr: {de: "Bus", fr: "bus", es: "autobús", jp: "バス", cn: "公共汽车", it: "l'autobus", ua: "автобус"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  bicycle:
+    tr: {de: "Fahrrad", fr: "vélo", es: "bicicleta", jp: "自転車", cn: "自行车", it: "la bicicletta", ua: "велосипед"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  motorcycle:
+    tr: {de: "Motorrad", fr: "moto", es: "motocicleta", jp: "バイク", cn: "摩托车", it: "la moto", ua: "мотоцикл"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  train:
+    tr: {de: "Zug", fr: "train", es: "tren", jp: "電車", cn: "火车", it: "il treno", ua: "поїзд"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  airplane:
+    tr: {de: "Flugzeug", fr: "avion", es: "avión", jp: "飛行機", cn: "飞机", it: "l'aereo", ua: "літак"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  boat:
+    tr: {de: "Boot", fr: "bateau", es: "barco", jp: "ボート", cn: "船", it: "la barca", ua: "човен"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  taxi:
+    tr: {de: "Taxi", fr: "taxi", es: "taxi", jp: "タクシー", cn: "出租车", it: "il taxi", ua: "таксі"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  van:
+    tr: {de: "Lieferwagen", fr: "camionnette", es: "furgoneta", jp: "バン", cn: "面包车", it: "il furgone", ua: "фургон"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  ambulance:
+    tr: {de: "Krankenwagen", fr: "ambulance", es: "ambulancia", jp: "救急車", cn: "救护车", it: "l'ambulanza", ua: "швидка допомога"}
+    art: {de: "der", fr: "l'", es: "la"}
+    pos: ["n"]
+  police_car:
+    tr: {de: "Polizeiauto", fr: "voiture de police", es: "coche de policía", jp: "パトカー", cn: "警车", it: "l'auto della polizia", ua: "поліцейська машина"}
+    art: {de: "das", fr: "la", es: "el"}
+    pos: ["n"]
+  fire_truck:
+    tr: {de: "Feuerwehrauto", fr: "camion de pompiers", es: "camión de bomberos", jp: "消防車", cn: "消防车", it: "il camion dei pompieri", ua: "пожежна машина"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  tractor:
+    tr: {de: "Traktor", fr: "tracteur", es: "tractor", jp: "トラクター", cn: "拖拉机", it: "il trattore", ua: "трактор"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  scooter:
+    tr: {de: "Roller", fr: "trottinette", es: "scooter", jp: "スクーター", cn: "滑板车", it: "il monopattino", ua: "самокат"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  skateboard:
+    tr: {de: "Skateboard", fr: "skateboard", es: "patineta", jp: "スケートボード", cn: "滑板", it: "lo skateboard", ua: "скейтборд"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  sled:
+    tr: {de: "Schlitten", fr: "luge", es: "trineo", jp: "そり", cn: "雪橇", it: "la slitta", ua: "сани"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  wagon:
+    tr: {de: "Wagen", fr: "chariot", es: "vagón", jp: "ワゴン", cn: "小车", it: "il carro", ua: "візок"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  subway:
+    tr: {de: "U-Bahn", fr: "métro", es: "metro", jp: "地下鉄", cn: "地铁", it: "la metropolitana", ua: "метро"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  tram:
+    tr: {de: "Straßenbahn", fr: "tramway", es: "tranvía", jp: "路面電車", cn: "有轨电车", it: "il tram", ua: "трамвай"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  helicopter:
+    tr: {de: "Hubschrauber", fr: "hélicoptère", es: "helicóptero", jp: "ヘリコプター", cn: "直升机", it: "l'elicottero", ua: "гелікоптер"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  ship:
+    tr: {de: "Schiff", fr: "navire", es: "barco", jp: "船", cn: "船", it: "la nave", ua: "корабель"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  sailboat:
+    tr: {de: "Segelboot", fr: "voilier", es: "velero", jp: "ヨット", cn: "帆船", it: "la barca a vela", ua: "вітрильник"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  canoe:
+    tr: {de: "Kanu", fr: "canoë", es: "canoa", jp: "カヌー", cn: "独木舟", it: "la canoa", ua: "каное"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  kayak:
+    tr: {de: "Kajak", fr: "kayak", es: "kayak", jp: "カヤック", cn: "皮划艇", it: "il kayak", ua: "каяк"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  ferry:
+    tr: {de: "Fähre", fr: "ferry", es: "ferry", jp: "フェリー", cn: "渡轮", it: "il traghetto", ua: "пором"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  submarine:
+    tr: {de: "U-Boot", fr: "sous-marin", es: "submarino", jp: "潜水艦", cn: "潜艇", it: "il sottomarino", ua: "підводний човен"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  jeep:
+    tr: {de: "Jeep", fr: "jeep", es: "jeep", jp: "ジープ", cn: "吉普车", it: "la jeep", ua: "джип"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  pickup_truck:
+    tr: {de: "Pickup", fr: "pick-up", es: "camioneta", jp: "ピックアップトラック", cn: "皮卡车", it: "il pick-up", ua: "пікап"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  minivan:
+    tr: {de: "Minivan", fr: "monospace", es: "minivan", jp: "ミニバン", cn: "小型货车", it: "il minivan", ua: "мінівен"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  limousine:
+    tr: {de: "Limousine", fr: "limousine", es: "limusina", jp: "リムジン", cn: "豪华轿车", it: "la limousine", ua: "лімузин"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  garbage_truck:
+    tr: {de: "Müllwagen", fr: "camion-poubelle", es: "camión de basura", jp: "ごみ収集車", cn: "垃圾车", it: "il camion della spazzatura", ua: "сміттєвоз"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  dump_truck:
+    tr: {de: "Muldenkipper", fr: "camion-benne", es: "camión volquete", jp: "ダンプカー", cn: "自卸车", it: "il camion ribaltabile", ua: "самоскид"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  tow_truck:
+    tr: {de: "Abschleppwagen", fr: "dépanneuse", es: "grúa", jp: "レッカー車", cn: "拖车", it: "il carro attrezzi", ua: "евакуатор"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  forklift:
+    tr: {de: "Gabelstapler", fr: "chariot élévateur", es: "montacargas", jp: "フォークリフト", cn: "叉车", it: "il muletto", ua: "навантажувач"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  bulldozer:
+    tr: {de: "Bulldozer", fr: "bulldozer", es: "excavadora", jp: "ブルドーザー", cn: "推土机", it: "il bulldozer", ua: "бульдозер"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  excavator:
+    tr: {de: "Bagger", fr: "pelleteuse", es: "excavadora", jp: "ショベルカー", cn: "挖掘机", it: "l'escavatore", ua: "екскаватор"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  crane:
+    tr: {de: "Kran", fr: "grue", es: "grúa", jp: "クレーン", cn: "起重机", it: "la gru", ua: "кран"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  cement_mixer:
+    tr: {de: "Betonmischer", fr: "bétonnière", es: "hormigonera", jp: "コンクリートミキサー車", cn: "水泥搅拌车", it: "la betoniera", ua: "бетономішалка"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  snowplow:
+    tr: {de: "Schneepflug", fr: "chasse-neige", es: "quitanieves", jp: "除雪車", cn: "扫雪车", it: "lo spazzaneve", ua: "снігоочисник"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  wheelchair:
+    tr: {de: "Rollstuhl", fr: "fauteuil roulant", es: "silla de ruedas", jp: "車椅子", cn: "轮椅", it: "la sedia a rotelle", ua: "інвалідний візок"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  stroller:
+    tr: {de: "Kinderwagen", fr: "poussette", es: "cochecito", jp: "ベビーカー", cn: "婴儿车", it: "il passeggino", ua: "дитячий візок"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  golf_cart:
+    tr: {de: "Golfwagen", fr: "voiturette de golf", es: "carrito de golf", jp: "ゴルフカート", cn: "高尔夫球车", it: "il golf cart", ua: "гольф-кар"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  snowmobile:
+    tr: {de: "Schneemobil", fr: "motoneige", es: "moto de nieve", jp: "スノーモービル", cn: "雪地摩托", it: "la motoslitta", ua: "снігохід"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  jet_ski:
+    tr: {de: "Jetski", fr: "jet-ski", es: "moto acuática", jp: "ジェットスキー", cn: "水上摩托", it: "la moto d'acqua", ua: "гідроцикл"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  hot_air_balloon:
+    tr: {de: "Heißluftballon", fr: "montgolfière", es: "globo aerostático", jp: "熱気球", cn: "热气球", it: "la mongolfiera", ua: "повітряна куля"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  blimp:
+    tr: {de: "Luftschiff", fr: "dirigeable", es: "dirigible", jp: "飛行船", cn: "飞艇", it: "il dirigibile", ua: "дирижабль"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  carriage:
+    tr: {de: "Kutsche", fr: "calèche", es: "carruaje", jp: "馬車", cn: "马车", it: "la carrozza", ua: "карета"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+furniture:
+  chair:
+    tr: {de: "Stuhl", fr: "chaise", es: "silla", jp: "椅子", cn: "椅子", it: "la sedia", ua: "стілець"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  table:
+    tr: {de: "Tisch", fr: "table", es: "mesa", jp: "テーブル", cn: "桌子", it: "il tavolo", ua: "стіл"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  couch:
+    tr: {de: "Sofa", fr: "canapé", es: "sofá", jp: "ソファ", cn: "沙发", it: "il divano", ua: "диван"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  bookshelf:
+    tr: {de: "Bücherregal", fr: "étagère", es: "estantería", jp: "本棚", cn: "书架", it: "la libreria", ua: "книжкова полиця"}
+    art: {de: "das", fr: "l'", es: "la"}
+    pos: ["n"]
+  lamp:
+    tr: {de: "Lampe", fr: "lampe", es: "lámpara", jp: "ランプ", cn: "灯", it: "la lampada", ua: "лампа"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  bed:
+    tr: {de: "Bett", fr: "lit", es: "cama", jp: "ベッド", cn: "床", it: "il letto", ua: "ліжко"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  bathroom:
+    tr: {de: "Badezimmer", fr: "salle de bain", es: "baño", jp: "浴室", cn: "浴室", it: "il bagno", ua: "ванна кімната"}
+    art: {de: "das", fr: "la", es: "el"}
+    pos: ["n"]
+  shower:
+    tr: {de: "Dusche", fr: "douche", es: "ducha", jp: "シャワー", cn: "淋浴", it: "la doccia", ua: "душ"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  sink:
+    tr: {de: "Waschbecken", fr: "évier", es: "lavabo", jp: "シンク", cn: "水槽", it: "il lavandino", ua: "раковина"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  toilet:
+    tr: {de: "Toilette", fr: "toilettes", es: "inodoro", jp: "トイレ", cn: "马桶", it: "il gabinetto", ua: "туалет"}
+    art: {de: "die", fr: "les", es: "el"}
+    pos: ["n"]
+  mirror:
+    tr: {de: "Spiegel", fr: "miroir", es: "espejo", jp: "鏡", cn: "镜子", it: "lo specchio", ua: "дзеркало"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  house:
+    tr: {de: "Haus", fr: "maison", es: "casa", jp: "家", cn: "房子", it: "la casa", ua: "будинок"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  door:
+    tr: {de: "Tür", fr: "porte", es: "puerta", jp: "ドア", cn: "门", it: "la porta", ua: "двері"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  window:
+    tr: {de: "Fenster", fr: "fenêtre", es: "ventana", jp: "窓", cn: "窗户", it: "la finestra", ua: "вікно"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  stairs:
+    tr: {de: "Treppe", fr: "escalier", es: "escalera", jp: "階段", cn: "楼梯", it: "le scale", ua: "сходи"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  refrigerator:
+    tr: {de: "Kühlschrank", fr: "réfrigérateur", es: "refrigerador", jp: "冷蔵庫", cn: "冰箱", it: "il frigorifero", ua: "холодильник"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  stove:
+    tr: {de: "Herd", fr: "cuisinière", es: "estufa", jp: "コンロ", cn: "炉灶", it: "il fornello", ua: "плита"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  oven:
+    tr: {de: "Ofen", fr: "four", es: "horno", jp: "オーブン", cn: "烤箱", it: "il forno", ua: "духовка"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  microwave:
+    tr: {de: "Mikrowelle", fr: "micro-ondes", es: "microondas", jp: "電子レンジ", cn: "微波炉", it: "il microonde", ua: "мікрохвильовка"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  dishwasher:
+    tr: {de: "Spülmaschine", fr: "lave-vaisselle", es: "lavavajillas", jp: "食器洗い機", cn: "洗碗机", it: "la lavastoviglie", ua: "посудомийна машина"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  washing_machine:
+    tr: {de: "Waschmaschine", fr: "lave-linge", es: "lavadora", jp: "洗濯機", cn: "洗衣机", it: "la lavatrice", ua: "пральна машина"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  dryer:
+    tr: {de: "Trockner", fr: "sèche-linge", es: "secadora", jp: "乾燥機", cn: "烘干机", it: "l'asciugatrice", ua: "сушарка"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  bathtub:
+    tr: {de: "Badewanne", fr: "baignoire", es: "bañera", jp: "バスタブ", cn: "浴缸", it: "la vasca da bagno", ua: "ванна"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  crib:
+    tr: {de: "Babybett", fr: "berceau", es: "cuna", jp: "ベビーベッド", cn: "婴儿床", it: "la culla", ua: "дитяче ліжечко"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  dresser:
+    tr: {de: "Kommode", fr: "commode", es: "cómoda", jp: "タンス", cn: "梳妆台", it: "il comò", ua: "комод"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  wardrobe:
+    tr: {de: "Kleiderschrank", fr: "armoire", es: "armario", jp: "ワードローブ", cn: "衣柜", it: "l'armadio", ua: "шафа"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  closet:
+    tr: {de: "Schrank", fr: "placard", es: "clóset", jp: "クローゼット", cn: "壁橱", it: "lo sgabuzzino", ua: "шафа"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  cabinet:
+    tr: {de: "Schrank", fr: "meuble", es: "gabinete", jp: "キャビネット", cn: "橱柜", it: "il mobiletto", ua: "шафка"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  desk:
+    tr: {de: "Schreibtisch", fr: "bureau", es: "escritorio", jp: "机", cn: "书桌", it: "la scrivania", ua: "письмовий стіл"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  nightstand:
+    tr: {de: "Nachttisch", fr: "table de nuit", es: "mesita de noche", jp: "ナイトスタンド", cn: "床头柜", it: "il comodino", ua: "тумбочка"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  coffee_table:
+    tr: {de: "Couchtisch", fr: "table basse", es: "mesa de centro", jp: "コーヒーテーブル", cn: "茶几", it: "il tavolino", ua: "журнальний столик"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  armchair:
+    tr: {de: "Sessel", fr: "fauteuil", es: "sillón", jp: "アームチェア", cn: "扶手椅", it: "la poltrona", ua: "крісло"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  stool:
+    tr: {de: "Hocker", fr: "tabouret", es: "taburete", jp: "スツール", cn: "凳子", it: "lo sgabello", ua: "табурет"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  shelf:
+    tr: {de: "Regal", fr: "étagère", es: "estante", jp: "棚", cn: "架子", it: "lo scaffale", ua: "полиця"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  bookcase:
+    tr: {de: "Bücherregal", fr: "bibliothèque", es: "estantería", jp: "本棚", cn: "书柜", it: "la libreria", ua: "книжкова шафа"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  pillow:
+    tr: {de: "Kissen", fr: "oreiller", es: "almohada", jp: "枕", cn: "枕头", it: "il cuscino", ua: "подушка"}
+    art: {de: "das", fr: "l'", es: "la"}
+    pos: ["n"]
+  blanket:
+    tr: {de: "Decke", fr: "couverture", es: "manta", jp: "毛布", cn: "毯子", it: "la coperta", ua: "ковдра"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  rug:
+    tr: {de: "Teppich", fr: "tapis", es: "alfombra", jp: "ラグ", cn: "地毯", it: "il tappeto", ua: "килим"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  curtain:
+    tr: {de: "Vorhang", fr: "rideau", es: "cortina", jp: "カーテン", cn: "窗帘", it: "la tenda", ua: "штора"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  clock:
+    tr: {de: "Uhr", fr: "horloge", es: "reloj", jp: "時計", cn: "时钟", it: "l'orologio", ua: "годинник"}
+    art: {de: "die", fr: "l'", es: "el"}
+    pos: ["n"]
+  fan:
+    tr: {de: "Ventilator", fr: "ventilateur", es: "ventilador", jp: "扇風機", cn: "风扇", it: "il ventilatore", ua: "вентилятор"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  television:
+    tr: {de: "Fernseher", fr: "télévision", es: "televisor", jp: "テレビ", cn: "电视", it: "la televisione", ua: "телевізор"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  computer:
+    tr: {de: "Computer", fr: "ordinateur", es: "computadora", jp: "コンピューター", cn: "电脑", it: "il computer", ua: "комп'ютер"}
+    art: {de: "der", fr: "l'", es: "la"}
+    pos: ["n"]
+  phone:
+    tr: {de: "Telefon", fr: "téléphone", es: "teléfono", jp: "電話", cn: "电话", it: "il telefono", ua: "телефон"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  faucet:
+    tr: {de: "Wasserhahn", fr: "robinet", es: "grifo", jp: "蛇口", cn: "水龙头", it: "il rubinetto", ua: "кран"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  towel:
+    tr: {de: "Handtuch", fr: "serviette", es: "toalla", jp: "タオル", cn: "毛巾", it: "l'asciugamano", ua: "рушник"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  toothbrush:
+    tr: {de: "Zahnbürste", fr: "brosse à dents", es: "cepillo de dientes", jp: "歯ブラシ", cn: "牙刷", it: "lo spazzolino", ua: "зубна щітка"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  trash_can:
+    tr: {de: "Mülleimer", fr: "poubelle", es: "basurero", jp: "ごみ箱", cn: "垃圾桶", it: "il cestino", ua: "смітник"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  basket:
+    tr: {de: "Korb", fr: "panier", es: "canasta", jp: "かご", cn: "篮子", it: "il cesto", ua: "кошик"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  box:
+    tr: {de: "Kiste", fr: "boîte", es: "caja", jp: "箱", cn: "盒子", it: "la scatola", ua: "коробка"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  vase:
+    tr: {de: "Vase", fr: "vase", es: "florero", jp: "花瓶", cn: "花瓶", it: "il vaso", ua: "ваза"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  plant:
+    tr: {de: "Pflanze", fr: "plante", es: "planta", jp: "植物", cn: "植物", it: "la pianta", ua: "рослина"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+city:
+  street:
+    tr: {de: "Straße", fr: "rue", es: "calle", jp: "通り", cn: "街道", it: "la strada", ua: "вулиця"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  building:
+    tr: {de: "Gebäude", fr: "bâtiment", es: "edificio", jp: "建物", cn: "建筑", it: "l'edificio", ua: "будівля"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  crosswalk:
+    tr: {de: "Zebrastreifen", fr: "passage piéton", es: "paso de peatones", jp: "横断歩道", cn: "人行横道", it: "il passaggio pedonale", ua: "пішохідний перехід"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  traffic_light:
+    tr: {de: "Ampel", fr: "feu de circulation", es: "semáforo", jp: "信号機", cn: "交通灯", it: "il semaforo", ua: "світлофор"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  bus_stop:
+    tr: {de: "Bushaltestelle", fr: "arrêt de bus", es: "parada de autobús", jp: "バス停", cn: "公交站", it: "la fermata dell'autobus", ua: "автобусна зупинка"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  park:
+    tr: {de: "Park", fr: "parc", es: "parque", jp: "公園", cn: "公园", it: "il parco", ua: "парк"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  sidewalk:
+    tr: {de: "Bürgersteig", fr: "trottoir", es: "acera", jp: "歩道", cn: "人行道", it: "il marciapiede", ua: "тротуар"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  bench:
+    tr: {de: "Bank", fr: "banc", es: "banco", jp: "ベンチ", cn: "长椅", it: "la panchina", ua: "лавка"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  mailbox:
+    tr: {de: "Briefkasten", fr: "boîte aux lettres", es: "buzón", jp: "郵便ポスト", cn: "邮箱", it: "la cassetta delle lettere", ua: "поштова скринька"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  school:
+    tr: {de: "Schule", fr: "école", es: "escuela", jp: "学校", cn: "学校", it: "la scuola", ua: "школа"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  hospital:
+    tr: {de: "Krankenhaus", fr: "hôpital", es: "hospital", jp: "病院", cn: "医院", it: "l'ospedale", ua: "лікарня"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  library:
+    tr: {de: "Bibliothek", fr: "bibliothèque", es: "biblioteca", jp: "図書館", cn: "图书馆", it: "la biblioteca", ua: "бібліотека"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  store:
+    tr: {de: "Laden", fr: "magasin", es: "tienda", jp: "店", cn: "商店", it: "il negozio", ua: "магазин"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  restaurant:
+    tr: {de: "Restaurant", fr: "restaurant", es: "restaurante", jp: "レストラン", cn: "餐厅", it: "il ristorante", ua: "ресторан"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  bank:
+    tr: {de: "Bank", fr: "banque", es: "banco", jp: "銀行", cn: "银行", it: "la banca", ua: "банк"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  hotel:
+    tr: {de: "Hotel", fr: "hôtel", es: "hotel", jp: "ホテル", cn: "酒店", it: "l'hotel", ua: "готель"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  museum:
+    tr: {de: "Museum", fr: "musée", es: "museo", jp: "博物館", cn: "博物馆", it: "il museo", ua: "музей"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  theater:
+    tr: {de: "Theater", fr: "théâtre", es: "teatro", jp: "劇場", cn: "剧院", it: "il teatro", ua: "театр"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  airport:
+    tr: {de: "Flughafen", fr: "aéroport", es: "aeropuerto", jp: "空港", cn: "机场", it: "l'aeroporto", ua: "аеропорт"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  train_station:
+    tr: {de: "Bahnhof", fr: "gare", es: "estación de tren", jp: "駅", cn: "火车站", it: "la stazione ferroviaria", ua: "залізничний вокзал"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  gas_station:
+    tr: {de: "Tankstelle", fr: "station-service", es: "gasolinera", jp: "ガソリンスタンド", cn: "加油站", it: "il distributore di benzina", ua: "заправка"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  fire_station:
+    tr: {de: "Feuerwache", fr: "caserne de pompiers", es: "estación de bomberos", jp: "消防署", cn: "消防站", it: "la caserma dei pompieri", ua: "пожежна станція"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  police_station:
+    tr: {de: "Polizeistation", fr: "poste de police", es: "comisaría", jp: "警察署", cn: "警察局", it: "la stazione di polizia", ua: "поліцейський відділок"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  post_office:
+    tr: {de: "Post", fr: "bureau de poste", es: "oficina de correos", jp: "郵便局", cn: "邮局", it: "l'ufficio postale", ua: "пошта"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  playground:
+    tr: {de: "Spielplatz", fr: "aire de jeux", es: "parque infantil", jp: "遊び場", cn: "游乐场", it: "il parco giochi", ua: "дитячий майданчик"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  bridge:
+    tr: {de: "Brücke", fr: "pont", es: "puente", jp: "橋", cn: "桥", it: "il ponte", ua: "міст"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  tunnel:
+    tr: {de: "Tunnel", fr: "tunnel", es: "túnel", jp: "トンネル", cn: "隧道", it: "il tunnel", ua: "тунель"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  fountain:
+    tr: {de: "Brunnen", fr: "fontaine", es: "fuente", jp: "噴水", cn: "喷泉", it: "la fontana", ua: "фонтан"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  statue:
+    tr: {de: "Statue", fr: "statue", es: "estatua", jp: "像", cn: "雕像", it: "la statua", ua: "статуя"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  parking_meter:
+    tr: {de: "Parkuhr", fr: "parcmètre", es: "parquímetro", jp: "パーキングメーター", cn: "停车计时器", it: "il parchimetro", ua: "паркомат"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  parking_lot:
+    tr: {de: "Parkplatz", fr: "parking", es: "estacionamiento", jp: "駐車場", cn: "停车场", it: "il parcheggio", ua: "парковка"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  street_sign:
+    tr: {de: "Straßenschild", fr: "panneau de rue", es: "letrero de calle", jp: "道路標識", cn: "路牌", it: "il cartello stradale", ua: "дорожній знак"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  stop_sign:
+    tr: {de: "Stoppschild", fr: "panneau stop", es: "señal de alto", jp: "一時停止標識", cn: "停车标志", it: "il segnale di stop", ua: "знак стоп"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  streetlight:
+    tr: {de: "Straßenlaterne", fr: "lampadaire", es: "farola", jp: "街灯", cn: "路灯", it: "il lampione", ua: "вуличний ліхтар"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  hydrant:
+    tr: {de: "Hydrant", fr: "bouche d'incendie", es: "hidrante", jp: "消火栓", cn: "消防栓", it: "l'idrante", ua: "гідрант"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  fence:
+    tr: {de: "Zaun", fr: "clôture", es: "cerca", jp: "フェンス", cn: "栅栏", it: "la recinzione", ua: "паркан"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  gate:
+    tr: {de: "Tor", fr: "portail", es: "puerta", jp: "門", cn: "大门", it: "il cancello", ua: "ворота"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  zoo:
+    tr: {de: "Zoo", fr: "zoo", es: "zoológico", jp: "動物園", cn: "动物园", it: "lo zoo", ua: "зоопарк"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  church:
+    tr: {de: "Kirche", fr: "église", es: "iglesia", jp: "教会", cn: "教堂", it: "la chiesa", ua: "церква"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  market:
+    tr: {de: "Markt", fr: "marché", es: "mercado", jp: "市場", cn: "市场", it: "il mercato", ua: "ринок"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  bakery:
+    tr: {de: "Bäckerei", fr: "boulangerie", es: "panadería", jp: "パン屋", cn: "面包店", it: "la panetteria", ua: "пекарня"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  cafe:
+    tr: {de: "Café", fr: "café", es: "cafetería", jp: "カフェ", cn: "咖啡馆", it: "il caffè", ua: "кафе"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  pharmacy:
+    tr: {de: "Apotheke", fr: "pharmacie", es: "farmacia", jp: "薬局", cn: "药店", it: "la farmacia", ua: "аптека"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  supermarket:
+    tr: {de: "Supermarkt", fr: "supermarché", es: "supermercado", jp: "スーパーマーケット", cn: "超市", it: "il supermercato", ua: "супермаркет"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  office:
+    tr: {de: "Büro", fr: "bureau", es: "oficina", jp: "オフィス", cn: "办公室", it: "l'ufficio", ua: "офіс"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  factory:
+    tr: {de: "Fabrik", fr: "usine", es: "fábrica", jp: "工場", cn: "工厂", it: "la fabbrica", ua: "фабрика"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  apartment:
+    tr: {de: "Wohnung", fr: "appartement", es: "apartamento", jp: "アパート", cn: "公寓", it: "l'appartamento", ua: "квартира"}
+    art: {de: "die", fr: "l'", es: "el"}
+    pos: ["n"]
+  skyscraper:
+    tr: {de: "Wolkenkratzer", fr: "gratte-ciel", es: "rascacielos", jp: "高層ビル", cn: "摩天大楼", it: "il grattacielo", ua: "хмарочос"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  garage:
+    tr: {de: "Garage", fr: "garage", es: "garaje", jp: "ガレージ", cn: "车库", it: "il garage", ua: "гараж"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  stadium:
+    tr: {de: "Stadion", fr: "stade", es: "estadio", jp: "スタジアム", cn: "体育场", it: "lo stadio", ua: "стадіон"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  pool:
+    tr: {de: "Schwimmbad", fr: "piscine", es: "piscina", jp: "プール", cn: "游泳池", it: "la piscina", ua: "басейн"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  garden:
+    tr: {de: "Garten", fr: "jardin", es: "jardín", jp: "庭", cn: "花园", it: "il giardino", ua: "сад"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  plaza:
+    tr: {de: "Platz", fr: "place", es: "plaza", jp: "広場", cn: "广场", it: "la piazza", ua: "площа"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  tower:
+    tr: {de: "Turm", fr: "tour", es: "torre", jp: "塔", cn: "塔", it: "la torre", ua: "вежа"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  clock_tower:
+    tr: {de: "Uhrturm", fr: "tour de l'horloge", es: "torre del reloj", jp: "時計塔", cn: "钟楼", it: "la torre dell'orologio", ua: "годинникова вежа"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+geography:
+  mountain:
+    tr: {de: "Berg", fr: "montagne", es: "montaña", jp: "山", cn: "山", it: "la montagna", ua: "гора"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  river:
+    tr: {de: "Fluss", fr: "rivière", es: "río", jp: "川", cn: "河流", it: "il fiume", ua: "річка"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  lake:
+    tr: {de: "See", fr: "lac", es: "lago", jp: "湖", cn: "湖", it: "il lago", ua: "озеро"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  ocean:
+    tr: {de: "Ozean", fr: "océan", es: "océano", jp: "海", cn: "海洋", it: "l'oceano", ua: "океан"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  desert:
+    tr: {de: "Wüste", fr: "désert", es: "desierto", jp: "砂漠", cn: "沙漠", it: "il deserto", ua: "пустеля"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  forest:
+    tr: {de: "Wald", fr: "forêt", es: "bosque", jp: "森", cn: "森林", it: "la foresta", ua: "ліс"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  valley:
+    tr: {de: "Tal", fr: "vallée", es: "valle", jp: "谷", cn: "山谷", it: "la valle", ua: "долина"}
+    art: {de: "das", fr: "la", es: "el"}
+    pos: ["n"]
+  canyon:
+    tr: {de: "Schlucht", fr: "canyon", es: "cañón", jp: "峡谷", cn: "峡谷", it: "il canyon", ua: "каньйон"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  glacier:
+    tr: {de: "Gletscher", fr: "glacier", es: "glaciar", jp: "氷河", cn: "冰川", it: "il ghiacciaio", ua: "льодовик"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  volcano:
+    tr: {de: "Vulkan", fr: "volcan", es: "volcán", jp: "火山", cn: "火山", it: "il vulcano", ua: "вулкан"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  island:
+    tr: {de: "Insel", fr: "île", es: "isla", jp: "島", cn: "岛", it: "l'isola", ua: "острів"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  waterfall:
+    tr: {de: "Wasserfall", fr: "cascade", es: "cascada", jp: "滝", cn: "瀑布", it: "la cascata", ua: "водоспад"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  cave:
+    tr: {de: "Höhle", fr: "grotte", es: "cueva", jp: "洞窟", cn: "洞穴", it: "la grotta", ua: "печера"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  beach:
+    tr: {de: "Strand", fr: "plage", es: "playa", jp: "ビーチ", cn: "海滩", it: "la spiaggia", ua: "пляж"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  hill:
+    tr: {de: "Hügel", fr: "colline", es: "colina", jp: "丘", cn: "小山", it: "la collina", ua: "пагорб"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  cliff:
+    tr: {de: "Klippe", fr: "falaise", es: "acantilado", jp: "崖", cn: "悬崖", it: "la scogliera", ua: "скеля"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  field:
+    tr: {de: "Feld", fr: "champ", es: "campo", jp: "野原", cn: "田野", it: "il campo", ua: "поле"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  meadow:
+    tr: {de: "Wiese", fr: "pré", es: "pradera", jp: "草地", cn: "草地", it: "il prato", ua: "луг"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  swamp:
+    tr: {de: "Sumpf", fr: "marais", es: "pantano", jp: "沼地", cn: "沼泽", it: "la palude", ua: "болото"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  pond:
+    tr: {de: "Teich", fr: "étang", es: "estanque", jp: "池", cn: "池塘", it: "lo stagno", ua: "ставок"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  stream:
+    tr: {de: "Bach", fr: "ruisseau", es: "arroyo", jp: "小川", cn: "溪流", it: "il ruscello", ua: "струмок"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  plain:
+    tr: {de: "Ebene", fr: "plaine", es: "llanura", jp: "平原", cn: "平原", it: "la pianura", ua: "рівнина"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  rainforest:
+    tr: {de: "Regenwald", fr: "forêt tropicale", es: "selva tropical", jp: "熱帯雨林", cn: "热带雨林", it: "la foresta pluviale", ua: "тропічний ліс"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  jungle:
+    tr: {de: "Dschungel", fr: "jungle", es: "jungla", jp: "ジャングル", cn: "丛林", it: "la giungla", ua: "джунглі"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  savanna:
+    tr: {de: "Savanne", fr: "savane", es: "sabana", jp: "サバンナ", cn: "稀树草原", it: "la savana", ua: "савана"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  tundra:
+    tr: {de: "Tundra", fr: "toundra", es: "tundra", jp: "ツンドラ", cn: "苔原", it: "la tundra", ua: "тундра"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  prairie:
+    tr: {de: "Prärie", fr: "prairie", es: "pradera", jp: "大草原", cn: "大草原", it: "la prateria", ua: "прерія"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  wetland:
+    tr: {de: "Feuchtgebiet", fr: "zone humide", es: "humedal", jp: "湿地", cn: "湿地", it: "la zona umida", ua: "водно-болотні угіддя"}
+    art: {de: "das", fr: "la", es: "el"}
+    pos: ["n"]
+  coast:
+    tr: {de: "Küste", fr: "côte", es: "costa", jp: "海岸", cn: "海岸", it: "la costa", ua: "узбережжя"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  shore:
+    tr: {de: "Ufer", fr: "rivage", es: "orilla", jp: "岸", cn: "岸边", it: "la riva", ua: "берег"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  bay:
+    tr: {de: "Bucht", fr: "baie", es: "bahía", jp: "湾", cn: "海湾", it: "la baia", ua: "затока"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  peninsula:
+    tr: {de: "Halbinsel", fr: "péninsule", es: "península", jp: "半島", cn: "半岛", it: "la penisola", ua: "півострів"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  reef:
+    tr: {de: "Riff", fr: "récif", es: "arrecife", jp: "岩礁", cn: "礁", it: "la barriera corallina", ua: "риф"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  coral_reef:
+    tr: {de: "Korallenriff", fr: "récif corallien", es: "arrecife de coral", jp: "サンゴ礁", cn: "珊瑚礁", it: "la barriera corallina", ua: "кораловий риф"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  lagoon:
+    tr: {de: "Lagune", fr: "lagon", es: "laguna", jp: "ラグーン", cn: "泻湖", it: "la laguna", ua: "лагуна"}
+    art: {de: "die", fr: "le", es: "la"}
+    pos: ["n"]
+  fjord:
+    tr: {de: "Fjord", fr: "fjord", es: "fiordo", jp: "フィヨルド", cn: "峡湾", it: "il fiordo", ua: "фіорд"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  oasis:
+    tr: {de: "Oase", fr: "oasis", es: "oasis", jp: "オアシス", cn: "绿洲", it: "l'oasi", ua: "оаза"}
+    art: {de: "die", fr: "l'", es: "el"}
+    pos: ["n"]
+  dune:
+    tr: {de: "Düne", fr: "dune", es: "duna", jp: "砂丘", cn: "沙丘", it: "la duna", ua: "дюна"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  plateau:
+    tr: {de: "Plateau", fr: "plateau", es: "meseta", jp: "高原", cn: "高原", it: "l'altopiano", ua: "плато"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  spring:
+    tr: {de: "Quelle", fr: "source", es: "manantial", jp: "泉", cn: "泉水", it: "la sorgente", ua: "джерело"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  geyser:
+    tr: {de: "Geysir", fr: "geyser", es: "géiser", jp: "間欠泉", cn: "间歇泉", it: "il geyser", ua: "гейзер"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  hot_spring:
+    tr: {de: "heiße Quelle", fr: "source chaude", es: "fuente termal", jp: "温泉", cn: "温泉", it: "la sorgente termale", ua: "гаряче джерело"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  iceberg:
+    tr: {de: "Eisberg", fr: "iceberg", es: "iceberg", jp: "氷山", cn: "冰山", it: "l'iceberg", ua: "айсберг"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  creek:
+    tr: {de: "Bach", fr: "ruisseau", es: "arroyo", jp: "小川", cn: "小溪", it: "il torrente", ua: "струмок"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  marsh:
+    tr: {de: "Marschland", fr: "marécage", es: "marisma", jp: "湿原", cn: "湿地", it: "la palude", ua: "болото"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  grove:
+    tr: {de: "Hain", fr: "bosquet", es: "arboleda", jp: "木立", cn: "树林", it: "il boschetto", ua: "гай"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+  orchard:
+    tr: {de: "Obstgarten", fr: "verger", es: "huerto", jp: "果樹園", cn: "果园", it: "il frutteto", ua: "фруктовий сад"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  farmland:
+    tr: {de: "Ackerland", fr: "terre agricole", es: "tierras de cultivo", jp: "農地", cn: "农田", it: "il terreno agricolo", ua: "сільськогосподарські угіддя"}
+    art: {de: "das", fr: "la", es: "las"}
+    pos: ["n"]
+  riverbank:
+    tr: {de: "Flussufer", fr: "berge", es: "ribera", jp: "川岸", cn: "河岸", it: "la riva del fiume", ua: "берег річки"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  mountain_peak:
+    tr: {de: "Berggipfel", fr: "sommet de la montagne", es: "cima de la montaña", jp: "山頂", cn: "山峰", it: "la cima della montagna", ua: "гірська вершина"}
+    art: {de: "der", fr: "le", es: "la"}
+    pos: ["n"]
+space:
+  star:
+    tr: {de: "Stern", fr: "étoile", es: "estrella", jp: "星", cn: "星星", it: "la stella", ua: "зірка"}
+    art: {de: "der", fr: "l'", es: "la"}
+    pos: ["n"]
+  planet:
+    tr: {de: "Planet", fr: "planète", es: "planeta", jp: "惑星", cn: "行星", it: "il pianeta", ua: "планета"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  moon:
+    tr: {de: "Mond", fr: "lune", es: "luna", jp: "月", cn: "月亮", it: "la luna", ua: "місяць"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  sun:
+    tr: {de: "Sonne", fr: "soleil", es: "sol", jp: "太陽", cn: "太阳", it: "il sole", ua: "сонце"}
+    art: {de: "die", fr: "le", es: "el"}
+    pos: ["n"]
+  galaxy:
+    tr: {de: "Galaxie", fr: "galaxie", es: "galaxia", jp: "銀河", cn: "星系", it: "la galassia", ua: "галактика"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  nebula:
+    tr: {de: "Nebel", fr: "nébuleuse", es: "nebulosa", jp: "星雲", cn: "星云", it: "la nebulosa", ua: "туманність"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  asteroid:
+    tr: {de: "Asteroid", fr: "astéroïde", es: "asteroide", jp: "小惑星", cn: "小行星", it: "l'asteroide", ua: "астероїд"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  comet:
+    tr: {de: "Komet", fr: "comète", es: "cometa", jp: "彗星", cn: "彗星", it: "la cometa", ua: "комета"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  black_hole:
+    tr: {de: "schwarze Loch", fr: "trou noir", es: "agujero negro", jp: "ブラックホール", cn: "黑洞", it: "il buco nero", ua: "чорна діра"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  satellite:
+    tr: {de: "Satellit", fr: "satellite", es: "satélite", jp: "衛星", cn: "卫星", it: "il satellite", ua: "супутник"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  rocket:
+    tr: {de: "Rakete", fr: "fusée", es: "cohete", jp: "ロケット", cn: "火箭", it: "il razzo", ua: "ракета"}
+    art: {de: "die", fr: "la", es: "el"}
+    pos: ["n"]
+  space_station:
+    tr: {de: "Raumstation", fr: "station spatiale", es: "estación espacial", jp: "宇宙ステーション", cn: "空间站", it: "la stazione spaziale", ua: "космічна станція"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  meteor:
+    tr: {de: "Meteor", fr: "météore", es: "meteoro", jp: "流星", cn: "流星", it: "il meteora", ua: "метеор"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  earth:
+    tr: {de: "Erde", fr: "Terre", es: "Tierra", jp: "地球", cn: "地球", it: "la Terra", ua: "Земля"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  mars:
+    tr: {de: "Mars", fr: "Mars", es: "Marte", jp: "火星", cn: "火星", it: "Marte", ua: "Марс"}
+    art: {de: "der"}
+    pos: ["n"]
+  venus:
+    tr: {de: "Venus", fr: "Vénus", es: "Venus", jp: "金星", cn: "金星", it: "Venere", ua: "Венера"}
+    art: {de: "die"}
+    pos: ["n"]
+  jupiter:
+    tr: {de: "Jupiter", fr: "Jupiter", es: "Júpiter", jp: "木星", cn: "木星", it: "Giove", ua: "Юпітер"}
+    art: {de: "der"}
+    pos: ["n"]
+  saturn:
+    tr: {de: "Saturn", fr: "Saturne", es: "Saturno", jp: "土星", cn: "土星", it: "Saturno", ua: "Сатурн"}
+    art: {de: "der"}
+    pos: ["n"]
+  uranus:
+    tr: {de: "Uranus", fr: "Uranus", es: "Urano", jp: "天王星", cn: "天王星", it: "Urano", ua: "Уран"}
+    art: {de: "der"}
+    pos: ["n"]
+  neptune:
+    tr: {de: "Neptun", fr: "Neptune", es: "Neptuno", jp: "海王星", cn: "海王星", it: "Nettuno", ua: "Нептун"}
+    art: {de: "der"}
+    pos: ["n"]
+  mercury:
+    tr: {de: "Merkur", fr: "Mercure", es: "Mercurio", jp: "水星", cn: "水星", it: "Mercurio", ua: "Меркурій"}
+    art: {de: "der"}
+    pos: ["n"]
+  space_shuttle:
+    tr: {de: "Space Shuttle", fr: "navette spatiale", es: "transbordador espacial", jp: "スペースシャトル", cn: "航天飞机", it: "lo space shuttle", ua: "космічний шатл"}
+    art: {de: "das", fr: "la", es: "el"}
+    pos: ["n"]
+  spaceship:
+    tr: {de: "Raumschiff", fr: "vaisseau spatial", es: "nave espacial", jp: "宇宙船", cn: "宇宙飞船", it: "l'astronave", ua: "космічний корабель"}
+    art: {de: "das", fr: "le", es: "la"}
+    pos: ["n"]
+  telescope:
+    tr: {de: "Teleskop", fr: "télescope", es: "telescopio", jp: "望遠鏡", cn: "望远镜", it: "il telescopio", ua: "телескоп"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  observatory:
+    tr: {de: "Sternwarte", fr: "observatoire", es: "observatorio", jp: "天文台", cn: "天文台", it: "l'osservatorio", ua: "обсерваторія"}
+    art: {de: "die", fr: "l'", es: "el"}
+    pos: ["n"]
+  constellation:
+    tr: {de: "Sternbild", fr: "constellation", es: "constelación", jp: "星座", cn: "星座", it: "la costellazione", ua: "сузір'я"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  eclipse:
+    tr: {de: "Finsternis", fr: "éclipse", es: "eclipse", jp: "日食", cn: "日食", it: "l'eclissi", ua: "затемнення"}
+    art: {de: "die", fr: "l'", es: "el"}
+    pos: ["n"]
+  solar_system:
+    tr: {de: "Sonnensystem", fr: "système solaire", es: "sistema solar", jp: "太陽系", cn: "太阳系", it: "il sistema solare", ua: "сонячна система"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  space_probe:
+    tr: {de: "Raumsonde", fr: "sonde spatiale", es: "sonda espacial", jp: "宇宙探査機", cn: "空间探测器", it: "la sonda spaziale", ua: "космічний зонд"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  lunar_rover:
+    tr: {de: "Mondrover", fr: "rover lunaire", es: "rover lunar", jp: "月面車", cn: "月球车", it: "il rover lunare", ua: "місяцехід"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  moon_rock:
+    tr: {de: "Mondstein", fr: "roche lunaire", es: "roca lunar", jp: "月の石", cn: "月岩", it: "la roccia lunare", ua: "місячний камінь"}
+    art: {de: "der", fr: "la", es: "la"}
+    pos: ["n"]
+  crater:
+    tr: {de: "Krater", fr: "cratère", es: "cráter", jp: "クレーター", cn: "陨石坑", it: "il cratere", ua: "кратер"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  shooting_star:
+    tr: {de: "Sternschnuppe", fr: "étoile filante", es: "estrella fugaz", jp: "流れ星", cn: "流星", it: "la stella cadente", ua: "падаюча зірка"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  supernova:
+    tr: {de: "Supernova", fr: "supernova", es: "supernova", jp: "超新星", cn: "超新星", it: "la supernova", ua: "наднова"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  milky_way:
+    tr: {de: "Milchstraße", fr: "Voie lactée", es: "Vía Láctea", jp: "天の川", cn: "银河", it: "la Via Lattea", ua: "Чумацький Шлях"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  ufo:
+    tr: {de: "UFO", fr: "ovni", es: "ovni", jp: "UFO", cn: "不明飞行物", it: "l'UFO", ua: "НЛО"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  spacesuit:
+    tr: {de: "Raumanzug", fr: "combinaison spatiale", es: "traje espacial", jp: "宇宙服", cn: "宇航服", it: "la tuta spaziale", ua: "скафандр"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  launch_pad:
+    tr: {de: "Startrampe", fr: "rampe de lancement", es: "plataforma de lanzamiento", jp: "発射台", cn: "发射台", it: "la rampa di lancio", ua: "стартовий майданчик"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  space_capsule:
+    tr: {de: "Raumkapsel", fr: "capsule spatiale", es: "cápsula espacial", jp: "宇宙カプセル", cn: "太空舱", it: "la capsula spaziale", ua: "космічна капсула"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  lander:
+    tr: {de: "Lander", fr: "atterrisseur", es: "módulo de aterrizaje", jp: "着陸船", cn: "着陆器", it: "il lander", ua: "посадковий модуль"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  rover:
+    tr: {de: "Rover", fr: "rover", es: "rover", jp: "探査車", cn: "探测车", it: "il rover", ua: "ровер"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  space_telescope:
+    tr: {de: "Weltraumteleskop", fr: "télescope spatial", es: "telescopio espacial", jp: "宇宙望遠鏡", cn: "太空望远镜", it: "il telescopio spaziale", ua: "космічний телескоп"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  dwarf_planet:
+    tr: {de: "Zwergplanet", fr: "planète naine", es: "planeta enano", jp: "準惑星", cn: "矮行星", it: "il pianeta nano", ua: "карликова планета"}
+    art: {de: "der", fr: "la", es: "el"}
+    pos: ["n"]
+  exoplanet:
+    tr: {de: "Exoplanet", fr: "exoplanète", es: "exoplaneta", jp: "系外惑星", cn: "系外行星", it: "l'esopianeta", ua: "екзопланета"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  aurora:
+    tr: {de: "Polarlicht", fr: "aurore polaire", es: "aurora", jp: "オーロラ", cn: "极光", it: "l'aurora", ua: "полярне сяйво"}
+    art: {de: "das", fr: "l'", es: "la"}
+    pos: ["n"]
+people:
+  mother:
+    tr: {de: "Mutter", fr: "mère", es: "madre", jp: "母", cn: "妈妈", it: "la madre", ua: "мати"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  father:
+    tr: {de: "Vater", fr: "père", es: "padre", jp: "父", cn: "爸爸", it: "il padre", ua: "батько"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  child:
+    tr: {de: "Kind", fr: "enfant", es: "niño", jp: "子供", cn: "孩子", it: "il bambino", ua: "дитина"}
+    art: {de: "das", fr: "l'", es: "el"}
+    pos: ["n"]
+  baby:
+    tr: {de: "Baby", fr: "bébé", es: "bebé", jp: "赤ちゃん", cn: "婴儿", it: "il neonato", ua: "немовля"}
+    art: {de: "das", fr: "le", es: "el"}
+    pos: ["n"]
+  uncle:
+    tr: {de: "Onkel", fr: "oncle", es: "tío", jp: "おじ", cn: "叔叔", it: "lo zio", ua: "дядько"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  grandmother:
+    tr: {de: "Großmutter", fr: "grand-mère", es: "abuela", jp: "祖母", cn: "奶奶", it: "la nonna", ua: "бабуся"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  grandfather:
+    tr: {de: "Großvater", fr: "grand-père", es: "abuelo", jp: "祖父", cn: "爷爷", it: "il nonno", ua: "дідусь"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  engineer:
+    tr: {de: "Ingenieur", fr: "ingénieur", es: "ingeniero", jp: "エンジニア", cn: "工程师", it: "l'ingegnere", ua: "інженер"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  teacher:
+    tr: {de: "Lehrer", fr: "professeur", es: "maestro", jp: "先生", cn: "老师", it: "l'insegnante", ua: "вчитель"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  doctor:
+    tr: {de: "Arzt", fr: "médecin", es: "médico", jp: "医者", cn: "医生", it: "il medico", ua: "лікар"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  chef:
+    tr: {de: "Koch", fr: "chef", es: "chef", jp: "シェフ", cn: "厨师", it: "lo chef", ua: "кухар"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  firefighter:
+    tr: {de: "Feuerwehrmann", fr: "pompier", es: "bombero", jp: "消防士", cn: "消防员", it: "il pompiere", ua: "пожежник"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  astronaut:
+    tr: {de: "Astronaut", fr: "astronaute", es: "astronauta", jp: "宇宙飛行士", cn: "宇航员", it: "l'astronauta", ua: "астронавт"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  sister:
+    tr: {de: "Schwester", fr: "sœur", es: "hermana", jp: "姉妹", cn: "姐妹", it: "la sorella", ua: "сестра"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  brother:
+    tr: {de: "Bruder", fr: "frère", es: "hermano", jp: "兄弟", cn: "兄弟", it: "il fratello", ua: "брат"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  aunt:
+    tr: {de: "Tante", fr: "tante", es: "tía", jp: "おば", cn: "阿姨", it: "la zia", ua: "тітка"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  cousin:
+    tr: {de: "Cousin", fr: "cousin", es: "primo", jp: "いとこ", cn: "表亲", it: "il cugino", ua: "двоюрідний брат"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  girl:
+    tr: {de: "Mädchen", fr: "fille", es: "niña", jp: "女の子", cn: "女孩", it: "la ragazza", ua: "дівчинка"}
+    art: {de: "das", fr: "la", es: "la"}
+    pos: ["n"]
+  boy:
+    tr: {de: "Junge", fr: "garçon", es: "niño", jp: "男の子", cn: "男孩", it: "il ragazzo", ua: "хлопчик"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  woman:
+    tr: {de: "Frau", fr: "femme", es: "mujer", jp: "女性", cn: "女人", it: "la donna", ua: "жінка"}
+    art: {de: "die", fr: "la", es: "la"}
+    pos: ["n"]
+  man:
+    tr: {de: "Mann", fr: "homme", es: "hombre", jp: "男性", cn: "男人", it: "l'uomo", ua: "чоловік"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  nurse:
+    tr: {de: "Krankenschwester", fr: "infirmière", es: "enfermera", jp: "看護師", cn: "护士", it: "l'infermiera", ua: "медсестра"}
+    art: {de: "die", fr: "l'", es: "la"}
+    pos: ["n"]
+  police_officer:
+    tr: {de: "Polizist", fr: "policier", es: "policía", jp: "警察官", cn: "警察", it: "il poliziotto", ua: "поліцейський"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  dentist:
+    tr: {de: "Zahnarzt", fr: "dentiste", es: "dentista", jp: "歯医者", cn: "牙医", it: "il dentista", ua: "стоматолог"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  farmer:
+    tr: {de: "Bauer", fr: "fermier", es: "agricultor", jp: "農家", cn: "农民", it: "il contadino", ua: "фермер"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  baker:
+    tr: {de: "Bäcker", fr: "boulanger", es: "panadero", jp: "パン職人", cn: "面包师", it: "il panettiere", ua: "пекар"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  waiter:
+    tr: {de: "Kellner", fr: "serveur", es: "camarero", jp: "ウェイター", cn: "服务员", it: "il cameriere", ua: "офіціант"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  cashier:
+    tr: {de: "Kassierer", fr: "caissier", es: "cajero", jp: "レジ係", cn: "收银员", it: "il cassiere", ua: "касир"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  mail_carrier:
+    tr: {de: "Postbote", fr: "facteur", es: "cartero", jp: "郵便配達員", cn: "邮递员", it: "il postino", ua: "листоноша"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  bus_driver:
+    tr: {de: "Busfahrer", fr: "chauffeur de bus", es: "conductor de autobús", jp: "バス運転手", cn: "公交车司机", it: "l'autista di autobus", ua: "водій автобуса"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  pilot:
+    tr: {de: "Pilot", fr: "pilote", es: "piloto", jp: "パイロット", cn: "飞行员", it: "il pilota", ua: "пілот"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  mechanic:
+    tr: {de: "Mechaniker", fr: "mécanicien", es: "mecánico", jp: "整備士", cn: "机械师", it: "il meccanico", ua: "механік"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  plumber:
+    tr: {de: "Klempner", fr: "plombier", es: "fontanero", jp: "配管工", cn: "水管工", it: "l'idraulico", ua: "сантехнік"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  painter:
+    tr: {de: "Maler", fr: "peintre", es: "pintor", jp: "画家", cn: "画家", it: "il pittore", ua: "маляр"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  artist:
+    tr: {de: "Künstler", fr: "artiste", es: "artista", jp: "芸術家", cn: "艺术家", it: "l'artista", ua: "художник"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  musician:
+    tr: {de: "Musiker", fr: "musicien", es: "músico", jp: "音楽家", cn: "音乐家", it: "il musicista", ua: "музикант"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  singer:
+    tr: {de: "Sänger", fr: "chanteur", es: "cantante", jp: "歌手", cn: "歌手", it: "il cantante", ua: "співак"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  dancer:
+    tr: {de: "Tänzer", fr: "danseur", es: "bailarín", jp: "ダンサー", cn: "舞者", it: "il ballerino", ua: "танцівник"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  actor:
+    tr: {de: "Schauspieler", fr: "acteur", es: "actor", jp: "俳優", cn: "演员", it: "l'attore", ua: "актор"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  athlete:
+    tr: {de: "Sportler", fr: "athlète", es: "atleta", jp: "運動選手", cn: "运动员", it: "l'atleta", ua: "спортсмен"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  soccer_player:
+    tr: {de: "Fußballspieler", fr: "footballeur", es: "futbolista", jp: "サッカー選手", cn: "足球运动员", it: "il calciatore", ua: "футболіст"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  baseball_player:
+    tr: {de: "Baseballspieler", fr: "joueur de baseball", es: "beisbolista", jp: "野球選手", cn: "棒球运动员", it: "il giocatore di baseball", ua: "бейсболіст"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  swimmer:
+    tr: {de: "Schwimmer", fr: "nageur", es: "nadador", jp: "水泳選手", cn: "游泳运动员", it: "il nuotatore", ua: "плавець"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  student:
+    tr: {de: "Schüler", fr: "élève", es: "estudiante", jp: "学生", cn: "学生", it: "lo studente", ua: "учень"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  principal:
+    tr: {de: "Schulleiter", fr: "directeur", es: "director", jp: "校長", cn: "校长", it: "il preside", ua: "директор школи"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  librarian:
+    tr: {de: "Bibliothekar", fr: "bibliothécaire", es: "bibliotecario", jp: "司書", cn: "图书管理员", it: "il bibliotecario", ua: "бібліотекар"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  scientist:
+    tr: {de: "Wissenschaftler", fr: "scientifique", es: "científico", jp: "科学者", cn: "科学家", it: "lo scienziato", ua: "науковець"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  programmer:
+    tr: {de: "Programmierer", fr: "programmeur", es: "programador", jp: "プログラマー", cn: "程序员", it: "il programmatore", ua: "програміст"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  architect:
+    tr: {de: "Architekt", fr: "architecte", es: "arquitecto", jp: "建築家", cn: "建筑师", it: "l'architetto", ua: "архітектор"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  judge:
+    tr: {de: "Richter", fr: "juge", es: "juez", jp: "裁判官", cn: "法官", it: "il giudice", ua: "суддя"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  lawyer:
+    tr: {de: "Anwalt", fr: "avocat", es: "abogado", jp: "弁護士", cn: "律师", it: "l'avvocato", ua: "адвокат"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  soldier:
+    tr: {de: "Soldat", fr: "soldat", es: "soldado", jp: "兵士", cn: "士兵", it: "il soldato", ua: "солдат"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  barber:
+    tr: {de: "Barbier", fr: "barbier", es: "barbero", jp: "理髪師", cn: "理发师", it: "il barbiere", ua: "барбер"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  hairdresser:
+    tr: {de: "Friseur", fr: "coiffeur", es: "peluquero", jp: "美容師", cn: "美发师", it: "il parrucchiere", ua: "перукар"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  photographer:
+    tr: {de: "Fotograf", fr: "photographe", es: "fotógrafo", jp: "写真家", cn: "摄影师", it: "il fotografo", ua: "фотограф"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  reporter:
+    tr: {de: "Reporter", fr: "journaliste", es: "reportero", jp: "記者", cn: "记者", it: "il reporter", ua: "репортер"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  captain:
+    tr: {de: "Kapitän", fr: "capitaine", es: "capitán", jp: "船長", cn: "船长", it: "il capitano", ua: "капітан"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+  construction_worker:
+    tr: {de: "Bauarbeiter", fr: "ouvrier du bâtiment", es: "obrero de construcción", jp: "建設作業員", cn: "建筑工人", it: "l'operaio edile", ua: "будівельник"}
+    art: {de: "der", fr: "l'", es: "el"}
+    pos: ["n"]
+  gardener:
+    tr: {de: "Gärtner", fr: "jardinier", es: "jardinero", jp: "庭師", cn: "园丁", it: "il giardiniere", ua: "садівник"}
+    art: {de: "der", fr: "le", es: "el"}
+    pos: ["n"]
+adjective:
+  big:
+    tr: {de: "groß", fr: "grand", es: "grande", jp: "大きい", cn: "大的", it: "grande", ua: "великий"}
+    pos: ["adj"]
+  small:
+    tr: {de: "klein", fr: "petit", es: "pequeño", jp: "小さい", cn: "小的", it: "piccolo", ua: "малий"}
+    pos: ["adj"]
+  tiny:
+    tr: {de: "winzig", fr: "minuscule", es: "diminuto", jp: "とても小さい", cn: "很小的", it: "minuscolo", ua: "крихітний"}
+    pos: ["adj"]
+  tall:
+    tr: {de: "hoch", fr: "grand", es: "alto", jp: "背が高い", cn: "高的", it: "alto", ua: "високий"}
+    pos: ["adj"]
+  short:
+    tr: {de: "kurz", fr: "court", es: "corto", jp: "短い", cn: "短的", it: "corto", ua: "короткий"}
+    pos: ["adj"]
+  long:
+    tr: {de: "lang", fr: "long", es: "largo", jp: "長い", cn: "长的", it: "lungo", ua: "довгий"}
+    pos: ["adj"]
+  round:
+    tr: {de: "rund", fr: "rond", es: "redondo", jp: "丸い", cn: "圆的", it: "rotondo", ua: "круглий"}
+    pos: ["adj"]
+  soft:
+    tr: {de: "weich", fr: "doux", es: "suave", jp: "柔らかい", cn: "软的", it: "morbido", ua: "м'який"}
+    pos: ["adj"]
+  hard:
+    tr: {de: "hart", fr: "dur", es: "duro", jp: "硬い", cn: "硬的", it: "duro", ua: "твердий"}
+    pos: ["adj"]
+  warm:
+    tr: {de: "warm", fr: "chaud", es: "cálido", jp: "暖かい", cn: "温暖的", it: "caldo", ua: "теплий"}
+    pos: ["adj"]
+  cold:
+    tr: {de: "kalt", fr: "froid", es: "frío", jp: "冷たい", cn: "冷的", it: "freddo", ua: "холодний"}
+    pos: ["adj"]
+  hot:
+    tr: {de: "heiß", fr: "chaud", es: "caliente", jp: "熱い", cn: "热的", it: "caldo", ua: "гарячий"}
+    pos: ["adj"]
+  cool:
+    tr: {de: "kühl", fr: "frais", es: "fresco", jp: "涼しい", cn: "凉爽的", it: "fresco", ua: "прохолодний"}
+    pos: ["adj"]
+  wet:
+    tr: {de: "nass", fr: "mouillé", es: "mojado", jp: "ぬれた", cn: "湿的", it: "bagnato", ua: "мокрий"}
+    pos: ["adj"]
+  dry:
+    tr: {de: "trocken", fr: "sec", es: "seco", jp: "乾いた", cn: "干的", it: "asciutto", ua: "сухий"}
+    pos: ["adj"]
+  clean:
+    tr: {de: "sauber", fr: "propre", es: "limpio", jp: "きれいな", cn: "干净的", it: "pulito", ua: "чистий"}
+    pos: ["adj"]
+  dirty:
+    tr: {de: "schmutzig", fr: "sale", es: "sucio", jp: "汚い", cn: "脏的", it: "sporco", ua: "брудний"}
+    pos: ["adj"]
+  happy:
+    tr: {de: "glücklich", fr: "heureux", es: "feliz", jp: "うれしい", cn: "开心的", it: "felice", ua: "щасливий"}
+    pos: ["adj"]
+  sad:
+    tr: {de: "traurig", fr: "triste", es: "triste", jp: "悲しい", cn: "伤心的", it: "triste", ua: "сумний"}
+    pos: ["adj"]
+  funny:
+    tr: {de: "lustig", fr: "drôle", es: "gracioso", jp: "面白い", cn: "好笑的", it: "divertente", ua: "смішний"}
+    pos: ["adj"]
+  silly:
+    tr: {de: "albern", fr: "rigolo", es: "tonto", jp: "おどけた", cn: "傻傻的", it: "sciocco", ua: "кумедний"}
+    pos: ["adj"]
+  sweet:
+    tr: {de: "süß", fr: "sucré", es: "dulce", jp: "甘い", cn: "甜的", it: "dolce", ua: "солодкий"}
+    pos: ["adj"]
+  kind:
+    tr: {de: "freundlich", fr: "gentil", es: "amable", jp: "親切な", cn: "友善的", it: "gentile", ua: "добрий"}
+    pos: ["adj"]
+  brave:
+    tr: {de: "mutig", fr: "courageux", es: "valiente", jp: "勇敢な", cn: "勇敢的", it: "coraggioso", ua: "сміливий"}
+    pos: ["adj"]
+  quick:
+    tr: {de: "schnell", fr: "rapide", es: "rápido", jp: "速い", cn: "快的", it: "veloce", ua: "швидкий"}
+    pos: ["adj"]
+  slow:
+    tr: {de: "langsam", fr: "lent", es: "lento", jp: "遅い", cn: "慢的", it: "lento", ua: "повільний"}
+    pos: ["adj"]
+  loud:
+    tr: {de: "laut", fr: "fort", es: "ruidoso", jp: "大きな音の", cn: "大声的", it: "rumoroso", ua: "гучний"}
+    pos: ["adj"]
+  quiet:
+    tr: {de: "leise", fr: "calme", es: "silencioso", jp: "静かな", cn: "安静的", it: "silenzioso", ua: "тихий"}
+    pos: ["adj"]
+  new:
+    tr: {de: "neu", fr: "nouveau", es: "nuevo", jp: "新しい", cn: "新的", it: "nuovo", ua: "новий"}
+    pos: ["adj"]
+  old:
+    tr: {de: "alt", fr: "vieux", es: "viejo", jp: "古い", cn: "旧的", it: "vecchio", ua: "старий"}
+    pos: ["adj"]
+  light:
+    tr: {de: "hell", fr: "clair", es: "claro", jp: "明るい", cn: "明亮的", it: "chiaro", ua: "світлий"}
+    pos: ["adj"]
+  dark:
+    tr: {de: "dunkel", fr: "sombre", es: "oscuro", jp: "暗い", cn: "暗的", it: "scuro", ua: "темний"}
+    pos: ["adj"]
+  full:
+    tr: {de: "voll", fr: "plein", es: "lleno", jp: "いっぱいの", cn: "满的", it: "pieno", ua: "повний"}
+    pos: ["adj"]
+  empty:
+    tr: {de: "leer", fr: "vide", es: "vacío", jp: "空の", cn: "空的", it: "vuoto", ua: "порожній"}
+    pos: ["adj"]
+  ready:
+    tr: {de: "bereit", fr: "prêt", es: "listo", jp: "準備できた", cn: "准备好的", it: "pronto", ua: "готовий"}
+    pos: ["adj"]
+  able:
+    tr: {de: "fähig", fr: "capable", es: "capaz", jp: "できる", cn: "有能力的", it: "capace", ua: "здатний"}
+    pos: ["adj"]
+  above:
+    tr: {de: "über", fr: "au-dessus de", es: "arriba", jp: "その上", cn: "多于", it: "Sopra", ua: "вище"}
+    pos: ["adj"]
+  active:
+    tr: {de: "aktiv", fr: "actif", es: "activo", jp: "アクティブ", cn: "积极的", it: "attivo", ua: "активний"}
+    pos: ["adj"]
+  afraid:
+    tr: {de: "besorgt", fr: "effrayé", es: "asustado", jp: "恐れている", cn: "害怕的", it: "Paura", ua: "боїться"}
+    pos: ["adj"]
+  alert:
+    tr: {de: "Alarm", fr: "alerte", es: "alerta", jp: "警告", cn: "警报", it: "avviso", ua: "оповіщення"}
+    pos: ["adj"]
+  alive:
+    tr: {de: "lebendig", fr: "vivant", es: "vivo", jp: "生きている", cn: "活", it: "vivo", ua: "живий"}
+    pos: ["adj"]
+  alone:
+    tr: {de: "allein", fr: "seul", es: "solo", jp: "一人で", cn: "独自的", it: "solo", ua: "поодинці"}
+    pos: ["adj"]
+  amazed:
+    tr: {de: "erstaunt", fr: "étonné", es: "asombrado", jp: "驚いた", cn: "惊讶", it: "stupito", ua: "вражений"}
+    pos: ["adj"]
+  awake:
+    tr: {de: "wach", fr: "éveillé", es: "despierto", jp: "起きている", cn: "醒", it: "sveglio", ua: "прокинутися"}
+    pos: ["adj"]
+  away:
+    tr: {de: "weg", fr: "loin", es: "lejos", jp: "離れて", cn: "离开", it: "lontano", ua: "геть"}
+    pos: ["adj"]
+  back:
+    tr: {de: "zurück", fr: "dos", es: "atrás", jp: "戻る", cn: "后退", it: "Indietro", ua: "назад"}
+    pos: ["adj"]
+  bad:
+    tr: {de: "schlecht", fr: "mauvais", es: "malo", jp: "悪い", cn: "坏的", it: "Cattivo", ua: "погано"}
+    pos: ["adj"]
+  bare:
+    tr: {de: "nackt", fr: "nu", es: "desnudo", jp: "裸", cn: "裸", it: "spoglio", ua: "голий"}
+    pos: ["adj"]
+  basic:
+    tr: {de: "Basic", fr: "basique", es: "básico", jp: "基本的な", cn: "基本的", it: "di base", ua: "основний"}
+    pos: ["adj"]
+  best:
+    tr: {de: "am besten", fr: "meilleur", es: "mejor", jp: "最高", cn: "最好的", it: "migliore", ua: "найкращий"}
+    pos: ["adj"]
+  better:
+    tr: {de: "besser", fr: "mieux", es: "mejor", jp: "より良い", cn: "更好的", it: "Meglio", ua: "краще"}
+    pos: ["adj"]
+  bitter:
+    tr: {de: "bitter", fr: "amer", es: "amargo", jp: "苦い", cn: "苦的", it: "amaro", ua: "гіркий"}
+    pos: ["adj"]
+  black:
+    tr: {de: "Schwarz", fr: "noir", es: "negro", jp: "黒", cn: "黑色的", it: "nero", ua: "чорний"}
+    pos: ["adj"]
+  bland:
+    tr: {de: "fade", fr: "fade", es: "amable", jp: "当たり障りのない", cn: "乏味的", it: "insipido", ua: "м'який"}
+    pos: ["adj"]
+  blind:
+    tr: {de: "blind", fr: "aveugle", es: "ciego", jp: "盲目", cn: "瞎的", it: "cieco", ua: "сліпий"}
+    pos: ["adj"]
+  blue:
+    tr: {de: "Blau", fr: "bleu", es: "azul", jp: "青", cn: "蓝色的", it: "blu", ua: "блакитний"}
+    pos: ["adj"]
+  bouncy:
+    tr: {de: "federnd", fr: "gonflable", es: "activo", jp: "弾むような", cn: "有弹性的", it: "rimbalzante", ua: "стрибучий"}
+    pos: ["adj"]
+  bright:
+    tr: {de: "hell", fr: "brillant", es: "brillante", jp: "明るい", cn: "明亮的", it: "luminoso", ua: "яскравий"}
+    pos: ["adj"]
+  broad:
+    tr: {de: "breit", fr: "large", es: "amplio", jp: "広い", cn: "广阔", it: "ampio", ua: "широкий"}
+    pos: ["adj"]
+  brown:
+    tr: {de: "braun", fr: "brun", es: "marrón", jp: "茶色", cn: "棕色的", it: "marrone", ua: "коричневий"}
+    pos: ["adj"]
+  bubbly:
+    tr: {de: "sprudelnd", fr: "pétillant", es: "burbujeante", jp: "陽気な", cn: "起泡的", it: "frizzante", ua: "пухирчастий"}
+    pos: ["adj"]
+  busy:
+    tr: {de: "beschäftigt", fr: "occupé", es: "ocupado", jp: "忙しい", cn: "忙碌的", it: "Occupato", ua: "зайнятий"}
+    pos: ["adj"]
+  careful:
+    tr: {de: "vorsichtig", fr: "prudent", es: "cuidadoso", jp: "注意深い", cn: "小心", it: "attento", ua: "обережний"}
+    pos: ["adj"]
+  certain:
+    tr: {de: "bestimmt", fr: "certain", es: "cierto", jp: "ある", cn: "肯定", it: "certo", ua: "певний"}
+    pos: ["adj"]
+  cheerful:
+    tr: {de: "heiter", fr: "joyeux", es: "alegre", jp: "陽気な", cn: "快乐", it: "allegro", ua: "веселий"}
+    pos: ["adj"]
+  clear:
+    tr: {de: "klar", fr: "clair", es: "claro", jp: "クリア", cn: "清除", it: "chiaro", ua: "ясно"}
+    pos: ["adj"]
+  clever:
+    tr: {de: "clever", fr: "intelligent", es: "inteligente", jp: "頭がいい", cn: "聪明的", it: "Intelligente", ua: "розумний"}
+    pos: ["adj"]
+  cloudy:
+    tr: {de: "wolkig", fr: "nuageux", es: "nublado", jp: "曇り", cn: "多云", it: "nuvoloso", ua: "хмарно"}
+    pos: ["adj"]
+  clumsy:
+    tr: {de: "unbeholfen", fr: "maladroit", es: "torpe", jp: "不器用", cn: "笨拙", it: "goffo", ua: "незграбний"}
+    pos: ["adj"]
+  colorful:
+    tr: {de: "bunt", fr: "coloré", es: "vistoso", jp: "カラフル", cn: "丰富多彩的", it: "colorato", ua: "барвистий"}
+    pos: ["adj"]
+  comfy:
+    tr: {de: "bequem", fr: "confortable", es: "confortable", jp: "快適な", cn: "舒服", it: "comodo", ua: "зручний"}
+    pos: ["adj"]
+  common:
+    tr: {de: "gemeinsam", fr: "commun", es: "común", jp: "一般", cn: "常见的", it: "comune", ua: "поширений"}
+    pos: ["adj"]
+  correct:
+    tr: {de: "richtig", fr: "correct", es: "correcto", jp: "正しい", cn: "正确的", it: "corretto", ua: "правильно"}
+    pos: ["adj"]
+  creamy:
+    tr: {de: "cremig", fr: "crémeux", es: "cremoso", jp: "クリーミーな", cn: "奶油味的", it: "cremoso", ua: "вершковий"}
+    pos: ["adj"]
+  crisp:
+    tr: {de: "knackig", fr: "croustillant", es: "crujiente", jp: "さわやかな", cn: "脆", it: "croccante", ua: "хрусткий"}
+    pos: ["adj"]
+  curly:
+    tr: {de: "lockig", fr: "bouclé", es: "ondulado", jp: "縮れた", cn: "卷曲", it: "riccio", ua: "кучеряве"}
+    pos: ["adj"]
+  daily:
+    tr: {de: "täglich", fr: "tous les jours", es: "a diario", jp: "毎日", cn: "日常的", it: "quotidiano", ua: "щодня"}
+    pos: ["adj"]
+  dear:
+    tr: {de: "Liebling", fr: "cher", es: "estimado", jp: "親愛なる", cn: "亲爱的", it: "Caro", ua: "дорогий"}
+    pos: ["adj"]
+  deep:
+    tr: {de: "tief", fr: "profond", es: "profundo", jp: "深い", cn: "深的", it: "profondo", ua: "глибокий"}
+    pos: ["adj"]
+  dizzy:
+    tr: {de: "schwindlig", fr: "vertigineux", es: "mareado", jp: "めまい", cn: "晕眩的", it: "dare le vertigini", ua: "запаморочення"}
+    pos: ["adj"]
+  eager:
+    tr: {de: "erpicht", fr: "désireux", es: "ansioso", jp: "熱心な", cn: "渴望的", it: "desideroso", ua: "нетерплячий"}
+    pos: ["adj"]
+  early:
+    tr: {de: "früh", fr: "tôt", es: "temprano", jp: "早い", cn: "早期的", it: "Presto", ua: "рано"}
+    pos: ["adj"]
+  easy:
+    tr: {de: "einfach", fr: "facile", es: "fácil", jp: "簡単", cn: "简单的", it: "facile", ua: "легко"}
+    pos: ["adj"]
+  equal:
+    tr: {de: "gleich", fr: "égal", es: "igual", jp: "等しい", cn: "平等的", it: "pari", ua: "рівні"}
+    pos: ["adj"]
+  every:
+    tr: {de: "jeder", fr: "chaque", es: "cada", jp: "毎", cn: "每一个", it: "ogni", ua: "кожен"}
+    pos: ["adj"]
+  fair:
+    tr: {de: "gerecht", fr: "équitable", es: "justo", jp: "公平", cn: "公平的", it: "Giusto", ua: "ярмарок"}
+    pos: ["adj"]
+  fancy:
+    tr: {de: "schick", fr: "fantaisie", es: "elegante", jp: "ファンシー", cn: "想要", it: "fantasia", ua: "фантазія"}
+    pos: ["adj"]
+  far:
+    tr: {de: "weit", fr: "loin", es: "lejos", jp: "遠い", cn: "远的", it: "lontano", ua: "далеко"}
+    pos: ["adj"]
+  fast:
+    tr: {de: "schnell", fr: "rapide", es: "rápido", jp: "速い", cn: "快速地", it: "veloce", ua: "швидко"}
+    pos: ["adj"]
+  fat:
+    tr: {de: "fett", fr: "graisse", es: "gordo", jp: "脂肪", cn: "胖的", it: "grasso", ua: "жиру"}
+    pos: ["adj"]
+  favorite:
+    tr: {de: "Favorit", fr: "préféré", es: "favorito", jp: "お気に入り", cn: "最喜欢的", it: "preferito", ua: "улюблений"}
+    pos: ["adj"]
+  few:
+    tr: {de: "wenige", fr: "peu", es: "pocos", jp: "少し", cn: "很少", it: "pochi", ua: "мало"}
+    pos: ["adj"]
+  firm:
+    tr: {de: "Firma", fr: "ferme", es: "firme", jp: "固い", cn: "公司", it: "ditta", ua: "фірма"}
+    pos: ["adj"]
+  first:
+    tr: {de: "Erste", fr: "d'abord", es: "primero", jp: "初め", cn: "第一的", it: "Primo", ua: "перший"}
+    pos: ["adj"]
+  fizzy:
+    tr: {de: "sprudelnd", fr: "pétillant", es: "gaseoso", jp: "シュワシュワ", cn: "起泡的", it: "frizzante", ua: "газований"}
+    pos: ["adj"]
+  flaky:
+    tr: {de: "flockig", fr: "floconneux", es: "escamoso", jp: "薄片状の", cn: "片状的", it: "traballante", ua: "лускатий"}
+    pos: ["adj"]
+  flat:
+    tr: {de: "Wohnung", fr: "plat", es: "departamento", jp: "フラット", cn: "平坦的", it: "Piatto", ua: "плоский"}
+    pos: ["adj"]
+  floppy:
+    tr: {de: "Diskette", fr: "souple", es: "flexible", jp: "フロッピー", cn: "软盘", it: "floscio", ua: "дискета"}
+    pos: ["adj"]
+  fluffy:
+    tr: {de: "flaumig", fr: "duveteux", es: "esponjoso", jp: "ふわふわ", cn: "蓬松的", it: "soffice", ua: "пухнастий"}
+    pos: ["adj"]
+  free:
+    tr: {de: "frei", fr: "gratuit", es: "gratis", jp: "無料", cn: "自由的", it: "gratuito", ua: "безкоштовно"}
+    pos: ["adj"]
+  fresh:
+    tr: {de: "frisch", fr: "frais", es: "fresco", jp: "新鮮な", cn: "新鲜的", it: "fresco", ua: "свіжий"}
+    pos: ["adj"]
+  friendly:
+    tr: {de: "freundlich", fr: "amical", es: "amigable", jp: "フレンドリー", cn: "友好的", it: "amichevole", ua: "дружній"}
+    pos: ["adj"]
+  front:
+    tr: {de: "Front", fr: "devant", es: "frente", jp: "フロント", cn: "正面", it: "anteriore", ua: "спереду"}
+    pos: ["adj"]
+  gentle:
+    tr: {de: "sanft", fr: "doux", es: "amable", jp: "優しい", cn: "温和的", it: "gentile", ua: "ніжний"}
+    pos: ["adj"]
+  giant:
+    tr: {de: "Riese", fr: "géant", es: "gigante", jp: "巨人", cn: "巨大的", it: "gigante", ua: "гігант"}
+    pos: ["adj"]
+  gifted:
+    tr: {de: "begabt", fr: "doué", es: "dotado", jp: "才能のある", cn: "天才", it: "dotato", ua: "обдарований"}
+    pos: ["adj"]
+  giving:
+    tr: {de: "geben", fr: "donner", es: "donación", jp: "与える", cn: "给予", it: "dare", ua: "надання"}
+    pos: ["adj"]
+  glassy:
+    tr: {de: "glasig", fr: "vitreux", es: "vidrioso", jp: "ガラス状の", cn: "玻璃状的", it: "vetroso", ua: "скляний"}
+    pos: ["adj"]
+  gleeful:
+    tr: {de: "fröhlich", fr: "joyeux", es: "jubiloso", jp: "陽気な", cn: "兴高采烈的", it: "allegro", ua: "радісно"}
+    pos: ["adj"]
+  good:
+    tr: {de: "Gut", fr: "bien", es: "bien", jp: "良い", cn: "好的", it: "Bene", ua: "добре"}
+    pos: ["adj"]
+  gray:
+    tr: {de: "grau", fr: "gris", es: "gris", jp: "グレー", cn: "灰色的", it: "grigio", ua: "сірий"}
+    pos: ["adj"]
+  green:
+    tr: {de: "Grün", fr: "vert", es: "verde", jp: "緑", cn: "绿色的", it: "verde", ua: "зелений"}
+    pos: ["adj"]
+  gritty:
+    tr: {de: "düster", fr: "graveleux", es: "arenoso", jp: "ザラザラした", cn: "坚韧不拔的", it: "grintoso", ua: "піщаний"}
+    pos: ["adj"]
+  grown:
+    tr: {de: "gewachsen", fr: "grandi", es: "crecido", jp: "成長した", cn: "长大了", it: "cresciuto", ua: "виріс"}
+    pos: ["adj"]
+  grumpy:
+    tr: {de: "mürrisch", fr: "grincheux", es: "gruñón", jp: "不機嫌そうな", cn: "脾气暴躁", it: "scontroso", ua: "сварливий"}
+    pos: ["adj"]
+  guilty:
+    tr: {de: "schuldig", fr: "coupable", es: "culpable", jp: "有罪", cn: "有罪的", it: "colpevole", ua: "винним"}
+    pos: ["adj"]
+  hairy:
+    tr: {de: "behaart", fr: "poilu", es: "peludo", jp: "毛深い", cn: "毛茸茸", it: "peloso", ua: "волохатий"}
+    pos: ["adj"]
+  handy:
+    tr: {de: "praktisch", fr: "pratique", es: "práctico", jp: "ハンディ", cn: "便利", it: "a portata di mano", ua: "зручний"}
+    pos: ["adj"]
+  healthy:
+    tr: {de: "gesund", fr: "en bonne santé", es: "saludable", jp: "健康", cn: "健康", it: "salutare", ua: "здоровий"}
+    pos: ["adj"]
+  heavy:
+    tr: {de: "schwer", fr: "lourd", es: "pesado", jp: "重い", cn: "重的", it: "pesante", ua: "важкий"}
+    pos: ["adj"]
+  high:
+    tr: {de: "hoch", fr: "haut", es: "alto", jp: "高い", cn: "高的", it: "alto", ua: "висока"}
+    pos: ["adj"]
+  honest:
+    tr: {de: "ehrlich", fr: "honnête", es: "honesto", jp: "正直", cn: "诚实的", it: "onesto", ua: "чесний"}
+    pos: ["adj"]
+  icy:
+    tr: {de: "eisig", fr: "glacé", es: "helado", jp: "氷っぽい", cn: "冰冷的", it: "ghiacciato", ua: "крижаний"}
+    pos: ["adj"]
+  ideal:
+    tr: {de: "Ideal", fr: "idéal", es: "ideal", jp: "理想的", cn: "理想的", it: "ideale", ua: "ідеал"}
+    pos: ["adj"]
+  itchy:
+    tr: {de: "juckend", fr: "qui démange", es: "que produce picor", jp: "かゆい", cn: "发痒", it: "prurito", ua: "сверблячий"}
+    pos: ["adj"]
+  jolly:
+    tr: {de: "lustig", fr: "gai", es: "alegre", jp: "陽気な", cn: "快乐的", it: "allegro", ua: "веселий"}
+    pos: ["adj"]
+  joyful:
+    tr: {de: "froh", fr: "joyeux", es: "alegre", jp: "楽しい", cn: "快乐", it: "gioioso", ua: "радісний"}
+    pos: ["adj"]
+  juicy:
+    tr: {de: "saftig", fr: "juteux", es: "jugoso", jp: "ジューシーな", cn: "多汁的", it: "succoso", ua: "соковитий"}
+    pos: ["adj"]
+  junior:
+    tr: {de: "Junior-", fr: "junior", es: "júnior", jp: "ジュニア", cn: "初级", it: "junior", ua: "молодший"}
+    pos: ["adj"]
+  just:
+    tr: {de: "Nur", fr: "juste", es: "justo", jp: "ただ", cn: "只是", it: "Appena", ua: "просто"}
+    pos: ["adj"]
+  keen:
+    tr: {de: "erpicht", fr: "passionné", es: "afecto", jp: "鋭い", cn: "敏锐的", it: "appassionato", ua: "гострий"}
+    pos: ["adj"]
+  lazy:
+    tr: {de: "faul", fr: "paresseux", es: "perezoso", jp: "怠け者", cn: "懒惰的", it: "Pigro", ua: "ледачий"}
+    pos: ["adj"]
+  left:
+    tr: {de: "links", fr: "gauche", es: "izquierda", jp: "左", cn: "左边", it: "Sinistra", ua: "зліва"}
+    pos: ["adj"]
+  level:
+    tr: {de: "Ebene", fr: "niveau", es: "nivel", jp: "レベル", cn: "等级", it: "livello", ua: "рівень"}
+    pos: ["adj"]
+  lovely:
+    tr: {de: "schön", fr: "beau", es: "hermoso", jp: "素敵な", cn: "迷人的", it: "bello", ua: "мило"}
+    pos: ["adj"]
+  low:
+    tr: {de: "niedrig", fr: "faible", es: "bajo", jp: "低い", cn: "低的", it: "Basso", ua: "низький"}
+    pos: ["adj"]
+  lower:
+    tr: {de: "untere", fr: "inférieur", es: "más bajo", jp: "より低い", cn: "降低", it: "inferiore", ua: "нижче"}
+    pos: ["adj"]
+  lucky:
+    tr: {de: "glücklich", fr: "chanceux", es: "afortunado", jp: "ラッキー", cn: "幸运的", it: "fortunato", ua: "пощастило"}
+    pos: ["adj"]
+  magic:
+    tr: {de: "Magie", fr: "magie", es: "magia", jp: "魔法", cn: "魔法", it: "magia", ua: "магія"}
+    pos: ["adj"]
+  major:
+    tr: {de: "wesentlich", fr: "majeur", es: "importante", jp: "選考科目", cn: "主要的", it: "maggiore", ua: "майор"}
+    pos: ["adj"]
+  many:
+    tr: {de: "viele", fr: "beaucoup", es: "muchos", jp: "多くの", cn: "许多", it: "molti", ua: "багато"}
+    pos: ["adj"]
+  messy:
+    tr: {de: "unordentlich", fr: "désordonné", es: "desordenado", jp: "乱雑な", cn: "凌乱的", it: "disordinato", ua: "безладний"}
+    pos: ["adj"]
+  mighty:
+    tr: {de: "mächtig", fr: "puissant", es: "poderoso", jp: "強力な", cn: "强大的", it: "potente", ua: "могутній"}
+    pos: ["adj"]
+  mild:
+    tr: {de: "leicht", fr: "bénin", es: "leve", jp: "軽度", cn: "温和的", it: "blando", ua: "помірний"}
+    pos: ["adj"]
+  minty:
+    tr: {de: "minzig", fr: "mentholé", es: "menta", jp: "ミント系", cn: "薄荷味的", it: "menta", ua: "м'ятний"}
+    pos: ["adj"]
+  misty:
+    tr: {de: "neblig", fr: "brumeux", es: "brumoso", jp: "霧深い", cn: "蒙蒙", it: "nebbioso", ua: "туманний"}
+    pos: ["adj"]
+  muddy:
+    tr: {de: "schlammig", fr: "boueux", es: "enturbiar", jp: "泥だらけの", cn: "浑", it: "fangoso", ua: "каламутний"}
+    pos: ["adj"]
+  narrow:
+    tr: {de: "eng", fr: "étroit", es: "angosto", jp: "狭い", cn: "狭窄的", it: "stretto", ua: "вузькі"}
+    pos: ["adj"]
+  near:
+    tr: {de: "nahe", fr: "près", es: "cerca", jp: "近く", cn: "靠近", it: "vicino", ua: "поблизу"}
+    pos: ["adj"]
+  neat:
+    tr: {de: "sauber", fr: "soigné", es: "limpio", jp: "きちんとした", cn: "整洁的", it: "pulito", ua: "акуратний"}
+    pos: ["adj"]
+  needed:
+    tr: {de: "benötigt", fr: "nécessaire", es: "necesario", jp: "必要な", cn: "需要的", it: "necessario", ua: "необхідний"}
+    pos: ["adj"]
+  nervous:
+    tr: {de: "nervös", fr: "nerveux", es: "nervioso", jp: "神経質", cn: "紧张的", it: "nervoso", ua: "нервовий"}
+    pos: ["adj"]
+  nice:
+    tr: {de: "Hübsch", fr: "bon", es: "lindo", jp: "ニース", cn: "好的", it: "Carino", ua: "приємно"}
+    pos: ["adj"]
+  noisy:
+    tr: {de: "laut", fr: "bruyant", es: "ruidoso", jp: "うるさい", cn: "嘈杂", it: "rumoroso", ua: "шумно"}
+    pos: ["adj"]
+  normal:
+    tr: {de: "Normal", fr: "normale", es: "normal", jp: "普通", cn: "普通的", it: "normale", ua: "нормально"}
+    pos: ["adj"]
+  odd:
+    tr: {de: "seltsam", fr: "impair", es: "extraño", jp: "奇数", cn: "奇怪的", it: "strano", ua: "непарний"}
+    pos: ["adj"]
+  okay:
+    tr: {de: "Okay", fr: "d'accord", es: "bueno", jp: "わかった", cn: "好的", it: "Va bene", ua: "гаразд"}
+    pos: ["adj"]
+  only:
+    tr: {de: "nur", fr: "seulement", es: "solo", jp: "のみ", cn: "仅有的", it: "soltanto", ua: "тільки"}
+    pos: ["adj"]
+  oval:
+    tr: {de: "Oval", fr: "ovale", es: "oval", jp: "楕円形", cn: "椭圆形", it: "ovale", ua: "овальний"}
+    pos: ["adj"]
+  pale:
+    tr: {de: "blass", fr: "pâle", es: "pálido", jp: "青白い", cn: "苍白", it: "pallido", ua: "блідий"}
+    pos: ["adj"]
+  past:
+    tr: {de: "Vergangenheit", fr: "passé", es: "pasado", jp: "過去", cn: "过去的", it: "passato", ua: "минуле"}
+    pos: ["adj"]
+  perfect:
+    tr: {de: "perfekt", fr: "parfait", es: "perfecto", jp: "完璧", cn: "完美的", it: "perfetto", ua: "ідеальний"}
+    pos: ["adj"]
+  pink:
+    tr: {de: "Rosa", fr: "rose", es: "rosa", jp: "ピンク", cn: "粉色的", it: "rosa", ua: "рожевий"}
+    pos: ["adj"]
+  playful:
+    tr: {de: "spielerisch", fr: "espiègle", es: "juguetón", jp: "遊び心のある", cn: "俏皮的", it: "giocoso", ua: "грайливий"}
+    pos: ["adj"]
+  plump:
+    tr: {de: "prall", fr: "dodu", es: "rechoncho", jp: "ふくよかな", cn: "丰满", it: "paffuto", ua: "пухкий"}
+    pos: ["adj"]
+  polite:
+    tr: {de: "höflich", fr: "poli", es: "educado", jp: "礼儀正しい", cn: "有礼貌的", it: "educato", ua: "ввічливий"}
+    pos: ["adj"]
+  poor:
+    tr: {de: "arm", fr: "pauvre", es: "pobre", jp: "貧しい", cn: "贫穷的", it: "povero", ua: "бідний"}
+    pos: ["adj"]
+  pretty:
+    tr: {de: "hübsch", fr: "joli", es: "bonito", jp: "かわいい", cn: "漂亮的", it: "bello", ua: "гарна"}
+    pos: ["adj"]
+  proud:
+    tr: {de: "stolz", fr: "fier", es: "orgulloso", jp: "誇りに思う", cn: "自豪的", it: "orgoglioso", ua: "гордий"}
+    pos: ["adj"]
+  pure:
+    tr: {de: "rein", fr: "pur", es: "puro", jp: "純粋な", cn: "纯的", it: "puro", ua: "чистий"}
+    pos: ["adj"]
+  purple:
+    tr: {de: "lila", fr: "violet", es: "púrpura", jp: "紫", cn: "紫色的", it: "viola", ua: "фіолетовий"}
+    pos: ["adj"]
+  rainy:
+    tr: {de: "regnerisch", fr: "pluvieux", es: "lluvioso", jp: "雨の", cn: "下雨的", it: "piovoso", ua: "дощовий"}
+    pos: ["adj"]
+  real:
+    tr: {de: "real", fr: "réel", es: "real", jp: "本物", cn: "真实的", it: "vero", ua: "справжній"}
+    pos: ["adj"]
+  rich:
+    tr: {de: "reich", fr: "riche", es: "rico", jp: "リッチ", cn: "富有的", it: "ricco", ua: "багатий"}
+    pos: ["adj"]
+  right:
+    tr: {de: "Rechts", fr: "droite", es: "bien", jp: "右", cn: "正确的", it: "Giusto", ua: "правильно"}
+    pos: ["adj"]
+  ripe:
+    tr: {de: "reif", fr: "mûr", es: "maduro", jp: "熟した", cn: "成熟", it: "maturo", ua: "стиглий"}
+    pos: ["adj"]
+  rosy:
+    tr: {de: "rosig", fr: "rosé", es: "rosado", jp: "バラ色の", cn: "红润", it: "roseo", ua: "рожевий"}
+    pos: ["adj"]
+  royal:
+    tr: {de: "königlich", fr: "royal", es: "real", jp: "ロイヤル", cn: "皇家的", it: "reale", ua: "королівський"}
+    pos: ["adj"]
+  salty:
+    tr: {de: "salzig", fr: "salé", es: "salado", jp: "塩辛い", cn: "咸", it: "salato", ua: "солоний"}
+    pos: ["adj"]
+  sandy:
+    tr: {de: "sandig", fr: "sablonneux", es: "arenoso", jp: "砂っぽい", cn: "沙", it: "sabbioso", ua: "піщаний"}
+    pos: ["adj"]
+  scary:
+    tr: {de: "beängstigend", fr: "effrayant", es: "aterrador", jp: "怖い", cn: "可怕的", it: "allarmante", ua: "страшно"}
+    pos: ["adj"]
+  secret:
+    tr: {de: "Geheimnis", fr: "secrète", es: "secreto", jp: "秘密", cn: "秘密", it: "segreto", ua: "секрет"}
+    pos: ["adj"]
+  sharp:
+    tr: {de: "scharf", fr: "pointu", es: "afilado", jp: "シャープ", cn: "锋利的", it: "affilato", ua: "різкий"}
+    pos: ["adj"]
+  shiny:
+    tr: {de: "glänzend", fr: "brillant", es: "brillante", jp: "光沢のある", cn: "闪亮的", it: "lucido", ua: "блискучий"}
+    pos: ["adj"]
+  shy:
+    tr: {de: "schüchtern", fr: "timide", es: "tímido", jp: "シャイ", cn: "害羞的", it: "Timido", ua: "сором'язливий"}
+    pos: ["adj"]
+  simple:
+    tr: {de: "einfach", fr: "simple", es: "simple", jp: "単純", cn: "简单的", it: "semplice", ua: "простий"}
+    pos: ["adj"]
+  sleepy:
+    tr: {de: "schläfrig", fr: "somnolent", es: "somnoliento", jp: "眠い", cn: "困", it: "assonnato", ua: "сонний"}
+    pos: ["adj"]
+  slick:
+    tr: {de: "glatt", fr: "nappe", es: "mancha", jp: "滑らかな", cn: "光滑的", it: "liscio", ua: "гладкий"}
+    pos: ["adj"]
+  slim:
+    tr: {de: "schlank", fr: "mince", es: "delgado", jp: "スリム", cn: "苗条的", it: "sottile", ua: "тонкий"}
+    pos: ["adj"]
+  slippery:
+    tr: {de: "rutschig", fr: "glissant", es: "resbaladizo", jp: "滑りやすい", cn: "滑", it: "scivoloso", ua: "слизький"}
+    pos: ["adj"]
+  smart:
+    tr: {de: "schlau", fr: "intelligent", es: "elegante", jp: "頭いい", cn: "聪明的", it: "accorto", ua: "розумний"}
+    pos: ["adj"]
+  smooth:
+    tr: {de: "glatt", fr: "lisse", es: "liso", jp: "スムーズ", cn: "光滑的", it: "liscio", ua: "гладкий"}
+    pos: ["adj"]
+  snowy:
+    tr: {de: "schneebedeckt", fr: "neigeux", es: "de mucha nieve", jp: "雪の多い", cn: "下雪的", it: "nevoso", ua: "сніговий"}
+    pos: ["adj"]
+  solid:
+    tr: {de: "solide", fr: "solide", es: "sólido", jp: "固体", cn: "坚硬的", it: "solido", ua: "твердий"}
+    pos: ["adj"]
+  sore:
+    tr: {de: "wund", fr: "douloureux", es: "doloroso", jp: "痛み", cn: "疮", it: "irritato", ua: "болить"}
+    pos: ["adj"]
+  sour:
+    tr: {de: "sauer", fr: "aigre", es: "agrio", jp: "酸っぱい", cn: "酸的", it: "acido", ua: "кислий"}
+    pos: ["adj"]
+  special:
+    tr: {de: "besonders", fr: "spécial", es: "especial", jp: "特別", cn: "特别的", it: "speciale", ua: "спеціальні"}
+    pos: ["adj"]
+  spicy:
+    tr: {de: "scharf", fr: "épicé", es: "picante", jp: "辛い", cn: "辛辣的", it: "speziato", ua: "пряний"}
+    pos: ["adj"]
+  square:
+    tr: {de: "Quadrat", fr: "carré", es: "cuadrado", jp: "四角", cn: "正方形", it: "piazza", ua: "площі"}
+    pos: ["adj"]
+  stale:
+    tr: {de: "abgestanden", fr: "vicié", es: "duro", jp: "古い", cn: "陈旧", it: "stantio", ua: "несвіжий"}
+    pos: ["adj"]
+  steady:
+    tr: {de: "stetig", fr: "constant", es: "estable", jp: "安定した", cn: "稳定的", it: "costante", ua: "стійкий"}
+    pos: ["adj"]
+  steep:
+    tr: {de: "steil", fr: "raide", es: "empinado", jp: "急な", cn: "陡", it: "ripido", ua: "крутий"}
+    pos: ["adj"]
+  still:
+    tr: {de: "Trotzdem", fr: "toujours", es: "aún", jp: "まだ", cn: "仍然", it: "Ancora", ua: "досі"}
+    pos: ["adj"]
+  strange:
+    tr: {de: "seltsam", fr: "étrange", es: "extraño", jp: "奇妙な", cn: "奇怪的", it: "strano", ua: "дивно"}
+    pos: ["adj"]
+  sunny:
+    tr: {de: "sonnig", fr: "ensoleillé", es: "soleado", jp: "晴れた", cn: "阳光明媚", it: "soleggiato", ua: "сонячно"}
+    pos: ["adj"]
+  sure:
+    tr: {de: "Sicher", fr: "bien sûr", es: "seguro", jp: "もちろん", cn: "当然", it: "Sicuro", ua: "впевнений"}
+    pos: ["adj"]
+  tasty:
+    tr: {de: "lecker", fr: "savoureux", es: "sabroso", jp: "美味しい", cn: "可口", it: "gustoso", ua: "смачно"}
+    pos: ["adj"]
+  tender:
+    tr: {de: "zart", fr: "tendre", es: "licitación", jp: "入札", cn: "投标", it: "tenero", ua: "ніжний"}
+    pos: ["adj"]
+  thick:
+    tr: {de: "dick", fr: "épais", es: "grueso", jp: "厚い", cn: "厚的", it: "spesso", ua: "товстий"}
+    pos: ["adj"]
+  thin:
+    tr: {de: "dünn", fr: "mince", es: "delgado", jp: "薄い", cn: "薄的", it: "magro", ua: "тонкий"}
+    pos: ["adj"]
+  thirsty:
+    tr: {de: "durstig", fr: "soif", es: "sediento", jp: "喉が渇いた", cn: "渴", it: "assetato", ua: "спраглий"}
+    pos: ["adj"]
+  tidy:
+    tr: {de: "ordentlich", fr: "rangé", es: "ordenado", jp: "きちんとした", cn: "整齐的", it: "Ordinato", ua: "охайний"}
+    pos: ["adj"]
+  tight:
+    tr: {de: "eng", fr: "serré", es: "ajustado", jp: "きつい", cn: "紧的", it: "stretto", ua: "туго"}
+    pos: ["adj"]
+  tough:
+    tr: {de: "hart", fr: "difficile", es: "difícil", jp: "厳しい", cn: "艰难的", it: "difficile", ua: "жорсткий"}
+    pos: ["adj"]
+  "true":
+    tr: {de: "WAHR", fr: "vrai", es: "verdadero", jp: "真実", cn: "真的", it: "VERO", ua: "правда"}
+    pos: ["adj"]
+  upper:
+    tr: {de: "obere", fr: "supérieur", es: "superior", jp: "アッパー", cn: "上", it: "superiore", ua: "верхній"}
+    pos: ["adj"]
+  useful:
+    tr: {de: "nützlich", fr: "utile", es: "útil", jp: "役に立つ", cn: "有用", it: "utile", ua: "корисний"}
+    pos: ["adj"]
+  vast:
+    tr: {de: "groß", fr: "vaste", es: "vasto", jp: "広大な", cn: "广阔的", it: "vasto", ua: "величезний"}
+    pos: ["adj"]
+  vivid:
+    tr: {de: "lebendig", fr: "vif", es: "vívido", jp: "鮮やかな", cn: "生动", it: "vivido", ua: "яскравий"}
+    pos: ["adj"]
+  wavy:
+    tr: {de: "wellig", fr: "ondulé", es: "ondulado", jp: "波状の", cn: "波浪状的", it: "ondulato", ua: "хвилясті"}
+    pos: ["adj"]
+  weak:
+    tr: {de: "schwach", fr: "faible", es: "débil", jp: "弱い", cn: "虚弱的", it: "Debole", ua: "слабкий"}
+    pos: ["adj"]
+  white:
+    tr: {de: "Weiß", fr: "blanc", es: "blanco", jp: "白", cn: "白色的", it: "bianco", ua: "білий"}
+    pos: ["adj"]
+  whole:
+    tr: {de: "ganz", fr: "entier", es: "entero", jp: "全体", cn: "所有的", it: "Totale", ua: "ціле"}
+    pos: ["adj"]
+  wide:
+    tr: {de: "breit", fr: "large", es: "ancho", jp: "広い", cn: "宽的", it: "Largo", ua: "широкий"}
+    pos: ["adj"]
+  wild:
+    tr: {de: "wild", fr: "sauvage", es: "salvaje", jp: "野生", cn: "荒野", it: "selvaggio", ua: "дикий"}
+    pos: ["adj"]
+  wise:
+    tr: {de: "weise", fr: "sage", es: "inteligente", jp: "賢い", cn: "明智的", it: "saggio", ua: "мудрий"}
+    pos: ["adj"]
+  wooden:
+    tr: {de: "aus Holz", fr: "en bois", es: "de madera", jp: "木製", cn: "木制的", it: "di legno", ua: "дерев'яний"}
+    pos: ["adj"]
+  woolly:
+    tr: {de: "wollig", fr: "laineux", es: "lanoso", jp: "羊毛のような", cn: "毛茸茸的", it: "di lana", ua: "шерстистий"}
+    pos: ["adj"]
+  young:
+    tr: {de: "jung", fr: "jeune", es: "joven", jp: "若い", cn: "年轻的", it: "giovane", ua: "молодий"}
+    pos: ["adj"]
+  zany:
+    tr: {de: "verrückt", fr: "loufoque", es: "loco", jp: "おかしな", cn: "滑稽的", it: "strano", ua: "дивний"}
+    pos: ["adj"]
+  zesty:
+    tr: {de: "pikant", fr: "piquant", es: "picante", jp: "ピリピリした", cn: "热情的", it: "piccante", ua: "пікантний"}
+    pos: ["adj"]
+  calm:
+    tr: {de: "ruhig", fr: "calme", es: "calma", jp: "落ち着いた", cn: "冷静的", it: "calma", ua: "спокійний"}
+    pos: ["adj"]
+  cozy:
+    tr: {de: "gemütlich", fr: "confortable", es: "acogedor", jp: "居心地の良い", cn: "舒适", it: "accogliente", ua: "затишний"}
+    pos: ["adj"]
+  cute:
+    tr: {de: "Niedlich", fr: "mignon", es: "lindo", jp: "かわいい", cn: "可爱的", it: "Carino", ua: "милий"}
+    pos: ["adj"]
+  damp:
+    tr: {de: "Feuchte", fr: "humide", es: "húmedo", jp: "湿った", cn: "潮湿", it: "umido", ua: "вологий"}
+    pos: ["adj"]
+verb:
+  run:
+    tr: {de: "rennen", fr: "courir", es: "correr", jp: "走る", cn: "跑", it: "correre", ua: "бігти"}
+    pos: ["v"]
+  walk:
+    tr: {de: "gehen", fr: "marcher", es: "caminar", jp: "歩く", cn: "走路", it: "camminare", ua: "ходити"}
+    pos: ["v"]
+  jump:
+    tr: {de: "springen", fr: "sauter", es: "saltar", jp: "跳ぶ", cn: "跳", it: "saltare", ua: "стрибати"}
+    pos: ["v"]
+  hop:
+    tr: {de: "hüpfen", fr: "sautiller", es: "brincar", jp: "ぴょんと跳ぶ", cn: "单脚跳", it: "saltellare", ua: "підстрибувати"}
+    pos: ["v"]
+  skip:
+    tr: {de: "hüpfen", fr: "sautiller", es: "saltar", jp: "スキップする", cn: "蹦跳", it: "saltellare", ua: "скакати"}
+    pos: ["v"]
+  play:
+    tr: {de: "spielen", fr: "jouer", es: "jugar", jp: "遊ぶ", cn: "玩", it: "giocare", ua: "грати"}
+    pos: ["v"]
+  read:
+    tr: {de: "lesen", fr: "lire", es: "leer", jp: "読む", cn: "读", it: "leggere", ua: "читати"}
+    pos: ["v"]
+  draw:
+    tr: {de: "zeichnen", fr: "dessiner", es: "dibujar", jp: "描く", cn: "画", it: "disegnare", ua: "малювати"}
+    pos: ["v"]
+  sing:
+    tr: {de: "singen", fr: "chanter", es: "cantar", jp: "歌う", cn: "唱", it: "cantare", ua: "співати"}
+    pos: ["v"]
+  dance:
+    tr: {de: "tanzen", fr: "danser", es: "bailar", jp: "踊る", cn: "跳舞", it: "ballare", ua: "танцювати"}
+    pos: ["v"]
+  clap:
+    tr: {de: "klatschen", fr: "applaudir", es: "aplaudir", jp: "拍手する", cn: "拍手", it: "applaudire", ua: "плескати"}
+    pos: ["v"]
+  wave:
+    tr: {de: "winken", fr: "saluer", es: "saludar", jp: "手を振る", cn: "挥手", it: "salutare", ua: "махати"}
+    pos: ["v"]
+  hug:
+    tr: {de: "umarmen", fr: "serrer dans les bras", es: "abrazar", jp: "抱きしめる", cn: "拥抱", it: "abbracciare", ua: "обіймати"}
+    pos: ["v"]
+  help:
+    tr: {de: "helfen", fr: "aider", es: "ayudar", jp: "助ける", cn: "帮助", it: "aiutare", ua: "допомагати"}
+    pos: ["v"]
+  look:
+    tr: {de: "schauen", fr: "regarder", es: "mirar", jp: "見る", cn: "看", it: "guardare", ua: "дивитися"}
+    pos: ["v"]
+  see:
+    tr: {de: "sehen", fr: "voir", es: "ver", jp: "見る", cn: "看见", it: "vedere", ua: "бачити"}
+    pos: ["v"]
+  hear:
+    tr: {de: "hören", fr: "entendre", es: "oír", jp: "聞く", cn: "听见", it: "sentire", ua: "чути"}
+    pos: ["v"]
+  talk:
+    tr: {de: "sprechen", fr: "parler", es: "hablar", jp: "話す", cn: "说话", it: "parlare", ua: "говорити"}
+    pos: ["v"]
+  eat:
+    tr: {de: "essen", fr: "manger", es: "comer", jp: "食べる", cn: "吃", it: "mangiare", ua: "їсти"}
+    pos: ["v"]
+  drink:
+    tr: {de: "trinken", fr: "boire", es: "beber", jp: "飲む", cn: "喝", it: "bere", ua: "пити"}
+    pos: ["v"]
+  cook:
+    tr: {de: "kochen", fr: "cuisiner", es: "cocinar", jp: "料理する", cn: "做饭", it: "cucinare", ua: "готувати"}
+    pos: ["v"]
+  bake:
+    tr: {de: "backen", fr: "cuire", es: "hornear", jp: "焼く", cn: "烘烤", it: "cuocere", ua: "пекти"}
+    pos: ["v"]
+  wash:
+    tr: {de: "waschen", fr: "laver", es: "lavar", jp: "洗う", cn: "洗", it: "lavare", ua: "мити"}
+    pos: ["v"]
+  brush:
+    tr: {de: "bürsten", fr: "brosser", es: "cepillar", jp: "ブラシをかける", cn: "刷", it: "spazzolare", ua: "чистити щіткою"}
+    pos: ["v"]
+  sleep:
+    tr: {de: "schlafen", fr: "dormir", es: "dormir", jp: "眠る", cn: "睡觉", it: "dormire", ua: "спати"}
+    pos: ["v"]
+  dream:
+    tr: {de: "träumen", fr: "rêver", es: "soñar", jp: "夢を見る", cn: "做梦", it: "sognare", ua: "мріяти"}
+    pos: ["v"]
+  smile:
+    tr: {de: "lächeln", fr: "sourire", es: "sonreír", jp: "ほほえむ", cn: "微笑", it: "sorridere", ua: "усміхатися"}
+    pos: ["v"]
+  laugh:
+    tr: {de: "lachen", fr: "rire", es: "reír", jp: "笑う", cn: "笑", it: "ridere", ua: "сміятися"}
+    pos: ["v"]
+  cry:
+    tr: {de: "weinen", fr: "pleurer", es: "llorar", jp: "泣く", cn: "哭", it: "piangere", ua: "плакати"}
+    pos: ["v"]
+  sit:
+    tr: {de: "sitzen", fr: "s'asseoir", es: "sentarse", jp: "座る", cn: "坐", it: "sedersi", ua: "сидіти"}
+    pos: ["v"]
+  stand:
+    tr: {de: "stehen", fr: "se tenir debout", es: "estar de pie", jp: "立つ", cn: "站", it: "stare in piedi", ua: "стояти"}
+    pos: ["v"]
+  swim:
+    tr: {de: "schwimmen", fr: "nager", es: "nadar", jp: "泳ぐ", cn: "游泳", it: "nuotare", ua: "плавати"}
+    pos: ["v"]
+  ride:
+    tr: {de: "fahren", fr: "monter", es: "montar", jp: "乗る", cn: "骑", it: "andare", ua: "їхати"}
+    pos: ["v"]
+  build:
+    tr: {de: "bauen", fr: "construire", es: "construir", jp: "作る", cn: "建造", it: "costruire", ua: "будувати"}
+    pos: ["v"]
+  count:
+    tr: {de: "zählen", fr: "compter", es: "contar", jp: "数える", cn: "数", it: "contare", ua: "рахувати"}
+    pos: ["v"]
+  share:
+    tr: {de: "teilen", fr: "partager", es: "compartir", jp: "分ける", cn: "分享", it: "condividere", ua: "ділитися"}
+    pos: ["v"]
+  open:
+    tr: {de: "öffnen", fr: "ouvrir", es: "abrir", jp: "開ける", cn: "打开", it: "aprire", ua: "відкривати"}
+    pos: ["v"]
+  close:
+    tr: {de: "schließen", fr: "fermer", es: "cerrar", jp: "閉める", cn: "关闭", it: "chiudere", ua: "закривати"}
+    pos: ["v"]
+  pull:
+    tr: {de: "ziehen", fr: "tirer", es: "tirar", jp: "引く", cn: "拉", it: "tirare", ua: "тягнути"}
+    pos: ["v"]
+  push:
+    tr: {de: "drücken", fr: "pousser", es: "empujar", jp: "押す", cn: "推", it: "spingere", ua: "штовхати"}
+    pos: ["v"]
+  give:
+    tr: {de: "geben", fr: "donner", es: "dar", jp: "あげる", cn: "给", it: "dare", ua: "давати"}
+    pos: ["v"]
+  take:
+    tr: {de: "nehmen", fr: "prendre", es: "tomar", jp: "取る", cn: "拿", it: "prendere", ua: "брати"}
+    pos: ["v"]
+  find:
+    tr: {de: "finden", fr: "trouver", es: "encontrar", jp: "見つける", cn: "找到", it: "trovare", ua: "знаходити"}
+    pos: ["v"]
+  add:
+    tr: {de: "hinzufügen", fr: "ajouter", es: "agregar", jp: "追加する", cn: "添加", it: "aggiungere", ua: "додати"}
+    pos: ["v"]
+  ask:
+    tr: {de: "fragen", fr: "demander", es: "preguntar", jp: "尋ねる", cn: "询问", it: "chiedere", ua: "просити"}
+    pos: ["v"]
+  balance:
+    tr: {de: "auszubalancieren", fr: "équilibrer", es: "equilibrar", jp: "バランスをとる", cn: "平衡", it: "per bilanciare", ua: "балансувати"}
+    pos: ["v"]
+  bathe:
+    tr: {de: "baden", fr: "se baigner", es: "bañarse", jp: "入浴する", cn: "洗澡", it: "fare il bagno", ua: "купатися"}
+    pos: ["v"]
+  beam:
+    tr: {de: "strahlen", fr: "rayonner", es: "transmitir", jp: "ビームする", cn: "光束", it: "irradiare", ua: "проміняти"}
+    pos: ["v"]
+  bend:
+    tr: {de: "sich beugen", fr: "plier", es: "doblarse", jp: "曲げる", cn: "弯曲", it: "piegarsi", ua: "згинати"}
+    pos: ["v"]
+  blink:
+    tr: {de: "blinzeln", fr: "cligner des yeux", es: "parpadear", jp: "まばたきする", cn: "眨眼", it: "lampeggiare", ua: "моргати"}
+    pos: ["v"]
+  blow:
+    tr: {de: "blasen", fr: "souffler", es: "soplar", jp: "吹く", cn: "吹", it: "soffiare", ua: "дути"}
+    pos: ["v"]
+  bounce:
+    tr: {de: "hüpfen", fr: "rebondir", es: "rebotar", jp: "跳ねる", cn: "弹跳", it: "rimbalzare", ua: "підстрибувати"}
+    pos: ["v"]
+  bring:
+    tr: {de: "bringen", fr: "apporter", es: "traer", jp: "持ってくる", cn: "带来", it: "portare", ua: "приносити"}
+    pos: ["v"]
+  call:
+    tr: {de: "anrufen", fr: "appeler", es: "llamar", jp: "電話する", cn: "打电话", it: "chiamare", ua: "дзвонити"}
+    pos: ["v"]
+  carry:
+    tr: {de: "tragen", fr: "porter", es: "llevar", jp: "運ぶ", cn: "携带", it: "portare", ua: "нести"}
+    pos: ["v"]
+  catch:
+    tr: {de: "fangen", fr: "attraper", es: "atrapar", jp: "捕まえる", cn: "抓住", it: "catturare", ua: "ловити"}
+    pos: ["v"]
+  chase:
+    tr: {de: "jagen", fr: "chasser", es: "perseguir", jp: "追いかける", cn: "追逐", it: "inseguire", ua: "переслідувати"}
+    pos: ["v"]
+  chew:
+    tr: {de: "kauen", fr: "mâcher", es: "masticar", jp: "噛む", cn: "咀嚼", it: "masticare", ua: "жувати"}
+    pos: ["v"]
+  choose:
+    tr: {de: "wählen", fr: "choisir", es: "elegir", jp: "選択する", cn: "选择", it: "scegliere", ua: "вибирати"}
+    pos: ["v"]
+  climb:
+    tr: {de: "klettern", fr: "grimper", es: "escalar", jp: "登る", cn: "攀登", it: "salire", ua: "лазити"}
+    pos: ["v"]
+  comb:
+    tr: {de: "kämmen", fr: "peigner", es: "peinar", jp: "とかす", cn: "梳理", it: "pettinare", ua: "розчісувати"}
+    pos: ["v"]
+  come:
+    tr: {de: "kommen", fr: "venir", es: "venir", jp: "来る", cn: "来", it: "venire", ua: "прийти"}
+    pos: ["v"]
+  copy:
+    tr: {de: "kopieren", fr: "copier", es: "copiar", jp: "コピーする", cn: "复制", it: "copiare", ua: "копіювати"}
+    pos: ["v"]
+  crawl:
+    tr: {de: "kriechen", fr: "ramper", es: "gatear", jp: "這う", cn: "爬行", it: "strisciare", ua: "повзати"}
+    pos: ["v"]
+  cut:
+    tr: {de: "schneiden", fr: "couper", es: "cortar", jp: "切る", cn: "切割", it: "tagliare", ua: "різати"}
+    pos: ["v"]
+  dig:
+    tr: {de: "graben", fr: "creuser", es: "cavar", jp: "掘る", cn: "挖", it: "scavare", ua: "копати"}
+    pos: ["v"]
+  dip:
+    tr: {de: "eintauchen", fr: "tremper", es: "sumergir", jp: "浸す", cn: "浸入", it: "immergere", ua: "занурювати"}
+    pos: ["v"]
+  dive:
+    tr: {de: "tauchen", fr: "plonger", es: "bucear", jp: "潜る", cn: "潜水", it: "immergersi", ua: "пірнати"}
+    pos: ["v"]
+  do:
+    tr: {de: "tun", fr: "faire", es: "hacer", jp: "すること", cn: "要做", it: "fare", ua: "робити"}
+    pos: ["v"]
+  doodle:
+    tr: {de: "kritzeln", fr: "griffonner", es: "garabatear", jp: "落書きする", cn: "涂鸦", it: "scarabocchiare", ua: "каракулювати"}
+    pos: ["v"]
+  drop:
+    tr: {de: "fallen lassen", fr: "laisser tomber", es: "dejar caer", jp: "落とす", cn: "放下", it: "far cadere", ua: "впасти"}
+    pos: ["v"]
+  dust:
+    tr: {de: "Staub wischen", fr: "épousseter", es: "al polvo", jp: "ほこりに", cn: "去灰尘", it: "alla polvere", ua: "порошити"}
+    pos: ["v"]
+  enter:
+    tr: {de: "eintreten", fr: "entrer", es: "entrar", jp: "入る", cn: "进入", it: "entrare", ua: "входити"}
+    pos: ["v"]
+  erase:
+    tr: {de: "löschen", fr: "effacer", es: "borrar", jp: "消す", cn: "擦除", it: "cancellare", ua: "стерти"}
+    pos: ["v"]
+  feed:
+    tr: {de: "füttern", fr: "se nourrir", es: "alimentar", jp: "餌を与える", cn: "喂养", it: "nutrire", ua: "годувати"}
+    pos: ["v"]
+  fill:
+    tr: {de: "füllen", fr: "remplir", es: "llenar", jp: "埋める", cn: "填补", it: "riempire", ua: "заповнювати"}
+    pos: ["v"]
+  fix:
+    tr: {de: "reparieren", fr: "réparer", es: "arreglar", jp: "直す", cn: "修复", it: "riparare", ua: "виправити"}
+    pos: ["v"]
+  flap:
+    tr: {de: "flattern", fr: "rabattre", es: "aletear", jp: "はためく", cn: "拍打", it: "sbattere", ua: "махати"}
+    pos: ["v"]
+  float:
+    tr: {de: "schweben", fr: "flotter", es: "flotar", jp: "浮く", cn: "漂浮", it: "galleggiare", ua: "плавати"}
+    pos: ["v"]
+  fold:
+    tr: {de: "falten", fr: "plier", es: "doblar", jp: "折りたたむ", cn: "折叠", it: "piegare", ua: "складати"}
+    pos: ["v"]
+  follow:
+    tr: {de: "folgen", fr: "à suivre", es: "seguir", jp: "従う", cn: "跟随", it: "seguire", ua: "слідувати"}
+    pos: ["v"]
+  giggle:
+    tr: {de: "kichern", fr: "rire", es: "reírse", jp: "くすくす笑う", cn: "咯咯笑", it: "ridacchiare", ua: "хихікати"}
+    pos: ["v"]
+  glow:
+    tr: {de: "leuchten", fr: "briller", es: "brillar", jp: "光る", cn: "发光", it: "brillare", ua: "світитися"}
+    pos: ["v"]
+  go:
+    tr: {de: "gehen", fr: "aller", es: "ir", jp: "持ち帰り", cn: "去", it: "andare", ua: "йти"}
+    pos: ["v"]
+  grab:
+    tr: {de: "greifen", fr: "saisir", es: "agarrar", jp: "つかむ", cn: "抢", it: "afferrare", ua: "схопити"}
+    pos: ["v"]
+  greet:
+    tr: {de: "grüßen", fr: "saluer", es: "saludar", jp: "挨拶する", cn: "打招呼", it: "salutare", ua: "вітати"}
+    pos: ["v"]
+  grow:
+    tr: {de: "wachsen", fr: "grandir", es: "crecer", jp: "成長する", cn: "成长", it: "crescere", ua: "рости"}
+    pos: ["v"]
+  guess:
+    tr: {de: "raten", fr: "deviner", es: "adivinar", jp: "推測する", cn: "猜测", it: "indovinare", ua: "здогадуватися"}
+    pos: ["v"]
+  hand:
+    tr: {de: "überreichen", fr: "donner", es: "entregar", jp: "手渡す", cn: "递给", it: "consegnare", ua: "передавати"}
+    pos: ["v"]
+  hang:
+    tr: {de: "hängen", fr: "pendre", es: "colgar", jp: "吊るす", cn: "挂", it: "appendere", ua: "повісити"}
+    pos: ["v"]
+  hide:
+    tr: {de: "verstecken", fr: "se cacher", es: "esconderse", jp: "隠す", cn: "隐藏", it: "nascondere", ua: "ховатися"}
+    pos: ["v"]
+  hold:
+    tr: {de: "halten", fr: "tenir", es: "sostener", jp: "保持する", cn: "持有", it: "tenere", ua: "тримати"}
+    pos: ["v"]
+  hum:
+    tr: {de: "summen", fr: "fredonner", es: "tararear", jp: "ハミングする", cn: "哼哼", it: "canticchiare", ua: "гудіти"}
+    pos: ["v"]
+  hurry:
+    tr: {de: "sich beeilen", fr: "se dépêcher", es: "darse prisa", jp: "急ぐ", cn: "快点", it: "fare in fretta", ua: "поспішати"}
+    pos: ["v"]
+  keep:
+    tr: {de: "behalten", fr: "garder", es: "mantener", jp: "保つ", cn: "保留", it: "mantenere", ua: "зберігати"}
+    pos: ["v"]
+  kick:
+    tr: {de: "treten", fr: "donner un coup de pied", es: "patear", jp: "蹴る", cn: "踢", it: "calciare", ua: "бити ногою"}
+    pos: ["v"]
+  kiss:
+    tr: {de: "küssen", fr: "embrasser", es: "besar", jp: "キスする", cn: "亲吻", it: "baciare", ua: "цілувати"}
+    pos: ["v"]
+  knock:
+    tr: {de: "klopfen", fr: "frapper", es: "tocar", jp: "ノックする", cn: "敲", it: "bussare", ua: "стукати"}
+    pos: ["v"]
+  land:
+    tr: {de: "landen", fr: "atterrir", es: "aterrizar", jp: "着陸する", cn: "着陆", it: "atterrare", ua: "приземлятися"}
+    pos: ["v"]
+  learn:
+    tr: {de: "lernen", fr: "apprendre", es: "aprender", jp: "学ぶ", cn: "学习", it: "per imparare", ua: "вчитися"}
+    pos: ["v"]
+  lift:
+    tr: {de: "heben", fr: "soulever", es: "levantar", jp: "持ち上げる", cn: "举起", it: "sollevare", ua: "піднімати"}
+    pos: ["v"]
+  line:
+    tr: {de: "sich anstellen", fr: "faire la queue", es: "hacer fila", jp: "並ぶ", cn: "排队", it: "fare la fila", ua: "ставати в чергу"}
+    pos: ["v"]
+  listen:
+    tr: {de: "zuhören", fr: "écouter", es: "escuchar", jp: "聞く", cn: "听", it: "ascoltare", ua: "слухати"}
+    pos: ["v"]
+  live:
+    tr: {de: "leben", fr: "vivre", es: "vivir", jp: "生きる", cn: "生活", it: "vivere", ua: "жити"}
+    pos: ["v"]
+  load:
+    tr: {de: "laden", fr: "charger", es: "cargar", jp: "ロードする", cn: "加载", it: "caricare", ua: "завантажити"}
+    pos: ["v"]
+  love:
+    tr: {de: "lieben", fr: "aimer", es: "amar", jp: "愛すること", cn: "去爱", it: "amare", ua: "любити"}
+    pos: ["v"]
+  make:
+    tr: {de: "machen", fr: "faire", es: "hacer", jp: "作る", cn: "使", it: "fare", ua: "зробити"}
+    pos: ["v"]
+  march:
+    tr: {de: "marschieren", fr: "marcher", es: "marchar", jp: "行進する", cn: "游行", it: "marciare", ua: "марширувати"}
+    pos: ["v"]
+  mix:
+    tr: {de: "mischen", fr: "mélanger", es: "mezclar", jp: "混ぜる", cn: "混合", it: "mescolare", ua: "змішувати"}
+    pos: ["v"]
+  move:
+    tr: {de: "bewegen", fr: "bouger", es: "moverse", jp: "移動する", cn: "移动", it: "muoversi", ua: "рухатися"}
+    pos: ["v"]
+  nod:
+    tr: {de: "nicken", fr: "hocher la tête", es: "asentir", jp: "うなずく", cn: "点头", it: "annuire", ua: "кивати"}
+    pos: ["v"]
+  pack:
+    tr: {de: "packen", fr: "emballer", es: "empacar", jp: "梱包する", cn: "打包", it: "fare le valigie", ua: "пакувати"}
+    pos: ["v"]
+  pass:
+    tr: {de: "passieren", fr: "passer", es: "pasar", jp: "通過する", cn: "通过", it: "passare", ua: "проходити"}
+    pos: ["v"]
+  pat:
+    tr: {de: "streicheln", fr: "tapoter", es: "acariciar", jp: "撫でる", cn: "拍拍", it: "dare una pacca", ua: "погладити"}
+    pos: ["v"]
+  peek:
+    tr: {de: "einen Blick darauf werfen", fr: "jeter un coup d'oeil", es: "echar un vistazo", jp: "覗く", cn: "偷看", it: "sbirciare", ua: "підглядати"}
+    pos: ["v"]
+  pick:
+    tr: {de: "auswählen", fr: "choisir", es: "escoger", jp: "選ぶ", cn: "挑选", it: "scegliere", ua: "вибирати"}
+    pos: ["v"]
+  pour:
+    tr: {de: "gießen", fr: "verser", es: "verter", jp: "注ぐ", cn: "倒", it: "versare", ua: "наливати"}
+    pos: ["v"]
+  press:
+    tr: {de: "drücken", fr: "appuyer", es: "presionar", jp: "押す", cn: "按", it: "premere", ua: "натиснути"}
+    pos: ["v"]
+  pretend:
+    tr: {de: "vorgeben", fr: "faire semblant", es: "fingir", jp: "ふりをする", cn: "假装", it: "fingere", ua: "прикидатися"}
+    pos: ["v"]
+  race:
+    tr: {de: "Rennen fahren", fr: "faire la course", es: "correr", jp: "レースする", cn: "比赛", it: "correre", ua: "змагатися"}
+    pos: ["v"]
+  reach:
+    tr: {de: "erreichen", fr: "atteindre", es: "alcanzar", jp: "到達する", cn: "达到", it: "raggiungere", ua: "досягти"}
+    pos: ["v"]
+  rest:
+    tr: {de: "sich ausruhen", fr: "se reposer", es: "descansar", jp: "休む", cn: "休息", it: "riposare", ua: "відпочивати"}
+    pos: ["v"]
+  rinse:
+    tr: {de: "spülen", fr: "rincer", es: "enjuagar", jp: "洗い流す", cn: "冲洗", it: "risciacquare", ua: "полоскати"}
+    pos: ["v"]
+  roll:
+    tr: {de: "rollen", fr: "rouler", es: "rodar", jp: "転がす", cn: "滚动", it: "rotolare", ua: "котитися"}
+    pos: ["v"]
+  rub:
+    tr: {de: "reiben", fr: "frotter", es: "frotar", jp: "こする", cn: "擦", it: "strofinare", ua: "терти"}
+    pos: ["v"]
+  save:
+    tr: {de: "retten", fr: "sauver", es: "guardar", jp: "保存する", cn: "保存", it: "salvare", ua: "зберегти"}
+    pos: ["v"]
+  say:
+    tr: {de: "sagen", fr: "dire", es: "decir", jp: "言うこと", cn: "说", it: "dire", ua: "сказати"}
+    pos: ["v"]
+  scoop:
+    tr: {de: "schöpfen", fr: "écoper", es: "sacar", jp: "すくう", cn: "舀", it: "raccogliere", ua: "черпати"}
+    pos: ["v"]
+  scrub:
+    tr: {de: "schrubben", fr: "frotter", es: "fregar", jp: "こする", cn: "擦洗", it: "strofinare", ua: "скрабувати"}
+    pos: ["v"]
+  shake:
+    tr: {de: "schütteln", fr: "secouer", es: "sacudir", jp: "振る", cn: "摇动", it: "scuotere", ua: "трясти"}
+    pos: ["v"]
+  shout:
+    tr: {de: "schreien", fr: "crier", es: "gritar", jp: "叫ぶ", cn: "喊叫", it: "gridare", ua: "кричати"}
+    pos: ["v"]
+  show:
+    tr: {de: "zeigen", fr: "montrer", es: "mostrar", jp: "見せる", cn: "展示", it: "mostrare", ua: "показати"}
+    pos: ["v"]
+  slide:
+    tr: {de: "gleiten", fr: "glisser", es: "deslizarse", jp: "スライドする", cn: "滑动", it: "far scorrere", ua: "ковзати"}
+    pos: ["v"]
+  smell:
+    tr: {de: "riechen", fr: "sentir", es: "oler", jp: "匂いを嗅ぐ", cn: "闻", it: "annusare", ua: "пахнути"}
+    pos: ["v"]
+  snap:
+    tr: {de: "schnappen", fr: "casser", es: "chasquear", jp: "スナップする", cn: "捕捉", it: "scattare", ua: "зачіпати"}
+    pos: ["v"]
+  sneeze:
+    tr: {de: "niesen", fr: "éternuer", es: "estornudar", jp: "くしゃみをする", cn: "打喷嚏", it: "starnutire", ua: "чхати"}
+    pos: ["v"]
+  spin:
+    tr: {de: "drehen", fr: "tourner", es: "girar", jp: "回す", cn: "旋转", it: "girare", ua: "прясти"}
+    pos: ["v"]
+  splash:
+    tr: {de: "planschen", fr: "éclabousser", es: "salpicar", jp: "飛び散る", cn: "溅起", it: "schizzare", ua: "бризкати"}
+    pos: ["v"]
+  stack:
+    tr: {de: "stapeln", fr: "empiler", es: "apilar", jp: "積み重ねる", cn: "堆叠", it: "impilare", ua: "укладати"}
+    pos: ["v"]
+  start:
+    tr: {de: "beginnen", fr: "pour commencer", es: "para empezar", jp: "始める", cn: "开始", it: "per iniziare", ua: "почати"}
+    pos: ["v"]
+  stay:
+    tr: {de: "bleiben", fr: "rester", es: "quedarse", jp: "滞在する", cn: "留下来", it: "restare", ua: "залишитися"}
+    pos: ["v"]
+  step:
+    tr: {de: "treten", fr: "faire un pas", es: "dar un paso", jp: "ステップする", cn: "迈出一步", it: "fare un passo", ua: "крокувати"}
+    pos: ["v"]
+  stir:
+    tr: {de: "umrühren", fr: "remuer", es: "revolver", jp: "かき混ぜる", cn: "搅拌", it: "mescolare", ua: "перемішати"}
+    pos: ["v"]
+  stop:
+    tr: {de: "aufzuhören", fr: "arrêter", es: "parar", jp: "止める", cn: "停止", it: "fermarsi", ua: "щоб зупинитися"}
+    pos: ["v"]
+  stretch:
+    tr: {de: "strecken", fr: "s'étirer", es: "estirar", jp: "ストレッチする", cn: "伸展", it: "allungare", ua: "розтягуватися"}
+    pos: ["v"]
+  tap:
+    tr: {de: "tippen", fr: "taper", es: "tocar", jp: "タップする", cn: "点击", it: "toccare", ua: "торкнутися"}
+    pos: ["v"]
+  taste:
+    tr: {de: "nach Geschmack", fr: "goûter", es: "al gusto", jp: "味わう", cn: "品尝", it: "assaggiare", ua: "за смаком"}
+    pos: ["v"]
+  teach:
+    tr: {de: "lehren", fr: "enseigner", es: "enseñar", jp: "教える", cn: "教导", it: "insegnare", ua: "навчати"}
+    pos: ["v"]
+  thank:
+    tr: {de: "sich bedanken", fr: "remercier", es: "agradecer", jp: "感謝する", cn: "感谢", it: "per ringraziare", ua: "дякувати"}
+    pos: ["v"]
+  think:
+    tr: {de: "denken", fr: "penser", es: "pensar", jp: "考える", cn: "思考", it: "pensare", ua: "думати"}
+    pos: ["v"]
+  throw:
+    tr: {de: "werfen", fr: "jeter", es: "tirar", jp: "投げる", cn: "扔", it: "lanciare", ua: "кидати"}
+    pos: ["v"]
+  tickle:
+    tr: {de: "kitzeln", fr: "chatouiller", es: "hacer cosquillas", jp: "くすぐる", cn: "挠痒痒", it: "solleticare", ua: "лоскотати"}
+    pos: ["v"]
+  tip:
+    tr: {de: "Trinkgeld geben", fr: "donner un pourboire", es: "dar propina", jp: "チップを渡す", cn: "小费", it: "dare la mancia", ua: "дати чайові"}
+    pos: ["v"]
+  toss:
+    tr: {de: "werfen", fr: "lancer", es: "tirar", jp: "投げる", cn: "扔", it: "lanciare", ua: "підкидати"}
+    pos: ["v"]
+  touch:
+    tr: {de: "berühren", fr: "toucher", es: "tocar", jp: "触れる", cn: "触摸", it: "toccare", ua: "торкатися"}
+    pos: ["v"]
+  trace:
+    tr: {de: "nachspüren", fr: "tracer", es: "rastrear", jp: "追跡する", cn: "追踪", it: "tracciare", ua: "простежити"}
+    pos: ["v"]
+  trade:
+    tr: {de: "tauschen", fr: "échanger", es: "comerciar", jp: "取引する", cn: "进行交易", it: "commerciare", ua: "торгувати"}
+    pos: ["v"]
+  try:
+    tr: {de: "versuchen", fr: "essayer", es: "intentarlo", jp: "試してみる", cn: "尝试", it: "provare", ua: "спробувати"}
+    pos: ["v"]
+  turn:
+    tr: {de: "umdrehen", fr: "tourner", es: "girar", jp: "回す", cn: "转动", it: "girare", ua: "обертатися"}
+    pos: ["v"]
+  visit:
+    tr: {de: "besuchen", fr: "visiter", es: "visitar", jp: "訪問する", cn: "参观", it: "da visitare", ua: "відвідати"}
+    pos: ["v"]
+  wait:
+    tr: {de: "warten", fr: "attendre", es: "esperar", jp: "待つ", cn: "等待", it: "aspettare", ua: "чекати"}
+    pos: ["v"]
+  wake:
+    tr: {de: "aufwachen", fr: "se réveiller", es: "despertar", jp: "目覚める", cn: "醒来", it: "svegliarsi", ua: "розбудити"}
+    pos: ["v"]
+  water:
+    tr: {de: "gießen", fr: "arroser", es: "regar", jp: "水に", cn: "浇水", it: "all'acqua", ua: "поливати"}
+    pos: ["v"]
+  wiggle:
+    tr: {de: "wackeln", fr: "se tortiller", es: "menear", jp: "小刻みに動く", cn: "摆动", it: "oscillare", ua: "ворушитися"}
+    pos: ["v"]
+  wipe:
+    tr: {de: "abwischen", fr: "essuyer", es: "limpiar", jp: "拭く", cn: "擦拭", it: "pulire", ua: "витирати"}
+    pos: ["v"]
+  wish:
+    tr: {de: "wünschen", fr: "souhaiter", es: "desear", jp: "望むこと", cn: "想要", it: "desiderare", ua: "бажати"}
+    pos: ["v"]
+  write:
+    tr: {de: "schreiben", fr: "écrire", es: "escribir", jp: "書く", cn: "写", it: "scrivere", ua: "писати"}
+    pos: ["v"]
+  yell:
+    tr: {de: "schreien", fr: "crier", es: "gritar", jp: "叫ぶ", cn: "喊叫", it: "urlare", ua: "кричати"}
+    pos: ["v"]
+  zip:
+    tr: {de: "zumachen", fr: "fermer la fermeture éclair", es: "cerrar la cremallera", jp: "ジッパーを閉める", cn: "拉上拉链", it: "chiudere la cerniera", ua: "застібати блискавку"}
+    pos: ["v"]
+  zoom:
+    tr: {de: "schnell fahren", fr: "foncer", es: "ir rápido", jp: "びゅんと進む", cn: "快速移动", it: "sfrecciare", ua: "мчати"}
+    pos: ["v"]
+  act:
+    tr: {de: "handeln", fr: "agir", es: "actuar", jp: "行動する", cn: "采取行动", it: "agire", ua: "діяти"}
+    pos: ["v"]
+  agree:
+    tr: {de: "zustimmen", fr: "être d'accord", es: "estar de acuerdo", jp: "同意する", cn: "同意", it: "essere d'accordo", ua: "погоджуватися"}
+    pos: ["v"]
+  aim:
+    tr: {de: "zielen", fr: "viser", es: "apuntar", jp: "目指す", cn: "瞄准", it: "mirare", ua: "цілитися"}
+    pos: ["v"]
+  answer:
+    tr: {de: "antworten", fr: "répondre", es: "responder", jp: "答える", cn: "回答", it: "per rispondere", ua: "відповідати"}
+    pos: ["v"]
+  arrive:
+    tr: {de: "ankommen", fr: "arriver", es: "llegar", jp: "到着する", cn: "到达", it: "arrivare", ua: "прибути"}
+    pos: ["v"]
+  bang:
+    tr: {de: "knallen", fr: "cogner", es: "golpear", jp: "強打する", cn: "砰", it: "sbattere", ua: "стукати"}
+    pos: ["v"]
+  become:
+    tr: {de: "to become", fr: "devenir", es: "convertirse en", jp: "なる", cn: "成为", it: "diventare", ua: "стати"}
+    pos: ["v"]
+  begin:
+    tr: {de: "beginnen", fr: "pour commencer", es: "para empezar", jp: "始める", cn: "开始", it: "per iniziare", ua: "почати"}
+    pos: ["v"]
+  belong:
+    tr: {de: "dazugehören", fr: "appartenir", es: "pertenecer", jp: "所属する", cn: "归属", it: "appartenere", ua: "належати"}
+    pos: ["v"]
+  bless:
+    tr: {de: "segnen", fr: "bénir", es: "bendecir", jp: "祝福する", cn: "祝福", it: "benedire", ua: "благословляти"}
+    pos: ["v"]
+  bloom:
+    tr: {de: "blühen", fr: "fleurir", es: "florecer", jp: "咲く", cn: "开花", it: "fiorire", ua: "цвісти"}
+    pos: ["v"]
+  boil:
+    tr: {de: "kochen", fr: "faire bouillir", es: "hervir", jp: "沸騰させる", cn: "煮沸", it: "bollire", ua: "варити"}
+    pos: ["v"]
+  borrow:
+    tr: {de: "ausleihen", fr: "emprunter", es: "pedir prestado", jp: "借りる", cn: "借", it: "prendere in prestito", ua: "позичати"}
+    pos: ["v"]
+  braid:
+    tr: {de: "flechten", fr: "tresser", es: "trenzar", jp: "三つ編みにする", cn: "编辫子", it: "intrecciare", ua: "заплітати"}
+    pos: ["v"]
+  break:
+    tr: {de: "brechen", fr: "briser", es: "romper", jp: "壊す", cn: "打破", it: "rompere", ua: "зламати"}
+    pos: ["v"]
+  breathe:
+    tr: {de: "atmen", fr: "respirer", es: "respirar", jp: "息をする", cn: "呼吸", it: "respirare", ua: "дихати"}
+    pos: ["v"]
+  bubble:
+    tr: {de: "sprudeln", fr: "faire des bulles", es: "burbujear", jp: "泡立つ", cn: "冒泡", it: "bollire", ua: "пузиритися"}
+    pos: ["v"]
+  bump:
+    tr: {de: "stoßen", fr: "cogner", es: "chocar", jp: "ぶつかる", cn: "碰撞", it: "urtare", ua: "зіткнутися"}
+    pos: ["v"]
+  bury:
+    tr: {de: "begraben", fr: "enterrer", es: "enterrar", jp: "埋める", cn: "埋葬", it: "seppellire", ua: "ховати"}
+    pos: ["v"]
+  camp:
+    tr: {de: "campen", fr: "camper", es: "acampar", jp: "キャンプへ", cn: "露营", it: "campeggiare", ua: "до табору"}
+    pos: ["v"]
+  care:
+    tr: {de: "sich kümmern", fr: "se soucier", es: "cuidar", jp: "気にする", cn: "照顾", it: "prendersi cura", ua: "доглядати"}
+    pos: ["v"]
+  chat:
+    tr: {de: "plaudern", fr: "discuter", es: "charlar", jp: "チャットする", cn: "聊天", it: "per chiacchierare", ua: "спілкуватися"}
+    pos: ["v"]
+  check:
+    tr: {de: "prüfen", fr: "vérifier", es: "comprobar", jp: "確認する", cn: "检查", it: "per controllare", ua: "щоб перевірити"}
+    pos: ["v"]
+  click:
+    tr: {de: "klicken", fr: "cliquer", es: "hacer clic", jp: "クリックする", cn: "单击", it: "fare clic", ua: "клацати"}
+    pos: ["v"]
+  collect:
+    tr: {de: "sammeln", fr: "collecter", es: "recoger", jp: "集める", cn: "收集", it: "raccogliere", ua: "збирати"}
+    pos: ["v"]
+  color:
+    tr: {de: "ausmalen", fr: "colorier", es: "colorear", jp: "色を付ける", cn: "着色", it: "colorare", ua: "розфарбувати"}
+    pos: ["v"]
+  cover:
+    tr: {de: "abdecken", fr: "couvrir", es: "cubrir", jp: "カバーする", cn: "覆盖", it: "coprire", ua: "покривати"}
+    pos: ["v"]
+  crack:
+    tr: {de: "knacken", fr: "craquer", es: "agrietarse", jp: "割る", cn: "破解", it: "rompere", ua: "тріснути"}
+    pos: ["v"]
+  crash:
+    tr: {de: "abstürzen", fr: "s'écraser", es: "estrellarse", jp: "クラッシュする", cn: "崩溃", it: "schiantarsi", ua: "розбитися"}
+    pos: ["v"]
+  cross:
+    tr: {de: "überqueren", fr: "traverser", es: "cruzar", jp: "渡る", cn: "穿越", it: "attraversare", ua: "перетинати"}
+    pos: ["v"]
+  cuddle:
+    tr: {de: "kuscheln", fr: "faire des câlins", es: "abrazar", jp: "抱きしめる", cn: "拥抱", it: "coccolare", ua: "обійматися"}
+    pos: ["v"]
+  curl:
+    tr: {de: "kräuseln", fr: "friser", es: "rizar", jp: "カールする", cn: "卷曲", it: "arricciare", ua: "завиватися"}
+    pos: ["v"]
+  dab:
+    tr: {de: "tupfen", fr: "tamponner", es: "frotar", jp: "軽くたたく", cn: "轻拍", it: "tamponare", ua: "мазати"}
+    pos: ["v"]
+  dare:
+    tr: {de: "wagen", fr: "oser", es: "atreverse", jp: "あえてする", cn: "敢于", it: "osare", ua: "зважитися"}
+    pos: ["v"]
+  dash:
+    tr: {de: "rennen", fr: "se précipiter", es: "correr", jp: "ダッシュする", cn: "冲刺", it: "precipitare", ua: "кидатися"}
+    pos: ["v"]
+  deliver:
+    tr: {de: "liefern", fr: "livrer", es: "entregar", jp: "届ける", cn: "交付", it: "consegnare", ua: "доставити"}
+    pos: ["v"]
+  dress:
+    tr: {de: "anziehen", fr: "s'habiller", es: "vestirse", jp: "服を着る", cn: "穿衣服", it: "vestirsi", ua: "одягатися"}
+    pos: ["v"]
+  drive:
+    tr: {de: "fahren", fr: "conduire", es: "conducir", jp: "運転する", cn: "开车", it: "guidare", ua: "водити"}
+    pos: ["v"]
+  earn:
+    tr: {de: "verdienen", fr: "gagner", es: "ganar", jp: "稼ぐ", cn: "赚取", it: "guadagnare", ua: "заробляти"}
+    pos: ["v"]
+  enjoy:
+    tr: {de: "genießen", fr: "profiter", es: "disfrutar", jp: "楽しむ", cn: "享受", it: "per godere", ua: "насолоджуватися"}
+    pos: ["v"]
+  explore:
+    tr: {de: "erkunden", fr: "explorer", es: "explorar", jp: "探検する", cn: "探索", it: "esplorare", ua: "досліджувати"}
+    pos: ["v"]
+  face:
+    tr: {de: "anschauen", fr: "faire face", es: "enfrentar", jp: "向き合う", cn: "面对", it: "affrontare", ua: "стикатися"}
+    pos: ["v"]
+  fall:
+    tr: {de: "fallen", fr: "tomber", es: "caer", jp: "落ちる", cn: "跌倒", it: "cadere", ua: "падати"}
+    pos: ["v"]
+  fasten:
+    tr: {de: "befestigen", fr: "attacher", es: "sujetar", jp: "締める", cn: "紧固", it: "fissare", ua: "закріплювати"}
+    pos: ["v"]
+  fetch:
+    tr: {de: "holen", fr: "aller chercher", es: "ir a buscar", jp: "取ってくる", cn: "去取", it: "andare a prendere", ua: "приносити"}
+    pos: ["v"]
+  finish:
+    tr: {de: "beenden", fr: "pour finir", es: "terminar", jp: "終わらせる", cn: "完成", it: "per finire", ua: "закінчити"}
+    pos: ["v"]
+  fit:
+    tr: {de: "passen", fr: "s'adapter", es: "encajar", jp: "フィットする", cn: "适合", it: "adattarsi", ua: "підходити"}
+    pos: ["v"]
+  freeze:
+    tr: {de: "einfrieren", fr: "geler", es: "congelar", jp: "凍らせる", cn: "冻结", it: "congelare", ua: "замерзнути"}
+    pos: ["v"]
+  fry:
+    tr: {de: "braten", fr: "faire frire", es: "freír", jp: "揚げる", cn: "煎", it: "friggere", ua: "смажити"}
+    pos: ["v"]
+  gather:
+    tr: {de: "sammeln", fr: "rassembler", es: "reunir", jp: "集まる", cn: "聚集", it: "raccogliere", ua: "збиратися"}
+    pos: ["v"]
+  glue:
+    tr: {de: "kleben", fr: "coller", es: "pegar", jp: "接着する", cn: "粘合", it: "incollare", ua: "клеїти"}
+    pos: ["v"]
+  grin:
+    tr: {de: "grinsen", fr: "sourire", es: "sonreír", jp: "ニヤニヤする", cn: "咧嘴笑", it: "sorridere", ua: "посміхатися"}
+    pos: ["v"]
+  guard:
+    tr: {de: "bewachen", fr: "garder", es: "proteger", jp: "守る", cn: "守护", it: "custodire", ua: "охороняти"}
+    pos: ["v"]
+  guide:
+    tr: {de: "führen", fr: "guider", es: "guiar", jp: "導く", cn: "指导", it: "guidare", ua: "направляти"}
+    pos: ["v"]
+  hammer:
+    tr: {de: "hämmern", fr: "marteler", es: "martillar", jp: "ハンマーで叩く", cn: "锤击", it: "martellare", ua: "забити"}
+    pos: ["v"]
+  happen:
+    tr: {de: "passieren", fr: "arriver", es: "suceder", jp: "起こる", cn: "发生", it: "accadere", ua: "статися"}
+    pos: ["v"]
+  haul:
+    tr: {de: "schleppen", fr: "transporter", es: "transportar", jp: "運ぶ", cn: "拖运", it: "trasportare", ua: "тягнути"}
+    pos: ["v"]
+  heal:
+    tr: {de: "heilen", fr: "guérir", es: "sanar", jp: "癒す", cn: "治愈", it: "per guarire", ua: "зцілити"}
+    pos: ["v"]
+  hike:
+    tr: {de: "wandern", fr: "faire une randonnée", es: "caminar", jp: "ハイキングする", cn: "徒步旅行", it: "fare un'escursione", ua: "піти в похід"}
+    pos: ["v"]
+  hunt:
+    tr: {de: "jagen", fr: "chasser", es: "cazar", jp: "狩りをする", cn: "打猎", it: "cacciare", ua: "полювати"}
+    pos: ["v"]
+  imagine:
+    tr: {de: "sich vorstellen", fr: "imaginer", es: "imaginar", jp: "想像する", cn: "想象", it: "immaginare", ua: "уявити"}
+    pos: ["v"]
+  join:
+    tr: {de: "beitreten", fr: "rejoindre", es: "unirse", jp: "参加する", cn: "加入", it: "unirsi", ua: "щоб приєднатися"}
+    pos: ["v"]
+  joke:
+    tr: {de: "scherzen", fr: "plaisanter", es: "bromear", jp: "冗談を言う", cn: "开玩笑", it: "per scherzare", ua: "пожартувати"}
+    pos: ["v"]
+  knit:
+    tr: {de: "stricken", fr: "tricoter", es: "tejer", jp: "編む", cn: "编织", it: "lavorare a maglia", ua: "в'язати"}
+    pos: ["v"]
+  lead:
+    tr: {de: "führen", fr: "diriger", es: "liderar", jp: "導く", cn: "领导", it: "condurre", ua: "керувати"}
+    pos: ["v"]
+  lean:
+    tr: {de: "lehnen", fr: "se pencher", es: "inclinarse", jp: "傾く", cn: "倾斜", it: "appoggiarsi", ua: "нахилятися"}
+    pos: ["v"]
+  leap:
+    tr: {de: "springen", fr: "sauter", es: "saltar", jp: "跳躍する", cn: "跳跃", it: "saltare", ua: "стрибати"}
+    pos: ["v"]
+  leave:
+    tr: {de: "gehen", fr: "partir", es: "dejar", jp: "去る", cn: "离开", it: "lasciare", ua: "піти"}
+    pos: ["v"]
+  lend:
+    tr: {de: "verleihen", fr: "prêter", es: "prestar", jp: "貸す", cn: "借出", it: "prestare", ua: "позичати"}
+    pos: ["v"]
+  let:
+    tr: {de: "lassen", fr: "laisser", es: "dejar", jp: "させます", cn: "让", it: "lasciare", ua: "дозволяти"}
+    pos: ["v"]
+  lick:
+    tr: {de: "lecken", fr: "lécher", es: "lamer", jp: "なめる", cn: "舔", it: "leccare", ua: "облизувати"}
+    pos: ["v"]
+  like:
+    tr: {de: "mögen", fr: "aimer", es: "gustar", jp: "好きになる", cn: "喜欢", it: "piacere", ua: "подобатися"}
+    pos: ["v"]
+  mail:
+    tr: {de: "verschicken", fr: "envoyer", es: "enviar por correo", jp: "郵送する", cn: "邮寄", it: "spedire", ua: "надсилати"}
+    pos: ["v"]

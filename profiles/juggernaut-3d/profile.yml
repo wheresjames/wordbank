@@ -1,0 +1,38 @@
+schema_version: 1
+name: juggernaut-3d
+description: Juggernaut XL Ragnarok — technical 3D product renders, no LoRA
+type: images
+model:
+  checkpoint: juggernautXL_ragnarokBy.safetensors
+  lora: null
+  lora_strength: null
+rembg_model: birefnet-general
+prompt:
+  template: 3D render, single {item}, isolated on light gray background, studio lighting, product visualization, centered, large, complete subject fully visible, sharp details, clean, high quality
+  categories:
+    animal: 3D render, single {item}, full body, isolated on light gray background, studio lighting, centered, large, entire animal visible from head to tail, sharp details, clean, high quality
+    food: 3D render, single {item}, isolated on light gray background, studio lighting, product visualization, centered, large, complete item fully visible, sharp details, clean, high quality
+    vehicle: 3D render, single {item}, isolated on light gray background, studio lighting, product visualization, centered, large, complete vehicle fully visible, sharp details, clean, high quality
+    furniture: 3D render, single {item}, isolated on light gray background, studio lighting, product visualization, centered, large, complete piece fully visible, sharp details, clean, high quality
+    city: 3D render, icon of a {item}, isolated on light gray background, studio lighting, centered, large, sharp details, minimal detail, clean, high quality
+    verb: 3D Pixar-style character render, cute friendly cartoon child or two children {desc}, full body, clear readable action pose, the verb is obvious from the pose and props, minimal prop-and-action scene, include every prop or context object named in the description, keep context objects simple and fully visible, isolated on light gray background, soft studio lighting, centered, large, wholesome, child-friendly, sharp details, clean, high quality
+  negative: cartoon, illustration, painting, watercolor, sketch, pencil, 2d, flat colors, anime, drawing, cell shading, storybook, dark background, black background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, people, humans, harsh shadow, cast shadow, reflection, background elements, background objects, background figures, small, tiny
+  negative_categories:
+    animal: cartoon, illustration, painting, watercolor, sketch, pencil, 2d, flat colors, anime, drawing, cell shading, storybook, dark background, black background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, clothes, clothing, dressed, outfit, costume, hat, shirt, flowers, plants, grass, ground, dirt, branches, trees, scenery, landscape, environment, props, accessories, decorations, second animal, other animals, background animals, people, humans, harsh shadow, cast shadow, reflection, background elements, background objects, background figures, small, tiny
+    food: cartoon, illustration, painting, watercolor, sketch, pencil, 2d, flat colors, anime, drawing, cell shading, storybook, dark background, black background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, plate, bowl, dish, table, surface, cutting board, kitchen, utensils, napkin, fork, knife, spoon, props, decorations, accessories, scenery, background elements, landscape, environment, people, humans, harsh shadow, cast shadow, reflection, background objects, background figures, small, tiny
+    vehicle: cartoon, illustration, painting, watercolor, sketch, pencil, 2d, flat colors, anime, drawing, cell shading, storybook, dark background, black background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, driver, passenger, road, street, highway, parking lot, ground, pavement, driveway, props, decorations, scenery, background elements, landscape, environment, people, humans, harsh shadow, cast shadow, reflection, background objects, background figures, small, tiny
+    furniture: cartoon, illustration, painting, watercolor, sketch, pencil, 2d, flat colors, anime, drawing, cell shading, storybook, dark background, black background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, room, wall, floor, ceiling, interior, rug, carpet, props, accessories, decorations, scenery, background elements, landscape, environment, people, humans, harsh shadow, cast shadow, reflection, background objects, background figures, small, tiny
+    city: cartoon, illustration, painting, watercolor, sketch, pencil, 2d, flat colors, anime, drawing, cell shading, storybook, dark background, black background, gradient background, vignette, gloomy, scary, adult, blurry, watermark, text, logo, signature, multiple subjects, duplicate, ghost, phantom, faint, two, three, several, many, group, pair, collection, pattern, repeating, tiled, grid, arrangement, cropped, cut off, partial, out of frame, incomplete, people, humans, crowd, busy, complex, cluttered, street scene, cityscape, harsh shadow, cast shadow, reflection, background elements, background objects, background figures, small, tiny
+    verb: 2d, flat colors, sketch, pencil, line art, anime, photorealistic, realistic child, uncanny, dark background, black background, gradient background, vignette, gloomy, scary, violent, weapon, blood, adult, nudity, blurry, watermark, text, logo, signature, crowd, large group, duplicate, cloned, extra limbs, extra fingers, deformed hands, malformed, distorted face, cropped, cut off, out of frame, busy background, cluttered scene, scenery, landscape
+generation:
+  cfg: 8
+  height: 512
+  images_per_item: 1
+  sampler: euler
+  scheduler: normal
+  steps: 20
+  width: 512
+downloads:
+- dest: models/checkpoints/juggernautXL_ragnarokBy.safetensors
+  civitai: 1759168
+  size_hint: ~6.8 GB

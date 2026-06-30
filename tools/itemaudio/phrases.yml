@@ -1,0 +1,68 @@
+# phrases.yml
+#
+# You can set global defaults and override them per item.
+# XTTS language examples include: en, de, fr, es, it, pt, pl, tr, ru, nl,
+# cs, ar, zh-cn, ja, hu, ko.
+
+defaults:
+  language: en
+  speaker_wav:
+  split_sentences: false
+
+items:
+  - text: hello
+    language: en
+
+  - text: world
+    language: en
+
+  - text: artificial intelligence
+    language: en
+
+  - text: this is a short sentence
+    language: en
+
+  - text: Guten Tag
+    language: de
+
+  - text: dies ist ein Test
+    language: de
+
+  - text: künstliche Intelligenz
+    language: de
+
+  - text: bonjour
+    language: fr
+
+  - text: ceci est un test
+    language: fr
+
+  - text: hola
+    language: es
+
+  - text: esto es una prueba
+    language: es
+
+  - text: ciao
+    language: it
+
+  - text: questa è una prova
+    language: it
+
+  - text: こんにちは
+    language: ja
+
+  - text: これはテストです
+    language: ja
+
+  - text: 你好
+    language: zh-cn
+
+  - text: 这是一个测试
+    language: zh-cn
+
+  - text: 안녕하세요
+    language: ko
+
+  - text: 이것은 테스트입니다
+    language: ko

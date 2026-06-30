@@ -1,0 +1,2790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wordbank UI</title>
+<style>
+:root {
+  --bg: #141414;
+  --surface: #1c1c1c;
+  --surface-2: #202020;
+  --border: #303030;
+  --text: #d7d7d7;
+  --dim: #858585;
+  --accent: #4a9eff;
+  --green: #4caf50;
+  --red: #ef5350;
+  --yellow: #e5b94f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+button, input, select {
+  font: inherit;
+}
+button {
+  background: #242424;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button.primary { color: white; background: #245f9f; border-color: #357fcf; }
+button.danger { color: var(--red); }
+button:disabled { opacity: 0.55; cursor: default; }
+input {
+  width: 100%;
+  background: #111;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 9px;
+}
+textarea {
+  width: 100%;
+  background: #111;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 9px;
+  font: inherit;
+  resize: vertical;
+}
+.prompt-box {
+  border: 1px solid var(--border);
+  background: #181818;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+.toolrow { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid #232323; }
+.toolrow:last-child { border-bottom: 0; }
+.toolset { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; background: #181818; }
+label { display: grid; gap: 4px; color: var(--dim); font-size: 12px; }
+select {
+  width: 100%;
+  background: #111;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 9px;
+}
+#app { display: grid; grid-template-columns: 210px 1fr 360px; height: 100vh; }
+#nav { background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; }
+#brand { padding: 16px; border-bottom: 1px solid var(--border); }
+#brand h1 { margin: 0; font-size: 18px; }
+#brand div { color: var(--dim); margin-top: 3px; font-size: 12px; word-break: break-all; }
+#navCorpus { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.nav-item {
+  padding: 10px 16px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+.nav-item:hover { background: rgba(255,255,255,0.04); }
+.nav-item.active { background: rgba(74,158,255,0.11); border-left-color: var(--accent); }
+#main { min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
+#content { overflow: auto; padding: 18px; flex: 1; min-height: 0; }
+/* "fill" mode: the active section fills the content area and scrolls internally
+   instead of letting the whole #content scroll (used by the Images/Audio tabs). */
+#content.fill { display: flex; flex-direction: column; overflow: hidden; }
+#content.fill #images.active, #content.fill #audio.active { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+#content.fill #images .subpane.active, #content.fill #audio .subpane.active { flex: 1; min-height: 0; }
+#content.fill #images-review.active, #content.fill #audio-review.active { display: flex; flex-direction: column; }
+#content.fill #images-review.active .split, #content.fill #audio-review.active .split { flex: 1; min-height: 0; grid-template-rows: minmax(0, 1fr); }
+#content.fill #images-review.active .list, #content.fill #audio-review.active .list { max-height: none; min-height: 0; }
+#content.fill #images-review.active .review-detail, #content.fill #audio-review.active .review-detail { overflow: auto; min-height: 0; }
+#content.fill #images-extract.active, #content.fill #audio-extract.active { overflow: auto; }
+#content.fill #images-generate.active, #content.fill #audio-generate.active { overflow: auto; }
+#logpane { border-left: 1px solid var(--border); background: #111; display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+#loghead { padding: 12px 14px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+#activeJob {
+  border-bottom: 1px solid var(--border);
+  padding: 10px 14px;
+  display: none;
+  gap: 8px;
+  background: #151515;
+}
+#activeJob.visible { display: grid; }
+#activeJobTitle { color: #eee; font-weight: 600; }
+#activeJobText { color: var(--dim); font-size: 12px; }
+#activeJobBar {
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+#activeJobFill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.15s ease;
+}
+#activeJobFill.indeterminate {
+  width: 35%;
+  animation: slide-progress 1.1s ease-in-out infinite;
+}
+@keyframes slide-progress {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(300%); }
+}
+#activeJobActions { display: flex; gap: 8px; justify-content: flex-end; }
+#logs { flex: 1; min-height: 0; white-space: pre-wrap; overflow-y: auto; overflow-x: hidden; padding: 12px 14px; color: #bdbdbd; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+.section { display: none; }
+.section.active { display: block; }
+.subtabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+.subtab { padding: 8px 14px; cursor: pointer; color: var(--dim); border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.subtab:hover { color: var(--text); }
+.subtab.active { color: var(--text); border-bottom-color: var(--accent); }
+.subpane { display: none; }
+.subpane.active { display: block; }
+.toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+.grid { display: grid; gap: 12px; }
+.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.metric { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 12px; }
+.metric .value { font-size: 24px; color: white; }
+.metric .value.ok { color: var(--green); }
+.metric .value.warn { color: var(--yellow); }
+.metric .label { color: var(--dim); font-size: 12px; }
+.metric .sub { color: var(--dim); font-size: 11px; margin-top: 3px; opacity: 0.85; }
+.panel { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; overflow: hidden; }
+.panel h2 { margin: 0; padding: 10px 12px; font-size: 13px; border-bottom: 1px solid var(--border); color: #eee; }
+.panel-body { padding: 12px; }
+.split { display: grid; grid-template-columns: 280px 1fr; gap: 14px; min-height: 520px; }
+.list { position: relative; border: 1px solid var(--border); background: var(--surface); overflow: auto; max-height: calc(100vh - 190px); border-radius: 8px; }
+.row { padding: 8px 10px; border-bottom: 1px solid #272727; cursor: pointer; display: flex; gap: 8px; align-items: center; }
+.row:last-child { border-bottom: 0; }
+.list-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: #232323;
+  border-bottom: 1px solid var(--border);
+  color: var(--dim);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  user-select: none;
+}
+.list-header:hover { background: #2a2a2a; color: var(--text); }
+.list-header .caret { margin-left: auto; font-size: 9px; opacity: 0.6; }
+.list-header:hover .caret { opacity: 1; }
+.popover.menu { width: auto; min-width: 150px; max-height: 320px; overflow: auto; overscroll-behavior: contain; padding: 4px; }
+.menu-item { padding: 6px 12px; border-radius: 5px; cursor: pointer; text-transform: capitalize; }
+.menu-item:hover { background: rgba(74,158,255,0.15); }
+.menu-item.current { color: var(--accent); }
+.row:hover { background: rgba(255,255,255,0.04); }
+.row.active { background: rgba(74,158,255,0.12); }
+.row .iconbtn {
+  flex: 0 0 auto;
+  padding: 2px 7px;
+  font-size: 13px;
+  line-height: 1.2;
+  background: #242424;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  opacity: 0.65;
+}
+.row .iconbtn:hover { opacity: 1; border-color: var(--accent); }
+.row .iconbtn.human-ok { opacity: 1; border-color: var(--green); color: var(--green); }
+#audioApproveLang { width: auto; min-width: 58px; flex: 0 0 auto; }
+.dot { width: 8px; height: 8px; border-radius: 99px; flex: 0 0 auto; background: var(--red); }
+.dot.ok { background: var(--green); }
+.dot.warn { background: var(--yellow); }
+.muted { color: var(--dim); }
+.statusline { margin-top: 8px; color: var(--dim); }
+.progressline { color: var(--dim); font-size: 12px; margin-top: 4px; }
+.pill {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 7px;
+  margin: 2px 4px 2px 0;
+  color: var(--dim);
+  font-size: 12px;
+}
+.pill.ok { border-color: #356f35; color: #8be28b; }
+.pill.bad { border-color: #743131; color: #ff9b9b; }
+.detail-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); gap: 14px; }
+/* Corpus page: the items list scrolls internally (bounded to the viewport) with a
+   sticky header, and a pager footer keeps the page count handy. */
+#corpusItemsPanel { display: flex; flex-direction: column; max-height: calc(100vh - 150px); }
+#corpusItemsPanel .panel-body { flex: 1; overflow: auto; min-height: 0; }
+#corpusItemsPanel thead th { position: sticky; top: 0; z-index: 1; background: var(--surface); }
+.corpus-pager { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-top: 1px solid var(--border); color: var(--dim); font-size: 12px; }
+.corpus-pager .spacer { flex: 1; }
+.corpus-pager:empty { display: none; }
+.approved-preview {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #181818;
+  padding: 10px;
+}
+.approved-preview img {
+  display: block;
+  max-width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+}
+pre.command {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #111;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  color: #cfcfcf;
+}
+.busyline {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--dim);
+}
+.spinner {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #3a3a3a;
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.cards { display: flex; flex-wrap: wrap; gap: 14px; align-content: flex-start; }
+.image-card {
+  position: relative;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 190px;
+  cursor: pointer;
+  background: #181818;
+}
+.image-card.selected { border-color: var(--green); }
+.image-card .delbtn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 5px;
+  background: rgba(20,20,20,0.78);
+  border: 1px solid var(--border);
+  color: var(--red);
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.image-card:hover .delbtn { opacity: 1; }
+.image-card .delbtn:hover { border-color: var(--red); background: rgba(40,20,20,0.92); }
+.popover {
+  position: fixed;
+  z-index: 1000;
+  width: 210px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.55);
+  font-size: 12px;
+}
+.popover-msg { color: var(--text); margin-bottom: 9px; line-height: 1.35; }
+.popover-msg b { color: #fff; word-break: break-all; }
+.popover-actions { display: flex; gap: 6px; justify-content: flex-end; }
+.popover-actions button { padding: 4px 11px; }
+.image-card img {
+  display: block;
+  width: 186px;
+  height: 186px;
+  object-fit: contain;
+  background-color: #252525;
+  background-image:
+    linear-gradient(45deg, #303030 25%, transparent 25%),
+    linear-gradient(-45deg, #303030 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #303030 75%),
+    linear-gradient(-45deg, transparent 75%, #303030 75%);
+  background-size: 14px 14px;
+  background-position: 0 0, 0 7px, 7px -7px, -7px 0;
+}
+.caption { padding: 7px 8px; color: var(--dim); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.clip {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #181818;
+  margin-bottom: 10px;
+}
+.clip.approved { border-color: var(--green); }
+.clip.rejected { border-color: var(--red); }
+.clip.flagged { border-color: var(--yellow); }
+audio { width: 100%; }
+.actions { display: flex; gap: 6px; }
+.error { color: #ff9b9b; }
+.ok { color: #8be28b; }
+.warn { color: #ffd36a; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid #292929; vertical-align: top; }
+th { color: var(--dim); font-weight: 500; }
+@media (max-width: 1100px) {
+  #app { grid-template-columns: 180px 1fr; }
+  #logpane { display: none; }
+  .split { grid-template-columns: 1fr; }
+  .cols-3 { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <nav id="nav">
+    <div id="brand">
+      <h1>Wordbank</h1>
+      <div id="rootLabel">loading...</div>
+    </div>
+    <div id="navCorpus">
+      <label>Corpus
+        <select id="corpusSelect"></select>
+      </label>
+      <label style="margin-top:10px">Image profile
+        <select id="profileSelect"></select>
+      </label>
+    </div>
+    <div class="nav-item active" data-section="dashboard">Dashboard</div>
+    <div class="nav-item" data-section="corpus">Corpus</div>
+    <div class="nav-item" data-section="images">Images</div>
+    <div class="nav-item" data-section="audio">Audio</div>
+    <div class="nav-item" data-section="packages">Packages</div>
+    <div class="nav-item" data-section="tools">Tools</div>
+    <div class="nav-item" data-section="jobs">Jobs</div>
+  </nav>
+
+  <main id="main">
+    <div id="content">
+      <section id="dashboard" class="section active">
+        <div class="toolbar">
+          <button id="dashValidate" class="primary">Run Validation</button>
+          <button id="exportReport">Export Report</button>
+          <span id="dashStatus" class="muted"></span>
+        </div>
+        <div class="grid cols-3" id="metrics"></div>
+        <div class="panel" style="margin-top:14px">
+          <h2>Readiness Issues</h2>
+          <div class="panel-body" id="issues">Run validation to load readiness.</div>
+        </div>
+      </section>
+
+      <section id="corpus" class="section">
+        <div class="toolbar">
+          <button id="loadCorpus" class="primary">Load Corpus</button>
+          <input id="corpusFilter" placeholder="Filter key/topic">
+          <select id="corpusMediaFilter" style="width:180px">
+            <option value="">All media states</option>
+            <option value="missing-image">Missing image</option>
+            <option value="missing-audio">Missing audio</option>
+            <option value="missing-translation">Missing translation</option>
+            <option value="ready">Ready</option>
+          </select>
+        </div>
+        <div class="panel" id="corpusItemsPanel">
+          <h2>Items</h2>
+          <div class="panel-body" style="padding:0">
+            <table>
+              <thead><tr><th>Key</th><th>Topic</th><th>Translations</th><th>Media</th></tr></thead>
+              <tbody id="corpusRows"></tbody>
+            </table>
+          </div>
+          <div id="corpusPager" class="corpus-pager"></div>
+        </div>
+      </section>
+
+      <section id="images" class="section">
+        <div class="subtabs" id="imageSubtabs">
+          <div class="subtab active" data-subtab="review">Review</div>
+          <div class="subtab" data-subtab="generate">Generate Image Candidates</div>
+          <div class="subtab" data-subtab="extract">Extraction</div>
+        </div>
+
+        <div class="subpane active" id="images-review">
+          <div class="toolbar">
+            <button id="loadImages" class="primary">Load Images</button>
+            <button id="purgeImages" class="danger">Purge Unselected</button>
+            <span id="imageStats" class="muted"></span>
+          </div>
+          <div class="split">
+            <div class="list" id="imageGroups"></div>
+            <div class="review-detail">
+              <h2 id="imageTitle" style="margin:0 0 10px">No image group loaded</h2>
+              <div id="imageApproved" class="approved-preview" style="display:none;margin-bottom:12px"></div>
+              <div id="imagePromptBox" class="prompt-box" style="display:none"></div>
+              <div class="cards" id="imageCards"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subpane" id="images-extract">
+          <div class="panel">
+            <h2>Extract Selected Images</h2>
+            <div class="panel-body">
+              <label style="max-width:560px">Candidates folder (source — where generated images are staged)
+                <input id="imageOutput">
+              </label>
+              <label style="max-width:560px;margin-top:12px">Extracted images folder (destination — selected images copied here)
+                <input id="imageExtract">
+              </label>
+              <div class="toolbar" style="margin-top:12px;margin-bottom:0">
+                <button id="extractImages" class="primary">Extract Selected</button>
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="overwriteImages" type="checkbox" style="width:auto"> overwrite existing images</label>
+              </div>
+              <div class="muted" style="margin-top:8px">For each word with a selected candidate, copies it from the candidates folder into the destination folder (named <code>&lt;key&gt;.png</code>). Enable overwrite to replace images that already exist.</div>
+              <div id="imageExtractStatus" class="statusline"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subpane" id="images-generate">
+          <div class="panel">
+            <h2>Generate Image Candidates</h2>
+            <div class="panel-body">
+              <div class="muted" style="margin-bottom:10px">Model, prompt, and generation settings come from the active <b id="genProfileName">profile</b> (change it in the left sidebar; edit it under Tools → Images). Generates into that profile's candidates folder.</div>
+              <div class="form-grid">
+                <label>ComfyUI host
+                  <input id="imageHost" value="127.0.0.1:8188">
+                </label>
+                <label>ComfyUI directory
+                  <input id="imageComfyui">
+                </label>
+                <label>Process items
+                  <input id="imageProcessItems" placeholder="dog,cat,car">
+                </label>
+                <label>Process categories
+                  <input id="imageProcessCategories" placeholder="animal,food">
+                </label>
+              </div>
+              <div class="toolbar" style="margin-top:10px;margin-bottom:0">
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="imageKeepOriginals" type="checkbox" style="width:auto"> keep originals</label>
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="imageNoRmbg" type="checkbox" style="width:auto"> skip background removal</label>
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="imageNoComfyui" type="checkbox" style="width:auto"> assume ComfyUI running</label>
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="imageNeedsSelection" type="checkbox" style="width:auto"> only no selection</label>
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="imageResume" type="checkbox" style="width:auto"> resume missing</label>
+                <button id="healthImages">Health Check</button>
+                <button id="copyImageCommand">Copy Command</button>
+                <button id="generateImages" class="primary">Generate Images</button>
+              </div>
+              <div id="imageGenerateStatus" class="statusline"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="audio" class="section">
+        <div class="subtabs" id="audioSubtabs">
+          <div class="subtab active" data-subtab="review">Review</div>
+          <div class="subtab" data-subtab="generate">Generate Audio Candidates</div>
+          <div class="subtab" data-subtab="extract">Extraction</div>
+        </div>
+
+        <div class="subpane active" id="audio-review">
+          <div class="toolbar">
+            <button id="loadAudio" class="primary">Load Audio</button>
+            <button id="purgeAudio" class="danger">Purge Unapproved</button>
+            <select id="audioApproveLang" title="Language to show & bulk-approve"></select>
+            <select id="audioReviewVoiceSet" title="Voice set to review"></select>
+            <button id="selectAudioWinner" title="Set this voice set as the selected package voice for this language">Set Package Voice</button>
+            <button id="approveAudioLang" title="Approve the first take for every word in this language that has no approved clip">Approve all</button>
+            <button id="disapproveAudioLang" class="danger" title="Clear approval (and human-approval) for every word in this language">Disapprove all</button>
+            <span id="audioStats" class="muted"></span>
+          </div>
+          <div class="split">
+            <div class="list" id="audioGroups"></div>
+            <div class="review-detail">
+              <h2 id="audioTitle" style="margin:0 0 4px">No audio group loaded</h2>
+              <div id="audioText" class="muted" style="margin-bottom:12px"></div>
+              <div id="audioClips"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subpane" id="audio-generate">
+          <div class="panel">
+            <h2>Generate Audio Candidates</h2>
+            <div class="panel-body">
+              <div class="form-grid">
+                <label>Language
+                  <select id="audioGenLang"></select>
+                </label>
+                <label>Voice set
+                  <select id="audioGenVoiceSet"></select>
+                </label>
+                <label>New voice set name
+                  <input id="audioVoiceSetName" placeholder="piper-thorsten">
+                </label>
+                <label>Engine
+                  <select id="audioEngine">
+                    <option value="coqui">coqui</option>
+                    <option value="piper">piper</option>
+                    <option value="mms">mms</option>
+                    <option value="melotts">melotts</option>
+                  </select>
+                </label>
+                <label>Model
+                  <input id="audioModel" placeholder="tts_models/en/ljspeech/vits">
+                </label>
+                <label>Voice
+                  <input id="audioVoice" placeholder="EN-US or de_DE-thorsten-high">
+                </label>
+                <label>Takes
+                  <input id="audioTakes" type="number" min="1" value="1">
+                </label>
+                <label>Format
+                  <input id="audioFormat" value="wav">
+                </label>
+                <label>Key filter
+                  <input id="audioKeys" placeholder="dog,cat,car">
+                </label>
+                <label>Synthesis
+                  <select id="audioSynthesize">
+                    <option value="">Prepare manifest only</option>
+                    <option value="1">Prepare and synthesize</option>
+                  </select>
+                </label>
+              </div>
+              <div class="toolbar" style="margin-top:10px;margin-bottom:0">
+                <button id="saveAudioVoiceSet">Save Voice Set</button>
+                <button id="copyAudioCommand">Copy Command</button>
+                <button id="generateAudio" class="primary">Generate Audio</button>
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="audioSkipExisting" type="checkbox" style="width:auto"> only missing (skip keys that already have audio)</label>
+              </div>
+              <div id="audioGenerateStatus" class="statusline"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subpane" id="audio-extract">
+          <div class="panel">
+            <h2>Extract Approved Audio</h2>
+            <div class="panel-body">
+              <label style="max-width:560px">Candidates folder (source — where generated audio is staged)
+                <input id="audioOutput">
+              </label>
+              <label style="max-width:560px;margin-top:12px">Extracted audio folder (destination — approved clips copied here under &lt;lang&gt;/)
+                <input id="audioExtract">
+              </label>
+              <div class="toolbar" style="margin-top:12px;margin-bottom:0">
+                <button id="extractAudio" class="primary">Extract Approved</button>
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="audioHumanOnly" type="checkbox" style="width:auto"> only human-approved</label>
+                <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="overwriteAudio" type="checkbox" style="width:auto"> overwrite existing audio</label>
+              </div>
+              <div class="muted" style="margin-top:8px">For each language/key with an approved clip, copies it into the destination folder as <code>&lt;lang&gt;/&lt;key&gt;.&lt;ext&gt;</code>. Enable <b>only human-approved</b> to export just the clips marked human-reviewed. Enable overwrite to replace audio that already exists.</div>
+              <div id="audioExtractStatus" class="statusline"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="packages" class="section">
+        <div class="panel">
+          <h2>Build Asset Package</h2>
+          <div class="panel-body grid">
+            <div class="muted" style="margin-bottom:4px">Builds <b>corpus × languages × profile</b>. Images come from the active <b id="pkgProfileName">profile</b>'s selected candidates (change it in the left sidebar). One profile → one package.</div>
+            <label>Word-list path
+              <input id="wordlist" placeholder="optional: path to a subset word-list.yml; blank uses the whole corpus">
+            </label>
+            <label>Languages
+              <input id="langs" value="en,de,fr,es">
+            </label>
+            <label>Output directory
+              <input id="packageOut" value="/tmp/wordbank-assets">
+            </label>
+            <label>Package audio format
+              <select id="packageAudioFormat">
+                <option value="wav">WAV</option>
+                <option value="ogg">Ogg Opus</option>
+              </select>
+            </label>
+            <label>Audio approval
+              <select id="packageAudioApproval">
+                <option value="approved">Approved (standard)</option>
+                <option value="human">Human-approved only</option>
+              </select>
+            </label>
+            <div class="muted" style="margin-bottom:4px">Standard uses the approved/extracted audio. <b>Human-approved only</b> builds from the audio review's human-reviewed clips (Audio tab) and drops words without one.</div>
+            <div class="toolbar">
+              <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="packageClean" type="checkbox" style="width:auto"> clean output first</label>
+              <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="packageFailOnDrop" type="checkbox" style="width:auto"> fail on drop</label>
+              <label style="display:flex;gap:6px;align-items:center;color:var(--dim)"><input id="packageQuietDrops" type="checkbox" style="width:auto"> quiet drops</label>
+            </div>
+            <div class="toolbar">
+              <button id="preflightPackage">Preflight Validate</button>
+              <button id="copyPackageCommand">Copy Command</button>
+              <button id="buildPackage" class="primary">Build Package</button>
+            </div>
+            <div id="packageStatus" class="statusline"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tools" class="section">
+        <div class="toolbar">
+          <button id="refreshTools" class="primary">Refresh Status</button>
+          <span id="toolsStatus" class="muted"></span>
+        </div>
+        <div class="subtabs" id="toolsSubtabs">
+          <div class="subtab active" data-subtab="deps">Dependencies</div>
+          <div class="subtab" data-subtab="images">Images</div>
+          <div class="subtab" data-subtab="audio">Audio</div>
+        </div>
+        <div class="subpane active" id="tools-deps"><div class="muted">Loading tool status…</div></div>
+        <div class="subpane" id="tools-images">
+          <div id="profilesManager"></div>
+          <div id="profileEditor"></div>
+          <div id="toolsImagesStatus" style="margin-top:14px"></div>
+        </div>
+        <div class="subpane" id="tools-audio"></div>
+      </section>
+
+      <section id="jobs" class="section">
+        <div class="toolbar">
+          <button id="refreshJobs" class="primary">Refresh Jobs</button>
+        </div>
+        <div class="panel">
+          <h2>Recent Jobs</h2>
+          <div class="panel-body" id="jobRows">No jobs yet.</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <aside id="logpane">
+    <div id="loghead">
+      <strong>Logs</strong>
+      <button id="clearLogs">Clear</button>
+    </div>
+    <div id="activeJob">
+      <div id="activeJobTitle">No active job</div>
+      <div id="activeJobText"></div>
+      <div id="activeJobBar"><div id="activeJobFill"></div></div>
+      <div id="activeJobActions">
+        <button id="activeJobCancel" class="danger">Cancel</button>
+      </div>
+    </div>
+    <div id="logs"></div>
+  </aside>
+</div>
+
+<script>
+const state = {
+  config: null,
+  section: 'dashboard',
+  validation: null,
+  corpus: [],
+  corpusPage: 0,
+  saveTimer: null,
+  imageOutput: '',
+  imageGroups: [],
+  imageIdx: -1,
+  audioOutput: '',
+  audioGroups: [],
+  audioIdx: -1,
+  audioProfile: null,
+  activeEventSource: null,
+  activeJobId: null,
+};
+
+const $ = id => document.getElementById(id);
+const enc = s => encodeURIComponent(s);
+const imageUrl = filename => `/media/images/${filename.split('/').map(enc).join('/')}?output=${enc($('imageOutput').value)}`;
+const audioUrl = filename => `/media/audio/${filename.split('/').map(enc).join('/')}?output=${enc($('audioOutput').value)}&language=${enc($('audioApproveLang').value)}&voice_set=${enc($('audioReviewVoiceSet').value)}`;
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    log('Copied to clipboard.');
+  } catch (_err) {
+    log('Clipboard unavailable. Text follows:');
+    log(text);
+  }
+}
+
+function packagePayload() {
+  return {
+    kind: 'package',
+    corpus: $('corpusSelect').value,
+    profile: $('profileSelect').value,
+    wordlist: $('wordlist').value.trim(),
+    langs: $('langs').value.trim(),
+    out: $('packageOut').value.trim(),
+    audio_format: $('packageAudioFormat').value,
+    audio_approval: $('packageAudioApproval').value,
+    clean: $('packageClean').checked,
+    fail_on_drop: $('packageFailOnDrop').checked,
+    quiet_drops: $('packageQuietDrops').checked,
+  };
+}
+
+function imagePayload() {
+  return {
+    kind: 'image-generate',
+    profile: $('profileSelect').value,
+    corpus: $('corpusSelect').value,
+    output: $('imageOutput').value.trim(),
+    host: $('imageHost').value.trim(),
+    comfyui: $('imageComfyui').value.trim(),
+    keep_originals: $('imageKeepOriginals').checked,
+    no_rmbg: $('imageNoRmbg').checked,
+    no_comfyui: $('imageNoComfyui').checked,
+    needs_selection: $('imageNeedsSelection').checked,
+    resume: $('imageResume').checked,
+    process_items: $('imageProcessItems').value.trim(),
+    process_categories: $('imageProcessCategories').value.trim(),
+  };
+}
+
+function audioPayload() {
+  return {
+    kind: 'audio-generate',
+    corpus: $('corpusSelect').value,
+    wordlist: $('wordlist').value.trim(),
+    langs: $('audioGenLang').value || $('langs').value.trim(),
+    voice_set: $('audioGenVoiceSet').value,
+    output: $('audioOutput').value.trim(),
+    takes: $('audioTakes').value,
+    format: $('audioFormat').value.trim(),
+    keys: $('audioKeys').value.trim(),
+    synthesize: Boolean($('audioSynthesize').value),
+    skip_existing: $('audioSkipExisting').checked,
+  };
+}
+
+async function copyCommand(payload) {
+  try {
+    const data = await api('/api/commands', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+    });
+    await copyText(data.shell);
+    log(data.shell);
+  } catch (err) {
+    log('Command copy failed: ' + err.message);
+  }
+}
+
+async function loadAudioProfile() {
+  try {
+    const data = await api('/api/audio/profile?output=' + enc($('audioOutput').value || ''));
+    state.audioProfile = data;
+    populateAudioProfileControls();
+  } catch (err) {
+    log('Audio profile load failed: ' + err.message);
+  }
+}
+
+function audioProfileLanguages() {
+  return Object.keys((state.audioProfile && state.audioProfile.languages) || {}).sort();
+}
+
+function audioVoiceSetsFor(lang) {
+  const info = state.audioProfile && state.audioProfile.languages && state.audioProfile.languages[lang];
+  return info && info.voice_sets ? info.voice_sets : {};
+}
+
+function selectedVoiceSetFor(lang) {
+  const info = state.audioProfile && state.audioProfile.languages && state.audioProfile.languages[lang];
+  return info ? info.selected : '';
+}
+
+function populateAudioProfileControls() {
+  const langs = audioProfileLanguages();
+  for (const id of ['audioGenLang', 'audioApproveLang']) {
+    const sel = $(id);
+    if (!sel) continue;
+    const cur = sel.value;
+    sel.innerHTML = langs.map(l => `<option value="${escHtml(l)}">${escHtml(l)}</option>`).join('');
+    if (langs.includes(cur)) sel.value = cur;
+    else if (langs.length) sel.value = langs[0];
+  }
+  populateVoiceSetSelects();
+}
+
+function populateVoiceSetSelects() {
+  const genLang = $('audioGenLang') ? $('audioGenLang').value : '';
+  const reviewLang = $('audioApproveLang') ? $('audioApproveLang').value : genLang;
+  fillVoiceSetSelect('audioGenVoiceSet', genLang);
+  fillVoiceSetSelect('audioReviewVoiceSet', reviewLang);
+  syncVoiceSetFields();
+}
+
+function fillVoiceSetSelect(id, lang) {
+  const sel = $(id);
+  if (!sel) return;
+  const sets = audioVoiceSetsFor(lang);
+  const names = Object.keys(sets).sort();
+  const cur = sel.value;
+  sel.innerHTML = names.map(name => {
+    const route = sets[name] || {};
+    const label = `${name} · ${route.engine || ''}${route.model ? ' · ' + route.model : ''}${route.voice ? ' · ' + route.voice : ''}`;
+    return `<option value="${escHtml(name)}">${escHtml(label)}</option>`;
+  }).join('');
+  const selected = selectedVoiceSetFor(lang);
+  if (names.includes(cur)) sel.value = cur;
+  else if (selected && names.includes(selected)) sel.value = selected;
+  else if (names.length) sel.value = names[0];
+}
+
+function syncVoiceSetFields() {
+  const lang = $('audioGenLang') ? $('audioGenLang').value : '';
+  const name = $('audioGenVoiceSet') ? $('audioGenVoiceSet').value : '';
+  const route = audioVoiceSetsFor(lang)[name] || {};
+  if ($('audioVoiceSetName')) $('audioVoiceSetName').value = name || '';
+  if ($('audioEngine')) $('audioEngine').value = route.engine || 'coqui';
+  if ($('audioModel')) $('audioModel').value = route.model || '';
+  if ($('audioVoice')) $('audioVoice').value = route.voice || '';
+}
+
+async function saveAudioVoiceSet() {
+  const payload = {
+    language: $('audioGenLang').value,
+    name: $('audioVoiceSetName').value.trim(),
+    engine: $('audioEngine').value,
+    model: $('audioModel').value.trim(),
+    voice: $('audioVoice').value.trim(),
+  };
+  const done = setBusy('audioGenerateStatus', 'saving voice set...', ['saveAudioVoiceSet']);
+  try {
+    const data = await api('/api/audio/profile/voice-set', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+    });
+    log(`Saved audio voice set ${data.language}/${data.voice_set}.`);
+    await loadAudioProfile();
+    $('audioGenLang').value = data.language;
+    populateVoiceSetSelects();
+    $('audioGenVoiceSet').value = data.voice_set;
+    $('audioReviewVoiceSet').value = data.voice_set;
+  } catch (err) {
+    $('audioGenerateStatus').innerHTML = `<span class="error">${err.message}</span>`;
+    log('Save voice set failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+async function selectAudioWinner() {
+  const language = $('audioApproveLang').value;
+  const voice_set = $('audioReviewVoiceSet').value;
+  if (!language || !voice_set) return;
+  try {
+    await api('/api/audio/profile/select', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({language, voice_set}),
+    });
+    log(`Set ${voice_set} as the ${language} package voice.`);
+    await loadAudioProfile();
+    await loadAudio({keepView: true});
+    loadTools();
+  } catch (err) {
+    log('Set package voice failed: ' + err.message);
+  }
+}
+
+function busyHtml(text) {
+  return `<span class="busyline"><span class="spinner"></span>${text}</span>`;
+}
+
+function setBusy(targetId, text, buttonIds = []) {
+  const target = targetId ? $(targetId) : null;
+  const previous = target ? target.innerHTML : '';
+  if (target) target.innerHTML = busyHtml(text);
+  buttonIds.forEach(id => {
+    const button = $(id);
+    if (button) button.disabled = true;
+  });
+  return () => {
+    buttonIds.forEach(id => {
+      const button = $(id);
+      if (button) button.disabled = false;
+    });
+    if (target && target.innerHTML.includes('spinner')) target.innerHTML = previous;
+  };
+}
+
+const LOG_MAX_CHARS = 200000;  // keep the logs pane bounded so it can't crash the tab
+function log(line) {
+  const el = $('logs');
+  let text = el.textContent + line + '\n';
+  if (text.length > LOG_MAX_CHARS) {
+    text = text.slice(text.length - LOG_MAX_CHARS);
+    const nl = text.indexOf('\n');  // drop the partial first line we sliced through
+    text = '…(older log lines trimmed)…\n' + (nl >= 0 ? text.slice(nl + 1) : text);
+  }
+  el.textContent = text;
+  el.scrollTop = el.scrollHeight;
+}
+
+function formState() {
+  return {
+    corpus: $('corpusSelect').value,
+    active_profile: $('profileSelect').value,
+    output_root: (state.config && state.config.output_root) || '',
+    wordlist: $('wordlist').value.trim(),
+    langs: $('langs').value.trim(),
+    image_extract: $('imageExtract').value.trim(),
+    audio_extract: $('audioExtract').value.trim(),
+    image_host: $('imageHost').value.trim(),
+    image_comfyui: $('imageComfyui').value.trim(),
+    package_out: $('packageOut').value.trim(),
+    package_audio_format: $('packageAudioFormat').value,
+    package_audio_approval: $('packageAudioApproval').value,
+  };
+}
+
+function applyFormState(saved) {
+  if (!saved) return;
+  if (saved.corpus && [...$('corpusSelect').options].some(o => o.value === saved.corpus)) {
+    $('corpusSelect').value = saved.corpus;
+  }
+  if (saved.wordlist) $('wordlist').value = saved.wordlist;
+  if (saved.langs) $('langs').value = saved.langs;
+  if (saved.image_extract) $('imageExtract').value = saved.image_extract;
+  if (saved.audio_extract) $('audioExtract').value = saved.audio_extract;
+  if (saved.image_host) $('imageHost').value = saved.image_host;
+  if (saved.image_comfyui) $('imageComfyui').value = saved.image_comfyui;
+  if (saved.package_out) $('packageOut').value = saved.package_out;
+  if (saved.package_audio_format) $('packageAudioFormat').value = saved.package_audio_format;
+  if (saved.package_audio_approval) $('packageAudioApproval').value = saved.package_audio_approval;
+}
+
+async function saveState({quiet = false} = {}) {
+  try {
+    const data = await api('/api/state', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(formState()),
+    });
+    if (!quiet) log(`Saved settings to ${data.path}`);
+  } catch (err) {
+    log('Save settings failed: ' + err.message);
+  }
+}
+
+function scheduleSaveState() {
+  clearTimeout(state.saveTimer);
+  state.saveTimer = setTimeout(() => saveState({quiet: true}), 700);
+}
+
+function setSection(name) {
+  state.section = name;
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.toggle('active', el.dataset.section === name));
+  document.querySelectorAll('.section').forEach(el => el.classList.toggle('active', el.id === name));
+  $('content').classList.toggle('fill', name === 'images' || name === 'audio');
+  if (name === 'tools' && !toolsLoaded) {
+    toolsLoaded = true;
+    loadTools();
+  }
+}
+
+async function api(url, opts) {
+  const res = await fetch(url, opts);
+  const data = await res.json();
+  if (!res.ok || data.ok === false) {
+    const err = new Error(data.error || `HTTP ${res.status}`);
+    err.status = res.status;
+    err.data = data;
+    throw err;
+  }
+  return data;
+}
+
+function params() {
+  const p = new URLSearchParams();
+  if ($('corpusSelect').value) p.set('corpus', $('corpusSelect').value);
+  if ($('wordlist').value.trim()) p.set('wordlist', $('wordlist').value.trim());
+  if ($('langs').value.trim()) p.set('langs', $('langs').value.trim());
+  return p;
+}
+
+async function loadConfig() {
+  state.config = await api('/api/config');
+  $('rootLabel').textContent = state.config.root;
+  $('imageOutput').value = state.config.default_image_output;
+  $('imageExtract').value = state.config.default_image_extract;
+  $('audioOutput').value = state.config.default_audio_output;
+  $('audioExtract').value = state.config.default_audio_extract;
+  $('imageComfyui').value = state.config.default_comfyui_dir;
+  $('imageHost').value = state.config.default_comfyui_host;
+  populateCorpora(state.config.corpora || [], state.config.default);
+  populateProfiles(state.config.profiles || [], state.config.active_profile);
+  const saved = await api('/api/state');
+  applyFormState(saved.state);
+  await loadAudioProfile();
+}
+
+function populateProfiles(profiles, active) {
+  const sel = $('profileSelect');
+  if (!profiles.length) {
+    sel.innerHTML = '<option value="">(no profiles)</option>';
+    return;
+  }
+  sel.innerHTML = profiles.map(p => `<option value="${escHtml(p.name)}">${escHtml(p.name)}</option>`).join('');
+  if (active) sel.value = active;
+  setProfileLabels(sel.value || 'profile');
+}
+
+function setProfileLabels(profile) {
+  for (const id of ['genProfileName', 'pkgProfileName']) {
+    const el = $(id);
+    if (el) el.textContent = profile;
+  }
+}
+
+// The image candidates dir is derived from the output root + active profile.
+function imageCandidatesPath(profile) {
+  const root = (state.config && state.config.output_root) || '';
+  return `${root}/images/${profile}/candidates`;
+}
+
+async function onProfileChange() {
+  const profile = $('profileSelect').value;
+  if (!profile) return;
+  try {
+    await api('/api/profiles/active', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: profile}),
+    });
+    if (state.config) state.config.active_profile = profile;
+    $('imageOutput').value = imageCandidatesPath(profile);
+    setProfileLabels(profile);
+    log(`Active image profile: ${profile}`);
+    if (state.section === 'images') loadImages();
+  } catch (err) {
+    log('Profile switch failed: ' + err.message);
+  }
+}
+
+function populateCorpora(corpora, defaultName) {
+  const sel = $('corpusSelect');
+  if (!corpora.length) {
+    sel.innerHTML = '<option value="">(no wordlists found)</option>';
+    return;
+  }
+  sel.innerHTML = corpora.map(c => `<option value="${c.name}">${c.name}</option>`).join('');
+  if (defaultName) sel.value = defaultName;
+}
+
+async function runValidation() {
+  const done = setBusy('dashStatus', 'validating corpus and media...', ['dashValidate', 'preflightPackage']);
+  try {
+    const data = await api('/api/validate?' + params().toString());
+    state.validation = data.summary;
+    renderValidation();
+    $('dashStatus').textContent = 'validation complete';
+  } catch (err) {
+    $('dashStatus').innerHTML = `<span class="error">${err.message}</span>`;
+    log('Validation failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+function renderValidation() {
+  const v = state.validation;
+  if (!v) return;
+  const langs = v.languages || [];
+  const known = v.known_keys || 0;
+  const ready = v.ready ?? known;
+  const complete = (n) => known > 0 && n === known ? 'ok' : '';
+  const cards = [];
+  // Headline: what a build of (corpus × languages × active profile) would actually ship.
+  cards.push(metric('Package-ready', `${ready}/${known}`,
+    langs.length ? `image + audio · ${langs.join(', ')}` : 'image only — no languages set',
+    known > 0 && ready === known ? 'ok' : (ready === 0 ? 'warn' : '')));
+  cards.push(metric('Images selected', `${v.image.selected}/${known}`,
+    `profile: ${v.image.profile || v.profile || '—'}`, complete(v.image.selected)));
+  for (const lang of langs) {
+    const a = (v.audio || {})[lang] || {approved: 0, human: 0};
+    cards.push(metric(`Audio · ${lang}`, `${a.approved}/${known}`,
+      `${a.human || 0} human-approved`, complete(a.approved)));
+  }
+  cards.push(metric('Corpus words', v.corpus_keys, v.wordlist ? 'from word-list' : 'whole corpus'));
+  if (v.missing_keys.length) cards.push(metric('Unknown keys', v.missing_keys.length, 'not in corpus', 'warn'));
+  $('metrics').innerHTML = cards.join('');
+
+  const lines = [];
+  if (v.missing_keys.length) lines.push(`<div class="error">Unknown keys (not in corpus): ${v.missing_keys.slice(0, 40).join(', ')}</div>`);
+  if (v.image.missing_or_unapproved.length) lines.push(`<div>No selected image in profile <b>${escHtml(v.image.profile || v.profile || '')}</b> (${v.image.missing_or_unapproved.length}): ${v.image.missing_or_unapproved.slice(0, 60).join(', ')}</div>`);
+  for (const [lang, keys] of Object.entries(v.translation_missing || {})) {
+    lines.push(`<div class="warn">${lang} translations missing (${keys.length}): ${keys.slice(0, 40).join(', ')}</div>`);
+  }
+  for (const [lang, info] of Object.entries(v.audio || {})) {
+    if (info.missing_or_unapproved.length) lines.push(`<div>${lang} audio missing (${info.missing_or_unapproved.length}): ${info.missing_or_unapproved.slice(0, 50).join(', ')}</div>`);
+  }
+  $('issues').innerHTML = lines.length ? lines.join('') : '<span class="ok">No readiness issues — every word ships in all selected languages.</span>';
+}
+
+function metric(label, value, sub = '', tone = '') {
+  return `<div class="metric"><div class="value${tone ? ' ' + tone : ''}">${value}</div><div class="label">${label}</div>${sub ? `<div class="sub">${escHtml(sub)}</div>` : ''}</div>`;
+}
+
+async function loadCorpus() {
+  const done = setBusy(null, '', ['loadCorpus']);
+  $('corpusRows').innerHTML = `<tr><td colspan="4">${busyHtml('loading corpus rows...')}</td></tr>`;
+  try {
+    const data = await api('/api/corpus?' + params().toString());
+    state.corpus = data.items;
+    state.corpusPage = 0;
+    renderCorpus();
+  } catch (err) {
+    $('corpusRows').innerHTML = `<tr><td colspan="4" class="error">${err.message}</td></tr>`;
+    log('Corpus load failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+const CORPUS_PAGE_SIZE = 150;
+
+function corpusFiltered() {
+  const q = $('corpusFilter').value.trim().toLowerCase();
+  const mediaFilter = $('corpusMediaFilter').value;
+  return state.corpus.filter(item => {
+    const matchesText = !q || item.key.includes(q) || String(item.topic || '').includes(q);
+    if (!matchesText) return false;
+    if (item.missing) return mediaFilter ? mediaFilter !== 'ready' : true;
+    const missingAudio = Object.values(item.audio_approved || {}).some(ok => !ok);
+    const missingTranslation = Object.values(item.translations || {}).some(text => !text);
+    if (mediaFilter === 'missing-image') return !item.image_approved;
+    if (mediaFilter === 'missing-audio') return missingAudio;
+    if (mediaFilter === 'missing-translation') return missingTranslation;
+    if (mediaFilter === 'ready') return item.image_approved && !missingAudio && !missingTranslation;
+    return true;
+  });
+}
+
+function renderCorpus() {
+  const filtered = corpusFiltered();
+  const total = filtered.length;
+  const pages = Math.max(1, Math.ceil(total / CORPUS_PAGE_SIZE));
+  if (state.corpusPage >= pages) state.corpusPage = pages - 1;
+  if (state.corpusPage < 0) state.corpusPage = 0;
+  const start = state.corpusPage * CORPUS_PAGE_SIZE;
+  const rows = filtered.slice(start, start + CORPUS_PAGE_SIZE).map(item => {
+    if (item.missing) return `<tr><td class="error">${item.key}</td><td colspan="3">missing from Wordbank corpus</td></tr>`;
+    const trans = Object.entries(item.translations || {}).map(([lang, text]) => `${lang}: ${text || '<span class="error">missing</span>'}`).join('<br>');
+    const audio = Object.entries(item.audio_approved || {}).map(([lang, ok]) => `${lang}:${ok ? '<span class="ok">ok</span>' : '<span class="error">missing</span>'}`).join(' ');
+    return `<tr><td>${item.key}</td><td>${item.topic || ''}</td><td>${trans}</td><td>image:${item.image_approved ? '<span class="ok">ok</span>' : '<span class="error">missing</span>'}<br>${audio}</td></tr>`;
+  });
+  $('corpusRows').innerHTML = rows.join('') || '<tr><td colspan="4" class="muted">No matching items.</td></tr>';
+  renderCorpusPager(total, start, rows.length, pages);
+}
+
+function renderCorpusPager(total, start, shown, pages) {
+  const el = $('corpusPager');
+  if (!el) return;
+  if (!total) { el.innerHTML = ''; return; }
+  el.innerHTML = `
+    <span>Showing ${start + 1}–${start + shown} of ${total}</span>
+    <span class="spacer"></span>
+    <button id="corpusPrev"${state.corpusPage <= 0 ? ' disabled' : ''}>Prev</button>
+    <span>Page ${state.corpusPage + 1} / ${pages}</span>
+    <button id="corpusNext"${state.corpusPage >= pages - 1 ? ' disabled' : ''}>Next</button>`;
+  const go = (delta) => { state.corpusPage += delta; $('corpusItemsPanel').querySelector('.panel-body').scrollTop = 0; renderCorpus(); };
+  $('corpusPrev').addEventListener('click', () => go(-1));
+  $('corpusNext').addEventListener('click', () => go(1));
+}
+
+async function loadImages({keepView = false} = {}) {
+  const done = setBusy('imageStats', 'loading image manifest...', ['loadImages']);
+  const keepScroll = $('imageGroups').scrollTop;
+  const keepIdx = state.imageIdx;
+  $('imageGroups').innerHTML = `<div class="row">${busyHtml('loading image groups...')}</div>`;
+  if (!keepView) $('imageCards').innerHTML = '';
+  try {
+    const data = await api('/api/images/groups?output=' + enc($('imageOutput').value) + '&corpus=' + enc($('corpusSelect').value));
+    state.imageOutput = data.output;
+    state.imageGroups = data.groups;
+    if (keepView && keepIdx >= 0 && keepIdx < data.groups.length) {
+      state.imageIdx = keepIdx;
+    } else {
+      state.imageIdx = data.groups.length ? 0 : -1;
+    }
+    renderImages();
+    if (keepView) $('imageGroups').scrollTop = keepScroll;
+  } catch (err) {
+    $('imageGroups').innerHTML = `<div class="row error">${err.message}</div>`;
+    log('Image load failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+function renderImages() {
+  const selected = state.imageGroups.filter(g => g.selected).length;
+  $('imageStats').textContent = `${selected}/${state.imageGroups.length} selected`;
+  const groupsEl = $('imageGroups');
+  if (!state.imageGroups.length) {
+    const profile = (state.config && state.config.active_profile) || $('profileSelect').value || 'this profile';
+    groupsEl.innerHTML = `<div class="row muted" style="display:block;padding:14px;line-height:1.5">No image candidates in profile <b>${escHtml(profile)}</b> yet.<br>Generate images (the <b>Generate</b> tab, or the ✨ button per word) or use <b>Import package</b> under Tools → Images to seed this profile.</div>`;
+    $('imageTitle').textContent = `No images in profile "${profile}"`;
+    $('imageCards').innerHTML = '';
+    $('imageApproved').style.display = 'none';
+    updatePromptBox(null);
+    return;
+  }
+  const keepScroll = groupsEl.scrollTop;
+  let lastCat = null;
+  groupsEl.innerHTML = state.imageGroups.map((g, i) => {
+    const cat = g.category || 'uncategorized';
+    let header = '';
+    if (cat !== lastCat) {
+      header = `<div class="list-header" data-cat="${escHtml(cat)}" onclick="openCategoryMenu(event)" title="Jump to category"><span>${escHtml(cat)}</span><span class="caret">▼</span></div>`;
+      lastCat = cat;
+    }
+    return header + `
+    <div class="row ${i === state.imageIdx ? 'active' : ''}" onclick="state.imageIdx=${i};renderImages()">
+      <span class="dot ${g.selected ? 'ok' : ''}"></span>
+      <span style="flex:1">${g.item}</span>
+      <span class="muted">${g.images.length}</span>
+      <button class="iconbtn" title="Generate a new image for &quot;${js(g.item)}&quot;" onclick="event.stopPropagation();generateImageForItem('${js(g.item)}')">✨</button>
+    </div>`;
+  }).join('');
+  groupsEl.scrollTop = keepScroll;
+  keepActiveRowVisible(groupsEl);
+  const g = state.imageGroups[state.imageIdx];
+  if (!g) {
+    $('imageTitle').textContent = 'No image group loaded';
+    $('imageCards').innerHTML = '';
+    $('imageApproved').style.display = 'none';
+    updatePromptBox(null);
+    return;
+  }
+  updatePromptBox(g);
+  $('imageTitle').textContent = `${g.item} ${g.selected ? '- ' + g.selected : '- no selection'}`;
+  const selectedImg = g.images.find(img => img.filename === g.selected);
+  $('imageApproved').style.display = 'block';
+  $('imageApproved').innerHTML = `
+    <div class="muted" style="margin-bottom:6px">Selected candidate — this word's deliverable for profile <b>${escHtml((state.config && state.config.active_profile) || '')}</b></div>
+    ${selectedImg ? `<img src="${imageUrl(selectedImg.filename)}"><div class="ok">${selectedImg.filename}</div>` : '<div class="warn">No candidate selected. Pick one below to make it this word\'s image.</div>'}
+  `;
+  $('imageCards').innerHTML = g.images.map((img, i) => `
+    <div class="image-card ${img.selected ? 'selected' : ''}" onclick="selectImage('${js(g.item)}','${js(img.filename)}')">
+      <button class="delbtn" title="Delete this image" onclick="event.stopPropagation();deleteImage(event,'${js(g.item)}','${js(img.filename)}')">🗑</button>
+      <img src="${imageUrl(img.filename)}" loading="lazy">
+      <div class="caption">${i + 1}. ${img.filename}</div>
+      <div class="caption">${img.seed || ''} ${img.category || ''}</div>
+    </div>`).join('');
+}
+
+async function selectImage(item, filename) {
+  const done = setBusy('imageStats', 'saving image selection...');
+  const g = state.imageGroups[state.imageIdx];
+  try {
+    const current = g.images.find(img => img.filename === filename);
+    await api('/api/images/select', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('imageOutput').value, item, filename: current && current.selected ? null : filename}),
+    });
+    await loadImages({keepView: true});
+  } finally {
+    done();
+  }
+}
+
+function deleteImage(ev, item, filename) {
+  confirmPopover(ev.currentTarget, `Delete <b>${escHtml(filename)}</b>?`, () => doDeleteImage(item, filename));
+}
+
+async function doDeleteImage(item, filename) {
+  const done = setBusy('imageStats', 'deleting image...');
+  const detail = document.querySelector('#images-review .review-detail');
+  const detailScroll = detail ? detail.scrollTop : 0;
+  try {
+    await api('/api/images/delete', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('imageOutput').value, item, filename}),
+    });
+    log(`Deleted image ${filename}`);
+    await loadImages({keepView: true});
+    if (detail) detail.scrollTop = detailScroll;
+  } catch (err) {
+    log('Image delete failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+async function extractImages() {
+  const done = setBusy('imageExtractStatus', 'extracting selected images...', ['extractImages']);
+  try {
+    const data = await api('/api/images/extract', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('imageOutput').value, dest: $('imageExtract').value, overwrite: $('overwriteImages').checked}),
+    });
+    $('imageExtractStatus').innerHTML = `<span class="ok">Copied ${data.copied.length}, skipped ${data.skipped.length}${data.errors && data.errors.length ? `, ${data.errors.length} error(s)` : ''}.</span>`;
+    log(`Image extract copied ${data.copied.length}, skipped ${data.skipped.length}`);
+    if (data.skipped && data.skipped.length) {
+      data.skipped.slice(0, 20).forEach(line => log('  skipped: ' + line));
+      if (data.skipped.length > 20) log(`  ... ${data.skipped.length - 20} more skipped`);
+    }
+    if (data.errors && data.errors.length) log('Image extract errors: ' + data.errors.join('; '));
+  } catch (err) {
+    if (err.data && Array.isArray(err.data.errors)) {
+      $('imageExtractStatus').innerHTML = `<span class="error">Extract blocked: ${err.data.errors.length} issue(s). See log.</span>`;
+      log(`Image extract blocked: ${err.data.errors.length} issue(s), ${err.data.skipped ? err.data.skipped.length : 0} skipped.`);
+      err.data.errors.slice(0, 20).forEach(line => log('  ' + line));
+      if (err.data.errors.length > 20) log(`  ... ${err.data.errors.length - 20} more`);
+      log('Enable the overwrite checkbox to replace existing files, or clear selections for items you do not want to extract.');
+    } else {
+      log('Image extract failed: ' + err.message);
+    }
+  } finally {
+    done();
+  }
+}
+
+function purgeUnselectedImages() {
+  const ready = state.imageGroups.filter(g => g.selected);
+  if (!ready.length) {
+    $('imageStats').innerHTML = '<span class="warn">No words with a selection to purge.</span>';
+    log('Purge skipped: no words have a selected image.');
+    return;
+  }
+  confirmPopover(
+    $('purgeImages'),
+    `Delete all unselected candidates for <b>${ready.length}</b> word(s) that have a selection? This cannot be undone.`,
+    doPurgeUnselectedImages,
+    {confirmLabel: 'Purge'},
+  );
+}
+
+async function doPurgeUnselectedImages() {
+  const done = setBusy('imageStats', 'purging unselected images...', ['purgeImages']);
+  try {
+    const data = await api('/api/images/purge', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('imageOutput').value}),
+    });
+    log(`Purged ${data.removed.length} unselected image(s).`);
+    if (data.errors && data.errors.length) {
+      log('Purge errors: ' + data.errors.join('; '));
+    }
+    await loadImages({keepView: true});
+  } catch (err) {
+    if (err.data && Array.isArray(err.data.errors)) {
+      $('imageStats').innerHTML = `<span class="error">Purge had ${err.data.errors.length} error(s). See log.</span>`;
+      log(`Purge removed ${err.data.removed ? err.data.removed.length : 0}, ${err.data.errors.length} error(s):`);
+      err.data.errors.slice(0, 20).forEach(line => log('  ' + line));
+      await loadImages({keepView: true});
+    } else {
+      log('Purge failed: ' + err.message);
+    }
+  } finally {
+    done();
+  }
+}
+
+// Per-word regeneration is queued so that clicking several ✨ buttons runs the
+// jobs one at a time instead of starting concurrent jobs that fight over
+// ComfyUI and the shared _regen_items file.
+const imageGenQueue = [];
+let imageGenRunning = false;
+const MAX_GEN_PER_WORD = 4;
+
+function generateImageForItem(item, prompt = null) {
+  // The running job stays at the head of the queue until it finishes, so this
+  // count includes any in-flight job for the same word. `prompt` is an optional
+  // one-off override; null means reuse the word's stored prompt.
+  const queuedForItem = imageGenQueue.filter(q => q.item === item).length;
+  if (queuedForItem >= MAX_GEN_PER_WORD) {
+    log(`${item} already has ${queuedForItem} generations queued (max ${MAX_GEN_PER_WORD}).`);
+    return;
+  }
+  imageGenQueue.push({item, prompt: prompt || null});
+  log(`Queued image generation for ${item}${prompt ? ' (custom prompt)' : ''} (${imageGenQueue.length} in queue).`);
+  renderGenQueueStatus();
+  processImageGenQueue();
+}
+
+function renderGenQueueStatus() {
+  if (!imageGenQueue.length) return;
+  const counts = new Map();
+  imageGenQueue.forEach(q => counts.set(q.item, (counts.get(q.item) || 0) + 1));
+  const summary = [...counts].map(([item, n]) => (n > 1 ? `${item} ×${n}` : item)).join(', ');
+  $('imageGenerateStatus').textContent =
+    `${imageGenRunning ? 'Generating' : 'Queued'} — ${imageGenQueue.length} job(s): ${summary}`;
+}
+
+async function processImageGenQueue() {
+  if (imageGenRunning) return;
+  imageGenRunning = true;
+  while (imageGenQueue.length) {
+    const {item, prompt} = imageGenQueue[0];
+    renderGenQueueStatus();
+    try {
+      const data = await api('/api/jobs/image-regenerate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          output: $('imageOutput').value.trim(),
+          item,
+          prompt: prompt || '',
+          profile: $('profileSelect').value,
+          corpus: $('corpusSelect').value,
+          host: $('imageHost').value.trim(),
+          comfyui: $('imageComfyui').value.trim(),
+          no_comfyui: $('imageNoComfyui').checked,
+          no_rmbg: $('imageNoRmbg').checked,
+          keep_originals: $('imageKeepOriginals').checked,
+        }),
+      });
+      const remaining = imageGenQueue.length - 1;
+      log(`Started image job ${data.job.id} for ${item}${prompt ? ' (custom prompt)' : ''}${remaining ? ` (${remaining} more queued)` : ''}`);
+      await watchJob(data.job.id, 'imageGenerateStatus');
+    } catch (err) {
+      $('imageGenerateStatus').innerHTML = `<span class="error">${err.message}</span>`;
+      log(`Image generation failed for ${item}: ${err.message}`);
+    }
+    imageGenQueue.shift();
+  }
+  imageGenRunning = false;
+}
+
+// Per-word custom-prompt editor in the Review detail pane. The draft is kept in
+// the textarea only (cleared when you switch words); it is never persisted.
+function groupStoredPrompt(g) {
+  const img = g.images.find(im => im.filename === g.selected) || g.images[0] || {};
+  // Fall back to the profile's default prompt so words with zero candidates
+  // still show an editable prompt instead of a blank box.
+  return img.prompt || g.default_prompt || '';
+}
+
+function updatePromptBox(g) {
+  const box = $('imagePromptBox');
+  if (!g) {
+    box.style.display = 'none';
+    box.dataset.item = '';
+    return;
+  }
+  box.style.display = 'block';
+  // Only rebuild (and reset the textarea) when the selected word changes, so an
+  // in-progress edit survives re-renders triggered by selecting/deleting cards.
+  if (box.dataset.item !== g.item) {
+    const stored = groupStoredPrompt(g);
+    box.dataset.item = g.item;
+    box.dataset.stored = stored;
+    box.innerHTML = `
+      <div class="muted" style="margin-bottom:6px">Custom prompt for <b>${escHtml(g.item)}</b> — used for this retry only, not saved</div>
+      <textarea id="imagePromptInput" rows="3"></textarea>
+      <div class="toolbar" style="margin-top:8px;margin-bottom:0">
+        <button class="primary" onclick="generateWithCustomPrompt()">Generate with this prompt</button>
+        <button onclick="resetPromptInput()">Reset to stored</button>
+      </div>`;
+    $('imagePromptInput').value = stored;
+  }
+}
+
+function resetPromptInput() {
+  $('imagePromptInput').value = $('imagePromptBox').dataset.stored || '';
+}
+
+function generateWithCustomPrompt() {
+  const item = $('imagePromptBox').dataset.item;
+  const prompt = $('imagePromptInput').value.trim();
+  if (!item) return;
+  if (!prompt) {
+    log('Enter a prompt before generating.');
+    return;
+  }
+  generateImageForItem(item, prompt);
+}
+
+async function healthImages() {
+  const done = setBusy('imageGenerateStatus', 'checking image pipeline...', ['healthImages']);
+  try {
+    const data = await api('/api/health?host=' + enc($('imageHost').value.trim()));
+    const h = data.health;
+    const lines = [
+      `base workflow: ${h.image_workflow.exists ? 'ok' : 'missing'} ${h.image_workflow.path}`,
+      `ComfyUI dir: ${h.comfyui_dir.exists ? 'ok' : 'missing'} ${h.comfyui_dir.path}`,
+      `ComfyUI host: ${h.comfyui.reachable ? 'reachable' : 'not reachable'} ${h.comfyui.host}`,
+    ];
+    $('imageGenerateStatus').innerHTML = lines.map(line => `<div>${line}</div>`).join('');
+    if (h.comfyui.error) log('ComfyUI health: ' + h.comfyui.error);
+  } catch (err) {
+    $('imageGenerateStatus').innerHTML = `<span class="error">${err.message}</span>`;
+  } finally {
+    done();
+  }
+}
+
+async function generateImages() {
+  const done = setBusy('imageGenerateStatus', 'starting image generation job...', ['generateImages']);
+  try {
+    const data = await api('/api/jobs/image-generate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(imagePayload()),
+    });
+    $('imageGenerateStatus').textContent = `Started image job ${data.job.id}`;
+    watchJob(data.job.id, 'imageGenerateStatus');
+  } catch (err) {
+    $('imageGenerateStatus').innerHTML = `<span class="error">${err.message}</span>`;
+    log('Image generation start failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+async function loadAudio({keepView = false} = {}) {
+  const done = setBusy('audioStats', 'loading audio manifest...', ['loadAudio']);
+  if (!state.audioProfile) await loadAudioProfile();
+  populateVoiceSetSelects();
+  const keepScroll = $('audioGroups').scrollTop;
+  const keepIdx = state.audioIdx;
+  $('audioGroups').innerHTML = `<div class="row">${busyHtml('loading audio groups...')}</div>`;
+  if (!keepView) $('audioClips').innerHTML = '';
+  try {
+    const q = new URLSearchParams({
+      output: $('audioOutput').value,
+      language: $('audioApproveLang').value,
+      voice_set: $('audioReviewVoiceSet').value,
+      corpus: $('corpusSelect').value,
+    });
+    const data = await api('/api/audio/groups?' + q.toString());
+    state.audioGroups = data.groups;
+    if (keepView && keepIdx >= 0 && keepIdx < data.groups.length) {
+      state.audioIdx = keepIdx;
+    } else {
+      state.audioIdx = data.groups.length ? 0 : -1;
+    }
+    renderAudio();
+    if (keepView) $('audioGroups').scrollTop = keepScroll;
+    if (!data.groups.length) {
+      $('audioGroups').innerHTML = '<div class="row muted">No staged audio manifest found. Generate audio candidates first.</div>';
+      $('audioStats').textContent = '0 staged groups';
+    }
+  } catch (err) {
+    $('audioGroups').innerHTML = `<div class="row error">${err.message}</div>`;
+    log('Audio load failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+function renderAudio() {
+  // The language dropdown doubles as a filter: the list shows only the selected
+  // language so review is one language at a time.
+  const filterLang = $('audioApproveLang').value;
+  const scope = state.audioGroups.filter(g => !filterLang || g.language === filterLang);
+  const approved = scope.filter(g => g.approved).length;
+  const human = scope.filter(g => g.human_approved).length;
+  const voiceSet = $('audioReviewVoiceSet').value;
+  $('audioStats').textContent = `${filterLang || 'all'} / ${voiceSet || 'voice set'}: ${approved} approved · ${human} human-approved / ${scope.length}`;
+  // Keep the detail selection inside the visible language.
+  if (state.audioIdx < 0 || !scope.includes(state.audioGroups[state.audioIdx])) {
+    state.audioIdx = scope.length ? state.audioGroups.indexOf(scope[0]) : -1;
+  }
+  const groupsEl = $('audioGroups');
+  const keepScroll = groupsEl.scrollTop;
+  groupsEl.innerHTML = scope.map((g) => {
+    const i = state.audioGroups.indexOf(g);
+    return `
+    <div class="row ${i === state.audioIdx ? 'active' : ''}" onclick="state.audioIdx=${i};renderAudio()">
+      <span class="dot ${g.approved ? 'ok' : ''}"></span>
+      <span style="flex:1">${g.key}</span>
+      <span class="muted">${g.clips.length}</span>
+      <button class="iconbtn ${g.human_approved ? 'human-ok' : ''}" title="${g.human_approved ? 'Human-approved — click to unmark' : 'Play & mark human-approved'}" onclick="event.stopPropagation();toggleHumanApprove(${i})">${g.human_approved ? '✅' : '👤'}</button>
+      <button class="iconbtn" title="Generate a new take for &quot;${js(g.language)} / ${js(g.key)}&quot;" onclick="event.stopPropagation();generateAudioForGroup('${js(g.key)}','${js(g.language)}')">✨</button>
+    </div>`;
+  }).join('');
+  groupsEl.scrollTop = keepScroll;
+  keepActiveRowVisible(groupsEl);
+  const g = state.audioGroups[state.audioIdx];
+  if (!g) {
+    $('audioTitle').textContent = 'No audio group loaded';
+    $('audioText').textContent = '';
+    $('audioClips').innerHTML = '';
+    return;
+  }
+  $('audioTitle').innerHTML = `${escHtml(g.language)} / ${escHtml(g.voice_set || $('audioReviewVoiceSet').value || '')} / ${escHtml(g.key)} `
+    + `<button class="iconbtn ${g.human_approved ? 'human-ok' : ''}" style="margin-left:8px;vertical-align:middle" title="${g.human_approved ? 'Human-approved — click to unmark' : 'Play & mark human-approved'}" onclick="toggleHumanApprove(${state.audioIdx})">${g.human_approved ? '✅ human-approved' : '👤 human approve'}</button>`;
+  $('audioText').textContent = `${g.text || ''} | ${g.engine || ''}${g.model ? ' / ' + g.model : ''}${g.voice ? ' / ' + g.voice : ''}${g.approved ? ' | approved: ' + g.approved : ' | no approved clip'}${g.human_approved ? ' | human ✓' : ''}`;
+  $('audioClips').innerHTML = g.clips.map((clip, i) => `
+    <div class="clip ${clip.status}">
+      <div class="muted">${i + 1}</div>
+      <div>
+        <audio controls preload="none" src="${audioUrl(clip.filename)}"></audio>
+        <div class="muted">${clip.filename} | ${clip.status} | ${clip.engine || ''}${clip.model ? ' | ' + clip.model : ''}${clip.voice ? ' | ' + clip.voice : ''}</div>
+      </div>
+      <div class="actions">
+        <button onclick="setAudioStatus('${js(clip.filename)}','approved')">Approve</button>
+        <button class="danger" onclick="setAudioStatus('${js(clip.filename)}','rejected')">Reject</button>
+        <button onclick="setAudioStatus('${js(clip.filename)}','flagged')">Flag</button>
+        <button onclick="setAudioStatus('${js(clip.filename)}','pending')">Reset</button>
+        <button class="danger" title="Delete this clip" onclick="deleteAudioClip(event,'${js(clip.filename)}')">🗑</button>
+      </div>
+    </div>`).join('');
+}
+
+async function setAudioStatus(filename, status) {
+  const done = setBusy('audioStats', 'saving audio status...');
+  const g = state.audioGroups[state.audioIdx];
+  const detail = document.querySelector('#audio-review .review-detail');
+  const detailScroll = detail ? detail.scrollTop : 0;
+  try {
+    await api('/api/audio/status', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('audioOutput').value, key: g.key, language: g.language, voice_set: $('audioReviewVoiceSet').value, filename, status}),
+    });
+    await loadAudio({keepView: true});
+    if (detail) detail.scrollTop = detailScroll;
+  } finally {
+    done();
+  }
+}
+
+function populateAudioLangs() {
+  const sel = $('audioApproveLang');
+  if (!sel) return;
+  const langs = [...new Set(state.audioGroups.map(g => g.language).filter(Boolean))].sort();
+  const cur = sel.value;
+  sel.innerHTML = langs.map(l => `<option value="${escHtml(l)}">${escHtml(l)}</option>`).join('');
+  if (langs.includes(cur)) sel.value = cur;
+  sel.disabled = !langs.length;
+  $('approveAudioLang').disabled = !langs.length;
+  $('disapproveAudioLang').disabled = !langs.length;
+}
+
+function approveAllAudioLang(ev) {
+  const lang = $('audioApproveLang').value;
+  if (!lang) { log('No language available to approve.'); return; }
+  const groups = state.audioGroups.filter(g => g.language === lang);
+  const pending = groups.filter(g => !g.approved).length;
+  if (!pending) { log(`All ${groups.length} ${lang} word(s) already have an approved clip.`); return; }
+  confirmPopover(ev.currentTarget,
+    `Approve the first take for <b>${pending}</b> ${escHtml(lang)} word(s) with no approved clip?`,
+    () => doApproveAllAudioLang(lang),
+    {confirmLabel: 'Approve all'});
+}
+
+async function doApproveAllAudioLang(lang) {
+  const done = setBusy('audioStats', `approving all ${lang} clips...`, ['approveAudioLang']);
+  try {
+    const data = await api('/api/audio/approve-language', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('audioOutput').value, language: lang, voice_set: $('audioReviewVoiceSet').value}),
+    });
+    log(`Approved ${data.approved} ${lang} clip(s) — first take per word; ${data.already_approved} already had one.`);
+    await loadAudio({keepView: true});
+  } catch (err) {
+    log('Approve all failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+function disapproveAllAudioLang(ev) {
+  const lang = $('audioApproveLang').value;
+  if (!lang) { log('No language available to disapprove.'); return; }
+  const groups = state.audioGroups.filter(g => g.language === lang);
+  const approved = groups.filter(g => g.approved).length;
+  if (!approved) { log(`No approved ${lang} clips to clear.`); return; }
+  confirmPopover(ev.currentTarget,
+    `Clear approval (and human-approval) for all <b>${approved}</b> approved ${escHtml(lang)} word(s)?`,
+    () => doDisapproveAllAudioLang(lang),
+    {confirmLabel: 'Disapprove all'});
+}
+
+async function doDisapproveAllAudioLang(lang) {
+  const done = setBusy('audioStats', `clearing all ${lang} approvals...`, ['disapproveAudioLang']);
+  try {
+    const data = await api('/api/audio/disapprove-language', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('audioOutput').value, language: lang, voice_set: $('audioReviewVoiceSet').value}),
+    });
+    log(`Cleared approval for ${data.cleared} ${lang} word(s).`);
+    await loadAudio({keepView: true});
+  } catch (err) {
+    log('Disapprove all failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+function playClip(filename) {
+  if (!filename) return;
+  try { new Audio(audioUrl(filename)).play().catch(() => {}); } catch (e) { /* ignore */ }
+}
+
+// Human review (second approval level): toggles the per-word human_approved flag.
+// Marking it plays the clip and also approves it; unmarking just clears the flag.
+async function toggleHumanApprove(idx) {
+  const g = state.audioGroups[idx];
+  if (!g) return;
+  const makeHuman = !g.human_approved;
+  if (makeHuman) playClip(g.approved || (g.clips[0] && g.clips[0].filename));
+  try {
+    await api('/api/audio/human-approve', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('audioOutput').value, key: g.key, language: g.language, voice_set: $('audioReviewVoiceSet').value, human: makeHuman}),
+    });
+    await loadAudio({keepView: true});
+  } catch (err) {
+    log('Human review update failed: ' + err.message);
+  }
+}
+
+async function deleteAudioClip(ev, filename) {
+  const g = state.audioGroups[state.audioIdx];
+  if (!g) return;
+  confirmPopover(ev.currentTarget, `Delete clip <b>${escHtml(filename)}</b>?`, () => doDeleteAudioClip(g.key, g.language, filename));
+}
+
+async function doDeleteAudioClip(key, language, filename) {
+  const done = setBusy('audioStats', 'deleting clip...');
+  const detail = document.querySelector('#audio-review .review-detail');
+  const detailScroll = detail ? detail.scrollTop : 0;
+  try {
+    await api('/api/audio/delete', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('audioOutput').value, key, language, voice_set: $('audioReviewVoiceSet').value, filename}),
+    });
+    log(`Deleted clip ${filename}`);
+    await loadAudio({keepView: true});
+    if (detail) detail.scrollTop = detailScroll;
+  } catch (err) {
+    log('Clip delete failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+function purgeUnapprovedAudio() {
+  const ready = state.audioGroups.filter(g => g.approved);
+  if (!ready.length) {
+    $('audioStats').innerHTML = '<span class="warn">No groups with an approved clip to purge.</span>';
+    log('Purge skipped: no audio groups have an approved clip.');
+    return;
+  }
+  confirmPopover(
+    $('purgeAudio'),
+    `Delete all unapproved clips for <b>${ready.length}</b> group(s) that have an approved clip? This cannot be undone.`,
+    doPurgeUnapprovedAudio,
+    {confirmLabel: 'Purge'},
+  );
+}
+
+async function doPurgeUnapprovedAudio() {
+  const done = setBusy('audioStats', 'purging unapproved clips...', ['purgeAudio']);
+  try {
+    const data = await api('/api/audio/purge', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('audioOutput').value, language: $('audioApproveLang').value, voice_set: $('audioReviewVoiceSet').value}),
+    });
+    log(`Purged ${data.removed.length} unapproved clip(s).`);
+    if (data.errors && data.errors.length) log('Purge errors: ' + data.errors.join('; '));
+    await loadAudio({keepView: true});
+  } catch (err) {
+    log('Purge failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+async function extractAudio() {
+  const done = setBusy('audioExtractStatus', 'extracting approved audio...', ['extractAudio']);
+  try {
+    const data = await api('/api/audio/extract', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({output: $('audioOutput').value, language: $('audioApproveLang').value, voice_set: $('audioReviewVoiceSet').value, dest: $('audioExtract').value, overwrite: $('overwriteAudio').checked, human_only: $('audioHumanOnly').checked}),
+    });
+    $('audioExtractStatus').innerHTML = `<span class="ok">Copied ${data.copied.length}, skipped ${data.skipped.length}${data.errors && data.errors.length ? `, ${data.errors.length} error(s)` : ''}.</span>`;
+    log(`Audio extract copied ${data.copied.length}, skipped ${data.skipped.length}`);
+    if (data.skipped && data.skipped.length) {
+      data.skipped.slice(0, 20).forEach(line => log('  skipped: ' + line));
+      if (data.skipped.length > 20) log(`  ... ${data.skipped.length - 20} more skipped`);
+    }
+    if (data.errors && data.errors.length) log('Audio extract errors: ' + data.errors.join('; '));
+  } catch (err) {
+    if (err.data && Array.isArray(err.data.errors)) {
+      $('audioExtractStatus').innerHTML = `<span class="error">Extract blocked: ${err.data.errors.length} issue(s). See log.</span>`;
+      log(`Audio extract blocked: ${err.data.errors.length} issue(s), ${err.data.skipped ? err.data.skipped.length : 0} skipped.`);
+      err.data.errors.slice(0, 20).forEach(line => log('  ' + line));
+      if (err.data.errors.length > 20) log(`  ... ${err.data.errors.length - 20} more`);
+      log('Enable the overwrite checkbox to replace existing files, or reset approved clips you do not want to extract.');
+    } else {
+      log('Audio extract failed: ' + err.message);
+    }
+  } finally {
+    done();
+  }
+}
+
+// Per-group audio regeneration queue (mirrors the image ✨ queue): each click
+// adds a take for that key/language, running one job at a time.
+const audioGenQueue = [];
+let audioGenRunning = false;
+
+function generateAudioForGroup(key, language) {
+  const id = `${language}:${key}`;
+  const queued = audioGenQueue.filter(q => `${q.language}:${q.key}` === id).length;
+  if (queued >= MAX_GEN_PER_WORD) {
+    log(`${language}/${key} already has ${queued} audio takes queued (max ${MAX_GEN_PER_WORD}).`);
+    return;
+  }
+  audioGenQueue.push({key, language});
+  log(`Queued audio take for ${language}/${key} (${audioGenQueue.length} in queue).`);
+  renderAudioQueueStatus();
+  processAudioGenQueue();
+}
+
+function renderAudioQueueStatus() {
+  if (!audioGenQueue.length) return;
+  const counts = new Map();
+  audioGenQueue.forEach(q => {
+    const id = `${q.language}/${q.key}`;
+    counts.set(id, (counts.get(id) || 0) + 1);
+  });
+  const summary = [...counts].map(([id, n]) => (n > 1 ? `${id} ×${n}` : id)).join(', ');
+  $('audioGenerateStatus').textContent =
+    `${audioGenRunning ? 'Generating' : 'Queued'} — ${audioGenQueue.length} job(s): ${summary}`;
+}
+
+async function processAudioGenQueue() {
+  if (audioGenRunning) return;
+  audioGenRunning = true;
+  while (audioGenQueue.length) {
+    const {key, language} = audioGenQueue[0];
+    renderAudioQueueStatus();
+    try {
+      const data = await api('/api/jobs/audio-generate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          corpus: $('corpusSelect').value,
+          output: $('audioOutput').value.trim(),
+          langs: language,
+          voice_set: $('audioReviewVoiceSet').value,
+          keys: key,
+          takes: 1,
+          format: $('audioFormat').value.trim() || 'wav',
+          synthesize: true,
+          merge: true,
+        }),
+      });
+      const remaining = audioGenQueue.length - 1;
+      log(`Started audio job ${data.job.id} for ${language}/${key}${remaining ? ` (${remaining} more queued)` : ''}`);
+      await watchJob(data.job.id, 'audioGenerateStatus');
+    } catch (err) {
+      $('audioGenerateStatus').innerHTML = `<span class="error">${err.message}</span>`;
+      log(`Audio generation failed for ${language}/${key}: ${err.message}`);
+    }
+    audioGenQueue.shift();
+  }
+  audioGenRunning = false;
+}
+
+async function generateAudio() {
+  const done = setBusy('audioGenerateStatus', 'starting audio generation job...', ['generateAudio']);
+  try {
+    const data = await api('/api/jobs/audio-generate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(audioPayload()),
+    });
+    $('audioGenerateStatus').textContent = `Started audio job ${data.job.id}`;
+    watchJob(data.job.id, 'audioGenerateStatus');
+  } catch (err) {
+    $('audioGenerateStatus').innerHTML = `<span class="error">${err.message}</span>`;
+    log('Audio generation start failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+async function buildPackage() {
+  const done = setBusy('packageStatus', 'starting package job...', ['buildPackage']);
+  try {
+    const data = await api('/api/jobs/package', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(packagePayload()),
+    });
+    $('packageStatus').textContent = `Started job ${data.job.id}`;
+    watchJob(data.job.id, 'packageStatus');
+  } catch (err) {
+    $('packageStatus').innerHTML = `<span class="error">${err.message}</span>`;
+    log('Package start failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+function progressText(s) {
+  const p = s.progress || {};
+  if (p.current && p.total) return `${s.status} ${p.current}/${p.total} ${p.label || ''}`;
+  if (p.summary) return `${s.status}: ${p.summary}`;
+  if (p.label) return `${s.status}: ${p.label}`;
+  return `${s.status}${s.exit_code === null ? '' : ' (' + s.exit_code + ')'}`;
+}
+
+function progressPercent(s) {
+  const p = s.progress || {};
+  if (p.current && p.total) return Math.max(0, Math.min(100, Math.round((p.current / p.total) * 100)));
+  if (s.status === 'succeeded') return 100;
+  return 0;
+}
+
+function updateActiveJob(id, s) {
+  state.activeJobId = id;
+  $('activeJob').classList.add('visible');
+  $('activeJobTitle').textContent = `Active job ${id}`;
+  $('activeJobText').textContent = progressText(s);
+  const pct = progressPercent(s);
+  const indeterminate = s.status === 'running' && pct === 0;
+  $('activeJobFill').classList.toggle('indeterminate', indeterminate);
+  $('activeJobFill').style.width = indeterminate ? '' : `${pct}%`;
+  $('activeJobCancel').disabled = s.status !== 'running';
+  if (['succeeded', 'failed', 'canceled'].includes(s.status)) {
+    $('activeJobCancel').disabled = true;
+    setTimeout(() => {
+      if (state.activeJobId === id) {
+        $('activeJob').classList.remove('visible');
+        state.activeJobId = null;
+      }
+    }, 3000);
+  }
+}
+
+// Map a job kind to the status element its generate page uses, so a reconnecting
+// browser routes progress text to the right place.
+const JOB_STATUS_EL = {
+  'image-generate': 'imageGenerateStatus',
+  'audio-generate': 'audioGenerateStatus',
+  'package': 'packageStatus',
+  'tool': 'toolsStatus',
+};
+
+// On load (or reconnect), attach to a job that is already running so its progress
+// and logs are visible to any browser, not just the one that started it.
+async function attachRunningJob() {
+  if (state.activeEventSource) return;  // already watching something
+  try {
+    const data = await api('/api/jobs');
+    const running = (data.jobs || [])
+      .filter(j => j.status === 'running')
+      .sort((a, b) => (b.started_at || 0) - (a.started_at || 0));
+    if (running.length) {
+      const job = running[0];
+      watchJob(job.id, JOB_STATUS_EL[job.kind] || null);
+    }
+  } catch (err) {
+    console.warn('Could not check for running jobs:', err.message);  // silent: the poller retries
+  }
+}
+
+function watchJob(id, statusId) {
+  if (state.activeEventSource) state.activeEventSource.close();
+  $('logs').textContent = '';
+  log(`Watching job ${id}`);
+  return new Promise(resolve => {
+    const es = new EventSource(`/api/jobs/${id}/events`);
+    state.activeEventSource = es;
+    es.addEventListener('log', ev => log(JSON.parse(ev.data)));
+    es.addEventListener('state', ev => {
+      const s = JSON.parse(ev.data);
+      if (statusId) $(statusId).textContent = `Job ${id}: ${progressText(s)}`;
+      updateActiveJob(id, s);
+      if (['succeeded', 'failed', 'canceled'].includes(s.status)) {
+        es.close();
+        if (state.activeEventSource === es) state.activeEventSource = null;
+        refreshJobs();
+        if (statusId === 'imageGenerateStatus') {
+          const detail = document.querySelector('#images-review .review-detail');
+          const detailScroll = detail ? detail.scrollTop : 0;
+          loadImages({keepView: true}).then(() => { if (detail) detail.scrollTop = detailScroll; });
+        }
+        if (statusId === 'audioGenerateStatus') {
+          const detail = document.querySelector('#audio-review .review-detail');
+          const detailScroll = detail ? detail.scrollTop : 0;
+          loadAudio({keepView: true}).then(() => { if (detail) detail.scrollTop = detailScroll; });
+        }
+        resolve(s);
+      }
+    });
+  });
+}
+
+async function refreshJobs() {
+  const done = setBusy(null, '', ['refreshJobs']);
+  try {
+    $('jobRows').innerHTML = busyHtml('loading jobs...');
+    const data = await api('/api/jobs');
+    if (!data.jobs.length) {
+      $('jobRows').textContent = 'No jobs yet.';
+      return;
+    }
+    $('jobRows').innerHTML = data.jobs.map(job => {
+      const p = job.progress || {};
+      const detail = p.summary || p.label || (p.current && p.total ? `${p.current}/${p.total}` : '');
+      return `
+      <div class="row" onclick="renderJobLog('${job.id}')">
+        <span class="dot ${job.status === 'succeeded' ? 'ok' : job.status === 'running' ? 'warn' : ''}"></span>
+        <span style="flex:1">${job.kind} ${job.id}<div class="progressline">${detail}</div></span>
+        <span class="muted">${job.status}</span>
+        ${job.kind === 'image-generate' && job.status !== 'running' ? `<button onclick="event.stopPropagation();showFailedItems('${job.id}')">Failed</button><button onclick="event.stopPropagation();retryFailedItems('${job.id}')">Retry</button>` : ''}
+        ${job.status === 'running' ? `<button onclick="event.stopPropagation();cancelJob('${job.id}')">Cancel</button>` : ''}
+      </div>`;
+    }).join('');
+  } catch (err) {
+    $('jobRows').innerHTML = `<span class="error">${err.message}</span>`;
+    log('Job refresh failed: ' + err.message);
+  } finally {
+    done();
+  }
+}
+
+async function renderJobLog(id) {
+  const data = await api(`/api/jobs/${id}`);
+  $('logs').textContent = data.job.lines.join('\n') + '\n';
+  if (data.job.artifacts) {
+    log('Artifacts: ' + Object.entries(data.job.artifacts).map(([k, v]) => `${k}=${v}`).join(' '));
+  }
+  $('logs').scrollTop = $('logs').scrollHeight;
+}
+
+async function cancelJob(id) {
+  try {
+    const data = await api(`/api/jobs/${id}/cancel`, {method: 'POST'});
+    log(`Cancel requested for ${id}: ${data.job.status}`);
+    refreshJobs();
+  } catch (err) {
+    log('Cancel failed: ' + err.message);
+  }
+}
+
+async function cancelActiveJob() {
+  if (!state.activeJobId) return;
+  await cancelJob(state.activeJobId);
+}
+
+async function showFailedItems(id) {
+  try {
+    const data = await api(`/api/jobs/${id}/failed-items`);
+    log(`Failed items for ${id} (${data.items.length}) from ${data.path}:`);
+    if (data.items.length) log(data.items.join(', '));
+  } catch (err) {
+    log('Failed item load failed: ' + err.message);
+  }
+}
+
+async function retryFailedItems(id) {
+  try {
+    const data = await api(`/api/jobs/${id}/retry-failed`, {method: 'POST'});
+    log(`Retrying ${data.items.length} failed image items in job ${data.job.id}`);
+    watchJob(data.job.id, 'imageGenerateStatus');
+    setSection('images');
+    setImageSubtab('generate');
+  } catch (err) {
+    log('Retry failed: ' + err.message);
+  }
+}
+
+async function exportReport() {
+  try {
+    const p = new URLSearchParams();
+    if ($('corpusSelect').value) p.set('corpus', $('corpusSelect').value);
+    if ($('wordlist').value.trim()) p.set('wordlist', $('wordlist').value.trim());
+    if ($('langs').value.trim()) p.set('langs', $('langs').value.trim());
+    if ($('imageOutput').value.trim()) p.set('image_output', $('imageOutput').value.trim());
+    if ($('audioOutput').value.trim()) p.set('audio_output', $('audioOutput').value.trim());
+    const res = await fetch('/api/report?' + p.toString());
+    if (!res.ok) {
+      const data = await res.json();
+      throw new Error(data.error || `HTTP ${res.status}`);
+    }
+    const text = await res.text();
+    await copyText(text);
+    log('Maintenance report copied to clipboard.');
+  } catch (err) {
+    log('Report export failed: ' + err.message);
+  }
+}
+
+function js(s) {
+  return String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
+
+// Keep the active row visible by scrolling only its list container — unlike
+// scrollIntoView, this never scrolls outer ancestors (e.g. #content).
+function keepActiveRowVisible(container) {
+  const active = container.querySelector('.row.active');
+  if (!active) return;
+  const cr = container.getBoundingClientRect();
+  const ar = active.getBoundingClientRect();
+  if (ar.top < cr.top) container.scrollTop -= cr.top - ar.top;
+  else if (ar.bottom > cr.bottom) container.scrollTop += ar.bottom - cr.bottom;
+}
+
+function escHtml(s) {
+  return String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+}
+
+// ── Tools tab ──────────────────────────────────────────────────────────────
+let toolsLoaded = false;
+
+function toolPill(ok, okText = 'installed', badText = 'missing') {
+  return `<span class="pill ${ok ? 'ok' : 'bad'}">${ok ? okText : badText}</span>`;
+}
+
+async function loadTools() {
+  const done = setBusy('toolsStatus', 'loading tool status…', ['refreshTools']);
+  try {
+    const host = ($('imageHost') && $('imageHost').value.trim()) || '127.0.0.1:8188';
+    const data = await api('/api/tools/status?host=' + enc(host));
+    renderTools(data.tools);
+    $('toolsStatus').textContent = '';
+  } catch (err) {
+    $('tools-deps').innerHTML = `<span class="error">${err.message}</span>`;
+  } finally {
+    done();
+  }
+  loadProfilesManager();
+}
+
+// ── Profiles manager (Tools → Images) ───────────────────────────────────────
+async function loadProfilesManager() {
+  // Always (re)enter in list mode — never leave a half-open editor when the
+  // Tools→Images view reloads.
+  $('profileEditor').innerHTML = '';
+  showProfileEditor(false);
+  try {
+    const data = await api('/api/profiles');
+    renderProfilesManager(data);
+  } catch (err) {
+    $('profilesManager').innerHTML = `<div class="panel"><h2>Image profiles</h2><div class="panel-body error">${err.message}</div></div>`;
+  }
+}
+
+function renderProfilesManager(data) {
+  const rows = data.profiles.map(p => `
+    <div class="toolset">
+      <div class="toolrow">
+        <span style="flex:1"><b>${escHtml(p.name)}</b>${p.active ? ' <span class="pill ok">active</span>' : ''}
+          <div class="muted">${escHtml(p.description || '')}</div>
+          <div class="muted">checkpoint: ${escHtml(p.checkpoint || '—')}</div>
+        </span>
+      </div>
+      <div class="toolbar" style="margin-top:8px;margin-bottom:0">
+        <button onclick="setActiveProfile('${js(p.name)}')" ${p.active ? 'disabled' : ''}>Set active</button>
+        <button onclick="editProfile('${js(p.name)}')">Edit</button>
+        <button onclick="cloneProfile('${js(p.name)}')">Clone</button>
+        <button onclick="importPackage('${js(p.name)}')">Import package</button>
+        <button class="danger" onclick="deleteProfile(event,'${js(p.name)}')">Delete</button>
+      </div>
+    </div>`).join('');
+  $('profilesManager').innerHTML = `
+    <div class="panel">
+      <h2>Image profiles</h2>
+      <div class="panel-body">
+        <div class="toolbar" style="margin-bottom:12px">
+          <label style="flex:1;max-width:520px">Output root (all generated output)
+            <input id="outputRootField" value="${escHtml(data.output_root || '')}">
+          </label>
+          <button onclick="saveOutputRoot()" style="align-self:end">Save</button>
+        </div>
+        ${rows}
+        <div class="toolbar" style="margin-top:6px;margin-bottom:0">
+          <button class="primary" onclick="newProfile()">New profile</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+// The editor is a drill-down "page": showing it hides the profile list (and the
+// ComfyUI/models status below), so it never opens a giant box pushed offscreen.
+function showProfileEditor(show) {
+  $('profilesManager').style.display = show ? 'none' : '';
+  $('toolsImagesStatus').style.display = show ? 'none' : '';
+  if (show) $('profileEditor').scrollIntoView({block: 'start'});
+}
+
+function closeProfileEditor() {
+  $('profileEditor').innerHTML = '';
+  showProfileEditor(false);
+  loadProfilesManager();
+}
+
+async function setActiveProfile(name) {
+  $('profileSelect').value = name;
+  await onProfileChange();
+  loadProfilesManager();
+}
+
+async function saveOutputRoot() {
+  const root = $('outputRootField').value.trim();
+  try {
+    await api('/api/state', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({...formState(), output_root: root}),
+    });
+    if (state.config) state.config.output_root = root;
+    $('imageOutput').value = imageCandidatesPath($('profileSelect').value);
+    $('audioOutput').value = `${root}/audio`;
+    log(`Output root set to ${root}`);
+  } catch (err) {
+    log('Save output root failed: ' + err.message);
+  }
+}
+
+async function editProfile(name) {
+  try {
+    const data = await api(`/api/profiles/${enc(name)}`);
+    renderProfileEditor(name, data.profile, data.edit, false);
+  } catch (err) {
+    log('Load profile failed: ' + err.message);
+  }
+}
+
+async function cloneProfile(name) {
+  try {
+    const data = await api(`/api/profiles/${enc(name)}`);
+    const p = data.profile;
+    p.name = `${name}-copy`;
+    renderProfileEditor(`${name}-copy`, p, data.edit, true);
+  } catch (err) {
+    log('Clone failed: ' + err.message);
+  }
+}
+
+async function importPackage(name) {
+  const pkg = prompt(`Import a built package into profile "${name}".\nImages become the selected candidate for their word; audio is restored into output/audio as approved.\n\nPackage directory path:`);
+  if (!pkg) return;
+  try {
+    const data = await api(`/api/profiles/${enc(name)}/import`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({package: pkg.trim(), overwrite: true}),
+    });
+    log(`Imported ${data.count} image(s)${data.audio_imported ? ` and ${data.audio_imported} audio clip(s)${data.human ? ' (human-approved)' : ''}` : ''} into ${name} → ${data.candidates}`);
+    if ($('profileSelect').value === name && state.section === 'images') loadImages();
+  } catch (err) {
+    log('Import failed: ' + err.message);
+  }
+}
+
+function newProfile() {
+  const blank = {
+    name: 'new-profile',
+    description: '',
+    model: {checkpoint: '', lora: null, lora_strength: null},
+    rembg_model: 'u2net',
+    prompt: {template: 'a {item} on a plain white background', negative: ''},
+    generation: {sampler: 'euler', scheduler: 'normal', steps: 20, cfg: 8, width: 512, height: 512, images_per_item: 1},
+  };
+  renderProfileEditor('new-profile', blank, {categories_yaml: '', negative_categories_yaml: '', downloads_yaml: ''}, true);
+}
+
+function renderProfileEditor(name, p, edit, isNew) {
+  const m = p.model || {};
+  const g = p.generation || {};
+  const pr = p.prompt || {};
+  const num = (v) => v === null || v === undefined ? '' : v;
+  $('profileEditor').innerHTML = `
+    <div class="panel">
+      <h2>${isNew ? 'New profile' : 'Edit profile: ' + escHtml(name)}</h2>
+      <div class="panel-body grid">
+        <div class="toolbar" style="margin-top:0;margin-bottom:4px">
+          <button onclick="closeProfileEditor()">← Back to profiles</button>
+        </div>
+        <input type="hidden" id="pfOrigName" value="${escHtml(name)}">
+        <div class="form-grid">
+          <label>Name <input id="pfName" value="${escHtml(p.name || name)}" ${isNew ? '' : 'readonly'}></label>
+          <label>Description <input id="pfDesc" value="${escHtml(p.description || '')}"></label>
+          <label>Checkpoint <input id="pfCheckpoint" value="${escHtml(m.checkpoint || '')}"></label>
+          <label>rembg model <input id="pfRembg" value="${escHtml(p.rembg_model || 'u2net')}"></label>
+          <label>LoRA (optional) <input id="pfLora" value="${escHtml(m.lora || '')}"></label>
+          <label>LoRA strength <input id="pfLoraStrength" value="${num(m.lora_strength)}"></label>
+          <label>Sampler <input id="pfSampler" value="${escHtml(g.sampler || 'euler')}"></label>
+          <label>Scheduler <input id="pfScheduler" value="${escHtml(g.scheduler || 'normal')}"></label>
+          <label>Steps <input id="pfSteps" type="number" value="${num(g.steps)}"></label>
+          <label>CFG <input id="pfCfg" type="number" step="0.5" value="${num(g.cfg)}"></label>
+          <label>Width <input id="pfWidth" type="number" value="${num(g.width)}"></label>
+          <label>Height <input id="pfHeight" type="number" value="${num(g.height)}"></label>
+          <label>Images per item <input id="pfIpi" type="number" value="${num(g.images_per_item)}"></label>
+        </div>
+        <label style="margin-top:8px">Default prompt template (must contain {item})
+          <textarea id="pfTemplate" rows="3">${escHtml(pr.template || '')}</textarea>
+        </label>
+        <label>Default negative prompt
+          <textarea id="pfNegative" rows="3">${escHtml(pr.negative || '')}</textarea>
+        </label>
+        <label>Per-category prompt overrides (YAML, advanced)
+          <textarea id="pfCategories" rows="4">${escHtml(edit.categories_yaml || '')}</textarea>
+        </label>
+        <label>Per-category negative overrides (YAML, advanced)
+          <textarea id="pfNegCategories" rows="4">${escHtml(edit.negative_categories_yaml || '')}</textarea>
+        </label>
+        <label>Model downloads (YAML, advanced)
+          <textarea id="pfDownloads" rows="3">${escHtml(edit.downloads_yaml || '')}</textarea>
+        </label>
+        <div class="toolbar" style="margin-bottom:0">
+          <button class="primary" onclick="saveProfileEdit()">Save profile</button>
+          <button onclick="closeProfileEditor()">Cancel</button>
+          <span id="pfStatus" class="muted"></span>
+        </div>
+      </div>
+    </div>`;
+  showProfileEditor(true);
+}
+
+async function saveProfileEdit() {
+  const numOrNull = (id) => { const v = $(id).value.trim(); return v === '' ? null : Number(v); };
+  const payload = {
+    name: $('pfName').value.trim(),
+    description: $('pfDesc').value.trim(),
+    model: {
+      checkpoint: $('pfCheckpoint').value.trim(),
+      lora: $('pfLora').value.trim() || null,
+      lora_strength: numOrNull('pfLoraStrength'),
+    },
+    rembg_model: $('pfRembg').value.trim() || 'u2net',
+    prompt: {template: $('pfTemplate').value, negative: $('pfNegative').value},
+    generation: {
+      sampler: $('pfSampler').value.trim(),
+      scheduler: $('pfScheduler').value.trim(),
+      steps: numOrNull('pfSteps'),
+      cfg: numOrNull('pfCfg'),
+      width: numOrNull('pfWidth'),
+      height: numOrNull('pfHeight'),
+      images_per_item: numOrNull('pfIpi'),
+    },
+    categories_yaml: $('pfCategories').value,
+    negative_categories_yaml: $('pfNegCategories').value,
+    downloads_yaml: $('pfDownloads').value,
+  };
+  $('pfStatus').innerHTML = busyHtml('saving…');
+  try {
+    const data = await api(`/api/profiles/${enc($('pfOrigName').value)}`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+    });
+    log(`Saved profile ${data.name}`);
+    const cfg = await api('/api/config');
+    populateProfiles(cfg.profiles || [], cfg.active_profile);
+    state.config.profiles = cfg.profiles;
+    closeProfileEditor();
+  } catch (err) {
+    $('pfStatus').innerHTML = `<span class="error">${err.message}</span>`;
+  }
+}
+
+function deleteProfile(ev, name) {
+  confirmPopover(ev.currentTarget, `Delete profile <b>${escHtml(name)}</b>? (config only; generated output is left in place)`, async () => {
+    try {
+      await api(`/api/profiles/${enc(name)}`, {method: 'DELETE'});
+      log(`Deleted profile ${name}`);
+      const cfg = await api('/api/config');
+      populateProfiles(cfg.profiles || [], cfg.active_profile);
+      state.config.profiles = cfg.profiles;
+      $('profileSelect').value = cfg.active_profile;
+      loadProfilesManager();
+    } catch (err) {
+      log('Delete profile failed: ' + err.message);
+    }
+  });
+}
+
+function sysRow(label, value) {
+  return `<div class="toolrow"><span style="flex:1">${escHtml(label)}</span><span class="muted">${escHtml(value || '—')}</span></div>`;
+}
+
+function renderSystem(s) {
+  if (!s) return '';
+  const cpu = s.cpu || {}, mem = s.memory || {}, gpu = s.gpu || {};
+  const cpuVal = `${cpu.model || 'unknown'}${cpu.cores_logical ? ` · ${cpu.cores_logical} threads` : ''}`;
+  const memVal = mem.total_gb ? `${mem.total_gb} GB total${mem.available_gb ? ` · ${mem.available_gb} GB available` : ''}` : '';
+  const gpuRows = (gpu.gpus && gpu.gpus.length)
+    ? gpu.gpus.map(g => {
+        const bits = [g.memory_mb ? `${(g.memory_mb / 1024).toFixed(0)} GB` : null, g.driver ? `driver ${g.driver}` : null].filter(Boolean);
+        return `<div class="toolrow" style="padding-left:12px"><span style="flex:1" class="muted">${escHtml(g.name)}</span><span class="pill ok">${escHtml(g.vendor || 'GPU')}</span>${bits.length ? `<span class="muted">${escHtml(bits.join(' · '))}</span>` : ''}</div>`;
+      }).join('')
+    : `<div class="toolrow" style="padding-left:12px"><span class="muted">No GPU detected (CPU-only)</span>${toolPill(false, '', 'no GPU')}</div>`;
+  return `<div class="panel"><h2>System</h2><div class="panel-body">
+    ${sysRow('Platform', s.platform)}
+    ${sysRow('Python', s.python)}
+    ${sysRow('CPU', cpuVal)}
+    ${sysRow('Memory', memVal)}
+    <div class="toolrow"><span style="flex:1">GPU${gpu.cuda_version ? ` <span class="muted">(CUDA ${escHtml(gpu.cuda_version)})</span>` : ''}</span></div>
+    ${gpuRows}
+  </div></div>`;
+}
+
+function renderTools(t) {
+  const py = t.python.map(p =>
+    `<div class="toolrow"><span style="flex:1">${escHtml(p.name)} <span class="muted">(${escHtml(p.module)})</span></span>${toolPill(p.installed)}</div>`
+  ).join('');
+
+  const c = t.comfyui;
+  const comfyHtml = `
+    <div class="toolrow"><span style="flex:1">ComfyUI cloned <span class="muted">${escHtml(c.path)}</span></span>${toolPill(c.installed)}</div>
+    <div class="toolrow"><span style="flex:1">websocket custom node</span>${toolPill(c.node_installed)}</div>
+    <div class="toolrow"><span style="flex:1">ComfyUI server <span class="muted">(${escHtml(c.host)})</span></span>${toolPill(c.reachable, 'running', 'not running')}</div>
+    <div class="toolbar" style="margin-top:10px;margin-bottom:0">
+      <button onclick="runToolJob('comfyui-install','','${c.installed ? 'Update' : 'Install'} ComfyUI')">${c.installed ? 'Update' : 'Install'} ComfyUI</button>
+    </div>`;
+
+  const audioEngines = t.audio_engines || {};
+  const audioHtml = Object.values(audioEngines).map(e => {
+    const rows = (e.voice_sets || []).map(v => {
+      const target = v.model || v.voice || '';
+      const needsRuntime = !e.runtime_installed;
+      const label = v.cached ? 'Re-download' : 'Download';
+      const dl = target
+        ? `<button ${needsRuntime ? 'disabled title="Install this audio engine before downloading voice data"' : `onclick="runToolJob('${js(e.engine)}-download','${js(target)}','${label} ${js(e.engine)} ${js(target)}')"`}>${needsRuntime ? 'Install first' : label}</button>`
+        : '';
+      const cacheTitle = v.cache_path ? ` title="${escHtml(v.cache_path)}"` : '';
+      return `<div class="toolrow" style="padding-left:12px;gap:8px">
+        <span style="flex:1" class="muted">${escHtml(v.lang)} / ${escHtml(v.voice_set)}${v.selected ? ' · selected' : ''}<br>${escHtml(v.model || '')}${v.voice ? ` · ${escHtml(v.voice)}` : ''}</span>
+        <span${cacheTitle}>${toolPill(Boolean(v.cached), 'cached', 'missing')}</span>
+        ${dl}
+      </div>`;
+    }).join('');
+    const installAction = e.engine === 'coqui' ? 'coqui-download' : `${e.engine}-install`;
+    const installLabel = e.engine === 'coqui' ? 'Install / update Coqui' : `Install ${e.engine}`;
+    const runtimeTitle = e.runtime_detail ? ` title="${escHtml(e.runtime_detail)}"` : '';
+    return `<div class="toolset">
+      <div class="toolrow"><span style="flex:1"><b>${escHtml(e.engine)}</b><div class="muted">${(e.voice_sets || []).length} configured voice set(s)</div></span>${toolPill(e.venv_installed, 'venv', 'no venv')}<span${runtimeTitle}>${toolPill(e.runtime_installed, 'runtime ready', 'runtime missing')}</span></div>
+      ${rows || '<div class="toolrow muted" style="padding-left:12px">No configured voice sets.</div>'}
+      <div class="toolbar" style="margin-top:8px;margin-bottom:0">
+        <button onclick="runToolJob('${installAction}','','${installLabel}')">${installLabel}</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  state.toolImageSets = t.image_models.sets;
+  const sets = t.image_models.sets.map(s => {
+    const files = s.downloads.map(d => {
+      const del = d.exists
+        ? `<button class="danger" style="padding:2px 8px" title="Delete this downloaded model file" onclick="deleteModel(event,'${js(d.dest)}')">🗑</button>`
+        : '';
+      return `<div class="toolrow" style="padding-left:12px;gap:8px"><span style="flex:1" class="muted">${escHtml(d.dest)}${d.size_hint ? ` (${escHtml(d.size_hint)})` : ''}</span>${toolPill(d.exists, d.size_mb ? `${d.size_mb} MB` : 'present', 'missing')}${del}</div>`;
+    }).join('');
+    return `<div class="toolset">
+      <div class="toolrow"><span style="flex:1"><b>${escHtml(s.name)}</b><div class="muted">${escHtml(s.description)}</div></span>${toolPill(s.complete, 'complete', 'incomplete')}</div>
+      ${files}
+      <div class="toolbar" style="margin-top:8px;margin-bottom:0">
+        <button onclick="runToolJob('image-download','${js(s.name)}','Download ${js(s.name)}')">${s.complete ? 'Re-download all' : 'Download missing'}</button>
+      </div>
+    </div>`;
+  }).join('');
+  const keyHtml = `<div class="toolbar" style="margin-top:6px;margin-bottom:0">
+    <input id="civitaiKey" type="password" placeholder="CivitAI API token" style="max-width:300px">
+    <button onclick="saveCivitaiKey()">Save Key</button>
+    <span class="muted">${t.image_models.civitai_key ? 'a key is saved' : 'no key saved'} — needed for some LoRA downloads</span>
+  </div>`;
+
+  $('tools-deps').innerHTML = `${renderSystem(t.system)}<div class="panel" style="margin-top:14px"><h2>Python packages</h2><div class="panel-body">${py}</div></div>`;
+  $('toolsImagesStatus').innerHTML = `
+    <div class="panel"><h2>ComfyUI</h2><div class="panel-body">${comfyHtml}</div></div>
+    <div class="panel" style="margin-top:14px">
+      <h2>Model file downloads</h2>
+      <div class="muted" style="padding:0 14px">Shared model files for the image pipeline. Style activation is per profile (Image profiles, above) — there is no global "active set".</div>
+      <div class="panel-body">${sets}${keyHtml}</div>
+    </div>`;
+  $('tools-audio').innerHTML = `<div class="panel"><h2>Audio engines</h2><div class="panel-body">${audioHtml}</div></div>`;
+}
+
+async function runToolJob(action, setName, label) {
+  $('toolsStatus').innerHTML = busyHtml(`starting: ${label}…`);
+  try {
+    const data = await api('/api/jobs/tool', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({action, set: setName}),
+    });
+    log(`Started tool job ${data.job.id}: ${label}`);
+    await watchJob(data.job.id, 'toolsStatus');
+    $('toolsStatus').textContent = `${label} finished.`;
+    await loadAudioProfile();
+    loadTools();
+  } catch (err) {
+    $('toolsStatus').innerHTML = `<span class="error">${err.message}</span>`;
+    log('Tool action failed: ' + err.message);
+  }
+}
+
+function deleteModel(ev, dest) {
+  const users = (state.toolImageSets || [])
+    .filter(s => (s.downloads || []).some(d => d.dest === dest))
+    .map(s => s.name);
+  const shared = users.length > 1 ? ` Shared by: <b>${users.map(escHtml).join(', ')}</b>.` : '';
+  confirmPopover(ev.currentTarget,
+    `Delete the downloaded model file<br><b>${escHtml(dest)}</b>?${shared}<br>It will need re-downloading to use any profile that needs it.`,
+    () => doDeleteModel(dest));
+}
+
+async function doDeleteModel(dest) {
+  $('toolsStatus').innerHTML = busyHtml('deleting model…');
+  try {
+    const data = await api('/api/tools/delete-model', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({dest}),
+    });
+    log(data.deleted
+      ? `Deleted ${dest}${data.freed_mb ? ` (freed ${data.freed_mb} MB)` : ''}`
+      : `${dest} was already absent`);
+    loadTools();
+  } catch (err) {
+    $('toolsStatus').innerHTML = `<span class="error">${err.message}</span>`;
+    log('Delete model failed: ' + err.message);
+  }
+}
+
+async function saveCivitaiKey() {
+  const token = $('civitaiKey').value.trim();
+  if (!token) {
+    log('Enter a CivitAI token first.');
+    return;
+  }
+  try {
+    await api('/api/tools/civitai-key', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({token}),
+    });
+    log('Saved CivitAI API key.');
+    loadTools();
+  } catch (err) {
+    log('Save key failed: ' + err.message);
+  }
+}
+
+let activePopover = null;
+function closePopover() {
+  if (!activePopover) return;
+  const p = activePopover;
+  activePopover = null;
+  p.el.remove();
+  document.removeEventListener('mousedown', p.onOutside, true);
+  document.removeEventListener('keydown', p.onKey, true);
+  window.removeEventListener('scroll', p.onScroll, true);
+}
+
+function scrollAffectsPopoverAnchor(anchorEl, ev) {
+  if (!anchorEl || !anchorEl.isConnected) return true;
+  const target = ev.target;
+  if (!target || target === window || target === document || target === document.body || target === document.documentElement) return true;
+  return target.contains(anchorEl);
+}
+
+function confirmPopover(anchorEl, message, onConfirm, {confirmLabel = 'Delete'} = {}) {
+  closePopover();
+  const el = document.createElement('div');
+  el.className = 'popover';
+  el.innerHTML = `
+    <div class="popover-msg">${message}</div>
+    <div class="popover-actions">
+      <button type="button" data-act="cancel">Cancel</button>
+      <button type="button" class="danger" data-act="confirm">${escHtml(confirmLabel)}</button>
+    </div>`;
+  document.body.appendChild(el);
+  const r = anchorEl.getBoundingClientRect();
+  const pad = 8;
+  let left = Math.min(r.right - el.offsetWidth, window.innerWidth - pad - el.offsetWidth);
+  if (left < pad) left = pad;
+  let top = r.bottom + 6;
+  if (top + el.offsetHeight > window.innerHeight - pad) top = r.top - el.offsetHeight - 6;
+  if (top < pad) top = pad;
+  el.style.left = `${left}px`;
+  el.style.top = `${top}px`;
+  const onOutside = e => { if (!el.contains(e.target)) closePopover(); };
+  const onKey = e => { if (e.key === 'Escape') closePopover(); };
+  const onScroll = e => { if (!el.contains(e.target) && scrollAffectsPopoverAnchor(anchorEl, e)) closePopover(); };
+  activePopover = {el, onOutside, onKey, onScroll};
+  // Defer the outside-click listener so the opening click doesn't close it.
+  setTimeout(() => document.addEventListener('mousedown', onOutside, true), 0);
+  document.addEventListener('keydown', onKey, true);
+  window.addEventListener('scroll', onScroll, true);
+  el.querySelector('[data-act="cancel"]').addEventListener('click', closePopover);
+  el.querySelector('[data-act="confirm"]').addEventListener('click', () => {
+    closePopover();
+    onConfirm();
+  });
+  el.querySelector('[data-act="confirm"]').focus();
+}
+
+function openCategoryMenu(ev) {
+  ev.stopPropagation();
+  const anchorEl = ev.currentTarget;
+  const listEl = anchorEl.closest('.list');
+  if (!listEl) return;
+  const currentCat = anchorEl.dataset.cat;
+  const cats = [];
+  listEl.querySelectorAll('.list-header').forEach(h => {
+    if (!cats.includes(h.dataset.cat)) cats.push(h.dataset.cat);
+  });
+  closePopover();
+  const el = document.createElement('div');
+  el.className = 'popover menu';
+  el.innerHTML = cats.map(c =>
+    `<div class="menu-item ${c === currentCat ? 'current' : ''}" data-cat="${escHtml(c)}">${escHtml(c)}</div>`
+  ).join('');
+  document.body.appendChild(el);
+  const r = anchorEl.getBoundingClientRect();
+  const pad = 8;
+  let left = Math.min(r.left, window.innerWidth - pad - el.offsetWidth);
+  if (left < pad) left = pad;
+  let top = r.bottom + 4;
+  if (top + el.offsetHeight > window.innerHeight - pad) top = Math.max(pad, r.top - el.offsetHeight - 4);
+  el.style.left = `${left}px`;
+  el.style.top = `${top}px`;
+  const onOutside = e => { if (!el.contains(e.target)) closePopover(); };
+  const onKey = e => { if (e.key === 'Escape') closePopover(); };
+  const onScroll = e => { if (!el.contains(e.target) && scrollAffectsPopoverAnchor(anchorEl, e)) closePopover(); };
+  activePopover = {el, onOutside, onKey, onScroll};
+  setTimeout(() => document.addEventListener('mousedown', onOutside, true), 0);
+  document.addEventListener('keydown', onKey, true);
+  window.addEventListener('scroll', onScroll, true);
+  el.querySelectorAll('.menu-item').forEach(mi => mi.addEventListener('click', () => {
+    const cat = mi.dataset.cat;
+    closePopover();
+    jumpToCategory(listEl, cat);
+  }));
+}
+
+function jumpToCategory(listEl, cat) {
+  const header = [...listEl.querySelectorAll('.list-header')].find(h => h.dataset.cat === cat);
+  if (header) listEl.scrollTop = header.offsetTop;
+}
+
+function setImageSubtab(name) {
+  document.querySelectorAll('#imageSubtabs .subtab').forEach(el => el.classList.toggle('active', el.dataset.subtab === name));
+  document.querySelectorAll('#images .subpane').forEach(el => el.classList.toggle('active', el.id === `images-${name}`));
+}
+
+function setAudioSubtab(name) {
+  document.querySelectorAll('#audioSubtabs .subtab').forEach(el => el.classList.toggle('active', el.dataset.subtab === name));
+  document.querySelectorAll('#audio .subpane').forEach(el => el.classList.toggle('active', el.id === `audio-${name}`));
+}
+
+function setToolsSubtab(name) {
+  document.querySelectorAll('#toolsSubtabs .subtab').forEach(el => el.classList.toggle('active', el.dataset.subtab === name));
+  document.querySelectorAll('#tools .subpane').forEach(el => el.classList.toggle('active', el.id === `tools-${name}`));
+}
+
+document.querySelectorAll('#imageSubtabs .subtab').forEach(el => el.addEventListener('click', () => setImageSubtab(el.dataset.subtab)));
+document.querySelectorAll('#audioSubtabs .subtab').forEach(el => el.addEventListener('click', () => setAudioSubtab(el.dataset.subtab)));
+document.querySelectorAll('#toolsSubtabs .subtab').forEach(el => el.addEventListener('click', () => setToolsSubtab(el.dataset.subtab)));
+document.querySelectorAll('.nav-item').forEach(el => el.addEventListener('click', () => setSection(el.dataset.section)));
+$('profileSelect').addEventListener('change', onProfileChange);
+$('corpusSelect').addEventListener('change', () => {
+  scheduleSaveState();
+  if (state.section === 'dashboard') runValidation();
+  else if (state.section === 'corpus') loadCorpus();
+});
+$('dashValidate').addEventListener('click', runValidation);
+$('exportReport').addEventListener('click', exportReport);
+$('loadCorpus').addEventListener('click', loadCorpus);
+$('corpusFilter').addEventListener('input', () => { state.corpusPage = 0; renderCorpus(); });
+$('corpusMediaFilter').addEventListener('change', () => { state.corpusPage = 0; renderCorpus(); });
+$('loadImages').addEventListener('click', loadImages);
+$('extractImages').addEventListener('click', extractImages);
+$('purgeImages').addEventListener('click', purgeUnselectedImages);
+$('healthImages').addEventListener('click', healthImages);
+$('copyImageCommand').addEventListener('click', () => copyCommand(imagePayload()));
+$('generateImages').addEventListener('click', generateImages);
+$('loadAudio').addEventListener('click', loadAudio);
+$('purgeAudio').addEventListener('click', purgeUnapprovedAudio);
+$('approveAudioLang').addEventListener('click', approveAllAudioLang);
+$('disapproveAudioLang').addEventListener('click', disapproveAllAudioLang);
+$('audioApproveLang').addEventListener('change', () => { populateVoiceSetSelects(); loadAudio(); });
+$('audioReviewVoiceSet').addEventListener('change', () => loadAudio());
+$('audioGenLang').addEventListener('change', () => populateVoiceSetSelects());
+$('audioGenVoiceSet').addEventListener('change', syncVoiceSetFields);
+$('saveAudioVoiceSet').addEventListener('click', saveAudioVoiceSet);
+$('selectAudioWinner').addEventListener('click', selectAudioWinner);
+$('extractAudio').addEventListener('click', extractAudio);
+$('copyAudioCommand').addEventListener('click', () => copyCommand(audioPayload()));
+$('generateAudio').addEventListener('click', generateAudio);
+$('preflightPackage').addEventListener('click', runValidation);
+$('copyPackageCommand').addEventListener('click', () => copyCommand(packagePayload()));
+$('buildPackage').addEventListener('click', buildPackage);
+$('refreshJobs').addEventListener('click', refreshJobs);
+$('refreshTools').addEventListener('click', loadTools);
+$('clearLogs').addEventListener('click', () => $('logs').textContent = '');
+$('activeJobCancel').addEventListener('click', cancelActiveJob);
+
+[
+  'wordlist', 'langs', 'imageExtract', 'audioExtract',
+  'imageHost', 'imageComfyui', 'packageOut', 'packageAudioFormat'
+].forEach(id => $(id).addEventListener('change', scheduleSaveState));
+
+document.addEventListener('keydown', ev => {
+  if (state.section === 'images' && state.imageGroups.length) {
+    if (ev.key === 'ArrowUp') { ev.preventDefault(); state.imageIdx = Math.max(0, state.imageIdx - 1); renderImages(); }
+    if (ev.key === 'ArrowDown') { ev.preventDefault(); state.imageIdx = Math.min(state.imageGroups.length - 1, state.imageIdx + 1); renderImages(); }
+    if (ev.key >= '1' && ev.key <= '9') {
+      const g = state.imageGroups[state.imageIdx];
+      const img = g && g.images[Number(ev.key) - 1];
+      if (img) selectImage(g.item, img.filename);
+    }
+  }
+  if (state.section === 'audio' && state.audioGroups.length) {
+    if (ev.key === 'ArrowUp') { ev.preventDefault(); state.audioIdx = Math.max(0, state.audioIdx - 1); renderAudio(); }
+    if (ev.key === 'ArrowDown') { ev.preventDefault(); state.audioIdx = Math.min(state.audioGroups.length - 1, state.audioIdx + 1); renderAudio(); }
+    if (ev.key >= '1' && ev.key <= '9') {
+      const g = state.audioGroups[state.audioIdx];
+      const clip = g && g.clips[Number(ev.key) - 1];
+      if (clip) setAudioStatus(clip.filename, 'approved');
+    }
+  }
+});
+
+loadConfig().then(() => runValidation()).catch(err => log('Startup failed: ' + err.message));
+attachRunningJob();
+// Keep watching: if a job is running (possibly started in another browser) and we
+// are not already attached, pick it up so progress/logs show in every browser.
+setInterval(() => { if (!state.activeEventSource) attachRunningJob(); }, 4000);
+</script>
+</body>
+</html>
